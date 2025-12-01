@@ -60,7 +60,7 @@
         }
       }
     },
-    "/api/Account/{accountId}": {
+    "/api/Account/AtualizarConta/{accountId}": {
       "put": {
         "tags": [
           "Account"

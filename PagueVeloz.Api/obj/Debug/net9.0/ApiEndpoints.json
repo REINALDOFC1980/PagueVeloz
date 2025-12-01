@@ -2,7 +2,7 @@
   {
     "ContainingType": "PagueVeloz.Api.Controllers.AccountController",
     "Method": "Update",
-    "RelativePath": "api/Account/{accountId}",
+    "RelativePath": "api/Account/AtualizarConta/{accountId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

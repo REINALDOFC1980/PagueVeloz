@@ -16,6 +16,7 @@ namespace PagueVeloz.TransactionProcessor.Infrastructure.Database
 
         public DbSet<AccountModel> Accounts { get; set; }
         public DbSet<TransactionModel> Transactions { get; set; }
+        public DbSet<IdempotencyRecord> IdempotencyRecords { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -64,6 +65,17 @@ namespace PagueVeloz.TransactionProcessor.Infrastructure.Database
                 entity.Property(e => e.Timestamp).IsRequired();
                 entity.Property(e => e.ErrorMessage).HasMaxLength(500);
             });
+
+            // Configurações da entidade IdempotencyRecord
+            modelBuilder.Entity<IdempotencyRecord>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Key).IsRequired();
+                entity.HasIndex(i => i.Key).IsUnique();
+                entity.Property(i => i.Response).IsRequired();
+                entity.Property(i => i.CreatedAt).IsRequired();
+            });
+
 
             base.OnModelCreating(modelBuilder);
         }

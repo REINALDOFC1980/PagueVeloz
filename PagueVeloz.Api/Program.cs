@@ -9,6 +9,7 @@ using PagueVeloz.Api.Validators;
 using PagueVeloz.Application.Interfaces;
 using PagueVeloz.Application.Services;
 using PagueVeloz.Infrastructure.Repositories.Account;
+using PagueVeloz.Infrastructure.Repositories.Idempotency;
 using PagueVeloz.Infrastructure.Services;
 using PagueVeloz.TransactionProcessor.Infrastructure.Database;
 using Serilog;
@@ -23,16 +24,18 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // Registro dos serviços e repositórios
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IAccountRepositoty, AccountRepositoty>();
-
-// Registro do serviço de auditoria
 builder.Services.AddScoped<IAuditService, AuditService>();
+builder.Services.AddScoped<IIdempotencyRepository, IdempotencyRepository>();
+builder.Services.AddScoped<IIdempotencyService, IdempotencyService>();
 
 
-// REGISTRA a conexão usada pelo Dapper
+
+
+// Registro a conexão usada pelo Dapper
 builder.Services.AddScoped<IDbConnection>(sp =>
     new SqlConnection(connectionString));
 
-// REGISTRA o DbContext do EF Core 
+// Registro o DbContext do EF Core 
 builder.Services.AddDbContext<PagueVelozDbContext>(options =>
     options.UseSqlServer(connectionString));
 

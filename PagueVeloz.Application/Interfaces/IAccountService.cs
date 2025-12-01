@@ -9,7 +9,7 @@ namespace PagueVeloz.Application.Interfaces
 {
     public interface IAccountService
     {
-        Task<AccountModel> CreateAccountAsync(AccountModel account);
+        Task<AccountModel> CreateAccountAsync(AccountModel account, string idempotencyKey);
         Task<AccountModel> GetAccountByIdAsync(Guid accountId);
         Task UpdateAccountAsync(AccountModel account);
     }

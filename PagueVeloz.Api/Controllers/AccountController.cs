@@ -21,29 +21,41 @@ namespace PagueVeloz.Api.Controllers
         }
 
         [HttpPost("CriarConta")]
-        public async Task<ActionResult> CriarConta(AccountCreateDto dto)
+        public async Task<IActionResult> CriarConta([FromBody] AccountCreateDto dto)
         {
-            Log.Information("Recebida solicitação de criação de conta.");
-
-
-
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var account = new AccountModel
+            try
             {
-                Balance = dto.Balance,
-                ReservedBalance = dto.ReservedBalance,
-                CreditLimit = dto.CreditLimit
-            };
+                Log.Information("Recebida solicitação de criação de conta.");
 
-            var created = await _serviceAccount.CreateAccountAsync(account);
+                
+                string idempotencyKey = Request.Headers["Idempotency-Key"];
 
-            Log.Information("Conta {AccountId} criada no banco.", account.AccountId);
+                if (string.IsNullOrEmpty(idempotencyKey))
+                {                
+                    idempotencyKey = Guid.NewGuid().ToString();
+                    Log.Warning("Idempotency-Key não enviada, gerando uma aleatória.");
+                }
 
-            return Ok(created);
+                // Mapeia DTO para Model
+                var account = new AccountModel
+                {
+                    Balance = dto.Balance,
+                    CreditLimit = dto.CreditLimit,
+                    ReservedBalance = 0
+                };
 
+                // Chama o Service com idempotência
+                var createdAccount = await _serviceAccount.CreateAccountAsync(account, idempotencyKey);
+
+                return Ok(createdAccount);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erro ao criar conta.");
+                return StatusCode(500, new { message = ex.Message });
+            }
         }
+    
 
         [HttpGet("BuscarConta/{accountId}")]
         public async Task<IActionResult> GetById(Guid accountId)
@@ -52,7 +64,7 @@ namespace PagueVeloz.Api.Controllers
             return Ok(account);
         }
 
-        [HttpPut("{accountId}")]
+        [HttpPut("AtualizarConta/{accountId}")]
         public async Task<IActionResult> Update(Guid accountId, AccountUpdateDto dto)
         {
             var account = await _serviceAccount.GetAccountByIdAsync(accountId);
