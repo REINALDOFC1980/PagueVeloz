@@ -1,0 +1,93 @@
+2025-12-01 09:56:40 An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-01 09:56:42 Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: EngineType=SqlServer 
+2025-12-01 09:56:42 Creating DbConnection.
+2025-12-01 09:56:42 Created DbConnection. (75ms).
+2025-12-01 09:56:42 Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-01 09:56:43 Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-01 09:56:43 Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-01 09:56:43 Created DbCommand for 'ExecuteNonQuery' (15ms).
+2025-12-01 09:56:43 Initialized DbCommand for 'ExecuteNonQuery' (27ms).
+2025-12-01 09:56:43 Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-01 09:56:43 Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-01 09:56:43 Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-01 09:56:43 Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (16ms).
+2025-12-01 09:56:43 Creating DbCommand for 'ExecuteScalar'.
+2025-12-01 09:56:43 Created DbCommand for 'ExecuteScalar' (4ms).
+2025-12-01 09:56:43 Initialized DbCommand for 'ExecuteScalar' (9ms).
+2025-12-01 09:56:43 Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-01 09:56:43 Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-01 09:56:43 Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-01 09:56:43 Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-01 09:56:43 Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-01 09:56:43 Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (5ms).
+2025-12-01 09:56:43 'PagueVelozDbContext' disposed.
+2025-12-01 09:56:43 Disposing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-01 09:56:43 Disposed connection to database '' on server '' (5ms).
+2025-12-01 09:56:43 Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-12-01 09:56:43 Hosting starting
+2025-12-01 09:56:44 Middleware loaded
+2025-12-01 09:56:44 Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16513 B).
+2025-12-01 09:56:44 Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-12-01 09:56:44 Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-01 09:56:44 Wildcard detected, all requests with hosts will be allowed.
+2025-12-01 09:56:44 Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-12-01 09:56:44 Now listening on: https://localhost:7249
+2025-12-01 09:56:44 Now listening on: http://localhost:5247
+2025-12-01 09:56:44 Loaded hosting startup assembly PagueVeloz.Api
+2025-12-01 09:56:44 Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-12-01 09:56:44 Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-12-01 09:56:44 Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-12-01 09:56:44 Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-01 09:56:44 Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-01 09:56:44 Application started. Press Ctrl+C to shut down.
+2025-12-01 09:56:44 Hosting environment: Development
+2025-12-01 09:56:44 Content root path: E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api
+2025-12-01 09:56:44 Hosting started
+2025-12-01 09:57:09 Connection id "0HNHGR4HNQ96C" accepted.
+2025-12-01 09:57:09 Connection id "0HNHGR4HNQ96C" started.
+2025-12-01 09:57:09 Connection 0HNHGR4HNQ96C established using the following protocol: "Tls13"
+2025-12-01 09:57:09 Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-01 09:57:09 No candidates found for the request path '/swagger/index.html'
+2025-12-01 09:57:09 Request did not match any endpoints
+2025-12-01 09:57:09 Response markup is scheduled to include browser refresh script injection.
+2025-12-01 09:57:09 Response markup was updated to include browser refresh script injection.
+2025-12-01 09:57:09 Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 180.6268ms
+2025-12-01 09:57:09 Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-01 09:57:09 Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-01 09:57:09 Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 39.4145ms
+2025-12-01 09:57:10 Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-01 09:57:10 No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-01 09:57:10 Request did not match any endpoints
+2025-12-01 09:57:10 Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.9659ms

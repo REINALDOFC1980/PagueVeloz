@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CA94A31C-88CE-4D96-B076-90FF6E851E40}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.infrastructure\\database\\paguevelozdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA94A31C-88CE-4D96-B076-90FF6E851E40}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|solutionrelative:pagueveloz.infrastructure\\database\\paguevelozdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\pagueveloz.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\pagueveloz.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.application\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|solutionrelative:pagueveloz.application\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.application\\interfaces\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|solutionrelative:pagueveloz.application\\interfaces\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA94A31C-88CE-4D96-B076-90FF6E851E40}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.infrastructure\\repositories\\accounts\\accountrepositoty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA94A31C-88CE-4D96-B076-90FF6E851E40}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|solutionrelative:pagueveloz.infrastructure\\repositories\\accounts\\accountrepositoty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA94A31C-88CE-4D96-B076-90FF6E851E40}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.infrastructure\\repositories\\accounts\\iaccountrepositoty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA94A31C-88CE-4D96-B076-90FF6E851E40}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|solutionrelative:pagueveloz.infrastructure\\repositories\\accounts\\iaccountrepositoty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.application\\audit\\auditservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|solutionrelative:pagueveloz.application\\audit\\auditservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 78,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +50,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "PagueVeloz.Api\\appsettings.json",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.json",
-              "RelativeToolTip": "PagueVeloz.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-01T11:52:06.157Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Program.cs",
               "RelativeDocumentMoniker": "PagueVeloz.Api\\Program.cs",
               "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Program.cs",
               "RelativeToolTip": "PagueVeloz.Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAuwGUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T11:52:17.072Z",
+              "WhenOpened": "2025-12-01T12:19:24.851Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PagueVelozDbContext.cs",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
-              "RelativeDocumentMoniker": "PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
-              "RelativeToolTip": "PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAgwEcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "IAccountRepositoty.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Repositories\\Accounts\\IAccountRepositoty.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Infrastructure\\Repositories\\Accounts\\IAccountRepositoty.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Repositories\\Accounts\\IAccountRepositoty.cs",
+              "RelativeToolTip": "PagueVeloz.Infrastructure\\Repositories\\Accounts\\IAccountRepositoty.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T11:47:02.761Z",
+              "WhenOpened": "2025-12-01T12:10:26.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountRepositoty.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Repositories\\Accounts\\AccountRepositoty.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Infrastructure\\Repositories\\Accounts\\AccountRepositoty.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Repositories\\Accounts\\AccountRepositoty.cs",
+              "RelativeToolTip": "PagueVeloz.Infrastructure\\Repositories\\Accounts\\AccountRepositoty.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T12:10:14.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IAccountService.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Interfaces\\IAccountService.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Application\\Interfaces\\IAccountService.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Interfaces\\IAccountService.cs",
+              "RelativeToolTip": "PagueVeloz.Application\\Interfaces\\IAccountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T12:12:39.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Application\\Services\\AccountService.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Services\\AccountService.cs",
+              "RelativeToolTip": "PagueVeloz.Application\\Services\\AccountService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T12:12:40.848Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PagueVeloz.Api",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\PagueVeloz.Api.csproj",
-              "RelativeDocumentMoniker": "PagueVeloz.Api\\PagueVeloz.Api.csproj",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\PagueVeloz.Api.csproj",
-              "RelativeToolTip": "PagueVeloz.Api\\PagueVeloz.Api.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-01T11:54:05.606Z",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Api\\Controllers\\AccountController.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "PagueVeloz.Api\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T12:33:40.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "PagueVeloz.Api\\appsettings.json",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.json",
+              "RelativeToolTip": "PagueVeloz.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-01T12:41:05.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuditService.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Audit\\AuditService.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Application\\Audit\\AuditService.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Audit\\AuditService.cs",
+              "RelativeToolTip": "PagueVeloz.Application\\Audit\\AuditService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T12:53:49.128Z",
               "EditorCaption": ""
             }
           ]

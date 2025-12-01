@@ -1,1 +1,55 @@
-[]
+[
+  {
+    "ContainingType": "PagueVeloz.Api.Controllers.AccountController",
+    "Method": "Update",
+    "RelativePath": "api/Account/{accountId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accountId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PagueVeloz.Application.DTOs.AccountUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PagueVeloz.Api.Controllers.AccountController",
+    "Method": "GetById",
+    "RelativePath": "api/Account/BuscarConta/{accountId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accountId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PagueVeloz.Api.Controllers.AccountController",
+    "Method": "CriarConta",
+    "RelativePath": "api/Account/CriarConta",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PagueVeloz.Api.DTOs.AccountCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

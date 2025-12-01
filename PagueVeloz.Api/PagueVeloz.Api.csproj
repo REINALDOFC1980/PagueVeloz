@@ -29,4 +29,8 @@
 		<ProjectReference Include="..\PAgueVeloz.Infrastructure\PagueVeloz.Infrastructure.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="logs\" />
+	</ItemGroup>
+
 </Project>

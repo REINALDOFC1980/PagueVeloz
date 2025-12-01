@@ -1,0 +1,157 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "PagueVeloz API",
+    "description": "API para processamento de transações financeiras",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Account/CriarConta": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Account/BuscarConta/{accountId}": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Account/{accountId}": {
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccountCreateDto": {
+        "type": "object",
+        "properties": {
+          "balance": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "reservedBalance": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "creditLimit": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountUpdateDto": {
+        "required": [
+          "balance",
+          "creditLimit",
+          "reservedBalance",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "balance": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "reservedBalance": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "creditLimit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status": {
+            "minLength": 1,
+            "pattern": "Active|Inactive|Blocked",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
