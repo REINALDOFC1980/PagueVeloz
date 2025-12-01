@@ -1,9 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.1.66" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.11" />
+
+
+		<PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+		<PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
+		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\PagueVeloz.Domain\PagueVeloz.Domain.csproj" />
+	</ItemGroup>
 
 </Project>

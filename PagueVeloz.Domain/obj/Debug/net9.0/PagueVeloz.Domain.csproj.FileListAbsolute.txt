@@ -1,0 +1,12 @@
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\bin\Debug\net9.0\PagueVeloz.Domain.deps.json
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\bin\Debug\net9.0\PagueVeloz.Domain.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\bin\Debug\net9.0\PagueVeloz.Domain.pdb
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\obj\Debug\net9.0\PagueVeloz.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\obj\Debug\net9.0\PagueVeloz.Domain.AssemblyInfoInputs.cache
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\obj\Debug\net9.0\PagueVeloz.Domain.AssemblyInfo.cs
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\obj\Debug\net9.0\PagueVeloz.Domain.csproj.CoreCompileInputs.cache
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\obj\Debug\net9.0\PagueVeloz.Domain.sourcelink.json
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\obj\Debug\net9.0\PagueVeloz.Domain.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\obj\Debug\net9.0\refint\PagueVeloz.Domain.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\obj\Debug\net9.0\PagueVeloz.Domain.pdb
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Domain\obj\Debug\net9.0\ref\PagueVeloz.Domain.dll

@@ -1,0 +1,71 @@
+﻿using Microsoft.EntityFrameworkCore;
+using PagueVeloz.Domain.Entities;
+
+using System;
+
+namespace PagueVeloz.TransactionProcessor.Infrastructure.Database
+{
+    /// <summary>
+    /// PagueVelozDbContext para criar o schema inicial do PagueVeloz via EF Core
+    /// </summary>
+    public class PagueVelozDbContext : DbContext
+    {
+        public PagueVelozDbContext(DbContextOptions<PagueVelozDbContext> options)
+            : base(options)
+        { }
+
+        public DbSet<AccountModel> Accounts { get; set; }
+        public DbSet<TransactionModel> Transactions { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Configurações da entidade Account
+            modelBuilder.Entity<AccountModel>(entity =>
+            {
+                entity.HasKey(e => e.AccountId);
+
+                entity.Property(e => e.Balance).IsRequired();
+                entity.Property(e => e.ReservedBalance).IsRequired();
+                entity.Property(e => e.CreditLimit).IsRequired();
+
+                entity.Property(e => e.Status)
+                      .HasConversion<string>() // salva enum como string
+                      .IsRequired();
+
+                // Relação 1:N com Transaction
+                entity.HasMany<TransactionModel>()
+                      .WithOne()
+                      .HasForeignKey(t => t.AccountId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            // Configurações da entidade Transaction
+            modelBuilder.Entity<TransactionModel>(entity =>
+            {
+                entity.HasKey(e => e.TransactionId);
+
+                entity.Property(e => e.Operation)
+                      .HasConversion<string>() // salva enum como string
+                      .IsRequired();
+
+                entity.Property(e => e.AccountId).IsRequired();
+                entity.Property(e => e.Amount).IsRequired();
+                entity.Property(e => e.Currency).HasMaxLength(3).IsRequired();
+                entity.Property(e => e.ReferenceId).HasMaxLength(100).IsRequired();
+                entity.HasIndex(t => t.ReferenceId).IsUnique(); // garante idempotência
+
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .IsRequired();
+
+                entity.Property(e => e.Balance).IsRequired();
+                entity.Property(e => e.ReservedBalance).IsRequired();
+                entity.Property(e => e.AvailableBalance).IsRequired();
+                entity.Property(e => e.Timestamp).IsRequired();
+                entity.Property(e => e.ErrorMessage).HasMaxLength(500);
+            });
+
+            base.OnModelCreating(modelBuilder);
+        }
+    }
+}

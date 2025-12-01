@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{CA94A31C-88CE-4D96-B076-90FF6E851E40}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.infrastructure\\database\\paguevelozdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA94A31C-88CE-4D96-B076-90FF6E851E40}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|solutionrelative:pagueveloz.infrastructure\\database\\paguevelozdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\pagueveloz.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\pagueveloz.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 78,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "PagueVeloz.Api\\Properties\\launchSettings.json",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Properties\\launchSettings.json",
-              "RelativeToolTip": "PagueVeloz.Api\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "PagueVeloz.Api\\appsettings.json",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.json",
+              "RelativeToolTip": "PagueVeloz.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-01T11:31:46.149Z",
+              "WhenOpened": "2025-12-01T11:52:06.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Program.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Api\\Program.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Program.cs",
+              "RelativeToolTip": "PagueVeloz.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T11:52:17.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PagueVelozDbContext.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
+              "RelativeToolTip": "PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T11:47:02.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PagueVeloz.Api",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\PagueVeloz.Api.csproj",
+              "RelativeDocumentMoniker": "PagueVeloz.Api\\PagueVeloz.Api.csproj",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\PagueVeloz.Api.csproj",
+              "RelativeToolTip": "PagueVeloz.Api\\PagueVeloz.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-01T11:54:05.606Z",
               "EditorCaption": ""
             }
           ]
