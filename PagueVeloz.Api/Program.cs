@@ -47,6 +47,15 @@ builder.Services.AddControllers()
     });
 
 
+// Registro dos health checks
+builder.Services.AddHealthChecks()
+    .AddSqlServer(
+        connectionString: connectionString,
+        name: "sqlserver",
+        failureStatus: Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus.Unhealthy,
+        tags: new[] { "ready" }
+    );
+
 // Configuração Serilog
 Log.Logger = new LoggerConfiguration()
     .Enrich.WithEnvironmentName()
@@ -60,8 +69,6 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 builder.Host.UseSerilog();
-
-
 
 // OpenTelemetry Metrics
 builder.Services.AddOpenTelemetry()
@@ -93,7 +100,6 @@ builder.Services.AddSwaggerGen(c =>
 
 // Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
@@ -125,6 +131,13 @@ app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseMiddleware<RequestLog>();
 
 app.MapPrometheusScrapingEndpoint();
+
+// Endpoints de health check
+app.MapHealthChecks("/health");         // Verifica o serviço geral
+app.MapHealthChecks("/health/ready");
+
+app.UseMiddleware<RequestTimingMiddleware>();
+
 
 app.UseHttpsRedirection();
 

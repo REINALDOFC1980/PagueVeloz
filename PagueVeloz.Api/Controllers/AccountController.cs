@@ -47,7 +47,19 @@ namespace PagueVeloz.Api.Controllers
                 // Chama o Service com idempotência
                 var createdAccount = await _serviceAccount.CreateAccountAsync(account, idempotencyKey);
 
-                return Ok(createdAccount);
+                var response = new AccountResponseDto
+                {
+                    AccountId = createdAccount.AccountId,
+                    Balance = createdAccount.Balance,
+                    ReservedBalance = createdAccount.ReservedBalance,
+                    CreditLimit = createdAccount.CreditLimit,
+                    Status = createdAccount.Status.ToString(),
+                    CreatedAt = createdAccount.CreatedAt,
+                    UpdatedAt = createdAccount.UpdatedAt
+                };
+
+
+                return Ok(response);
             }
             catch (Exception ex)
             {
@@ -74,7 +86,7 @@ namespace PagueVeloz.Api.Controllers
             account.CreditLimit = dto.CreditLimit;
             account.Status = AccountStatus.Active;
 
-            await _serviceAccount.UpdateAccountAsync(account);
+            await _serviceAccount.UpdateBalanceAsync(account);
 
             // Retorna o objeto atualizado
             return Ok(new

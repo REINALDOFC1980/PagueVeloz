@@ -65,19 +65,35 @@ namespace PagueVeloz.Infrastructure.Repositories.Account
             return await _connection.QueryFirstOrDefaultAsync<AccountModel>(sql, new { accountId });
         }
 
-        public async Task UpdateAccountAsync(AccountModel account)
+        public async Task<bool> UpdateAccountAsync(AccountModel account)
         {
             account.UpdatedAt = DateTime.UtcNow;
+
             var sql = @"
-                UPDATE Accounts
-                SET Balance = @Balance,
-                    ReservedBalance = @ReservedBalance,
-                    CreditLimit = @CreditLimit,
-                    Status = @Status,
-                    UpdatedAt = @UpdatedAt
-                WHERE AccountId = @AccountId";
-            await _connection.ExecuteAsync(sql, account);
+                        UPDATE Accounts
+                        SET Balance = @Balance,
+                            ReservedBalance = @ReservedBalance,
+                            CreditLimit = @CreditLimit,
+                            Status = @Status,
+                            UpdatedAt = @UpdatedAt
+                        WHERE AccountId = @AccountId 
+                          AND RowVersion = @RowVersion";
+
+            var parameters = new
+            {
+                account.Balance,
+                account.ReservedBalance,
+                account.CreditLimit,
+                account.Status,
+                account.UpdatedAt,
+                account.AccountId,
+                account.RowVersion
+            };
+
+            var affectedRows = await _connection.ExecuteAsync(sql, parameters);
+            return affectedRows > 0;
         }
+
 
 
     }

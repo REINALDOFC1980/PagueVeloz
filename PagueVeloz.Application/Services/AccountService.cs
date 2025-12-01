@@ -71,10 +71,17 @@ namespace PagueVeloz.Application.Services
             return account;
         }
 
-        public async Task UpdateAccountAsync(AccountModel account)
+        public async Task<AccountModel> UpdateBalanceAsync(AccountModel account)
         {
             account.UpdatedAt = DateTime.UtcNow;
-            await _accountRepository.UpdateAccountAsync(account);
+
+            bool updated = await _accountRepository.UpdateAccountAsync(account);
+
+            if (!updated)
+                throw new InvalidOperationException("Falha ao atualizar a conta. Possível conflito de concorrência.");
+
+            return account;
         }
+
     }
 }

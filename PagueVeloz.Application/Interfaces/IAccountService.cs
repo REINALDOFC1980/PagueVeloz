@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using PagueVeloz.Domain.Entities;
+﻿using PagueVeloz.Domain.Entities;
 
 
 namespace PagueVeloz.Application.Interfaces
@@ -11,6 +7,6 @@ namespace PagueVeloz.Application.Interfaces
     {
         Task<AccountModel> CreateAccountAsync(AccountModel account, string idempotencyKey);
         Task<AccountModel> GetAccountByIdAsync(Guid accountId);
-        Task UpdateAccountAsync(AccountModel account);
+        Task<AccountModel> UpdateBalanceAsync(AccountModel account);
     }
 }

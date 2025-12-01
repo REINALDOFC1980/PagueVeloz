@@ -1,6 +1,7 @@
 ﻿using Serilog;
 using System.Net;
 using System.Text.Json;
+using System.Diagnostics;
 
 public class ExceptionHandlingMiddleware
 {
@@ -25,27 +26,34 @@ public class ExceptionHandlingMiddleware
 
     private static Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
+        var traceId = Activity.Current?.Id ?? context.TraceIdentifier;
         var code = HttpStatusCode.InternalServerError; // 500 por padrão
-        string result;
+        string error = "Internal Server Error";
+        string message = "Ocorreu um erro inesperado.";
 
-        // Diferencia tipos de exceção
         switch (exception)
         {
-            case ArgumentException:
+            case ArgumentException argEx:
                 code = HttpStatusCode.BadRequest;
-                result = JsonSerializer.Serialize(new { message = exception.Message });
+                error = "Bad Request";
+                message = argEx.Message;
                 break;
-            case KeyNotFoundException:
+            case KeyNotFoundException notFoundEx:
                 code = HttpStatusCode.NotFound;
-                result = JsonSerializer.Serialize(new { message = exception.Message });
-                break;
-            default:
-                result = JsonSerializer.Serialize(new { message = "Ocorreu um erro inesperado." });
+                error = "Not Found";
+                message = notFoundEx.Message;
                 break;
         }
 
-        // Log detalhado
-        Log.Error(exception, "Erro capturado globalmente");
+        var result = JsonSerializer.Serialize(new
+        {
+            traceId,
+            status = (int)code,
+            error,
+            message
+        });
+
+        Log.Error(exception, "Erro capturado globalmente. TraceId: {TraceId}", traceId);
 
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = (int)code;

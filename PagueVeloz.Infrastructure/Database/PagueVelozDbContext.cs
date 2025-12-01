@@ -28,12 +28,15 @@ namespace PagueVeloz.TransactionProcessor.Infrastructure.Database
                 entity.Property(e => e.Balance).IsRequired();
                 entity.Property(e => e.ReservedBalance).IsRequired();
                 entity.Property(e => e.CreditLimit).IsRequired();
+                entity.Property(e => e.RowVersion)
+                       .IsRowVersion()     
+                       .IsRequired();
 
                 entity.Property(e => e.Status)
-                      .HasConversion<string>() // salva enum como string
+                      .HasConversion<string>() 
                       .IsRequired();
 
-                // Relação 1:N com Transaction
+             
                 entity.HasMany<TransactionModel>()
                       .WithOne()
                       .HasForeignKey(t => t.AccountId)

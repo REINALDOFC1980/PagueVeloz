@@ -7,6 +7,6 @@ namespace PagueVeloz.Infrastructure.Repositories.Account
     {
         Task<AccountModel> CreateAccountAsync(AccountModel account);
         Task<AccountModel> GetAccountByIdAsync(Guid accountId);
-        Task UpdateAccountAsync(AccountModel account);
+        Task<bool> UpdateAccountAsync(AccountModel account); 
     }
 }
