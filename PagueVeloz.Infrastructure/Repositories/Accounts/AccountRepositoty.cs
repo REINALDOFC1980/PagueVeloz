@@ -56,7 +56,7 @@ namespace PagueVeloz.Infrastructure.Repositories.Account
                 if (ex.Message.Contains("PRIMARY KEY") || ex.Message.Contains("duplicate"))
                 {
                     Log.Warning(ex, "Tentativa de criar AccountId duplicado {@Account}", account);
-                    throw new Exception("AccountId duplicado detectado.");
+                    throw new Exception("Conta duplicado detectado.");
                 }
 
                 Log.Error(ex, "Erro ao criar conta {@Account}", account);

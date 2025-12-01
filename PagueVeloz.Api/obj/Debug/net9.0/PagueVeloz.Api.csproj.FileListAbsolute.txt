@@ -108,3 +108,11 @@ E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\PagueVeloz.Appli
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\PagueVeloz.Domain.pdb
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\PagueVeloz.Infrastructure.pdb
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\obj\Debug\net9.0\PagueVeloz.Api.sourcelink.json
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\OpenTelemetry.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\OpenTelemetry.Api.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\OpenTelemetry.Api.ProviderBuilderExtensions.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\OpenTelemetry.Exporter.Prometheus.AspNetCore.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\OpenTelemetry.Extensions.Hosting.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\OpenTelemetry.Instrumentation.AspNetCore.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\OpenTelemetry.Instrumentation.Http.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\bin\Debug\net9.0\OpenTelemetry.Instrumentation.Runtime.dll

@@ -1,7 +1,11 @@
+using FluentValidation.AspNetCore;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
 using PagueVeloz.Api.Middlewares;
+using PagueVeloz.Api.Validators;
 using PagueVeloz.Application.Interfaces;
 using PagueVeloz.Application.Services;
 using PagueVeloz.Infrastructure.Repositories.Account;
@@ -33,6 +37,12 @@ builder.Services.AddDbContext<PagueVelozDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 
+builder.Services.AddControllers()
+    .AddFluentValidation(fv =>
+    {
+        fv.RegisterValidatorsFromAssemblyContaining<AccountCreateValidator>();
+    });
+
 
 // Configuração Serilog
 Log.Logger = new LoggerConfiguration()
@@ -48,6 +58,21 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
+
+
+// OpenTelemetry Metrics
+builder.Services.AddOpenTelemetry()
+    .WithMetrics(metrics =>
+    {
+        metrics
+            .SetResourceBuilder(ResourceBuilder.CreateDefault()
+                .AddService("PagueVeloz.Api", serviceVersion: "1.0.0"));
+
+        metrics.AddAspNetCoreInstrumentation();
+        metrics.AddRuntimeInstrumentation();
+        metrics.AddHttpClientInstrumentation();
+        metrics.AddPrometheusExporter();
+    });
 
 
 // Swagger/OpenAPI
@@ -88,9 +113,15 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = "swagger";
     });
 }
+
+
+// Middleware para tratamento global de exceções
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 // Middleware para log de requisições
 app.UseMiddleware<RequestLog>();
 
+app.MapPrometheusScrapingEndpoint();
 
 app.UseHttpsRedirection();
 

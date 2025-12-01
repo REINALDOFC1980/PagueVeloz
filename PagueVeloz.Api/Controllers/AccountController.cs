@@ -25,6 +25,8 @@ namespace PagueVeloz.Api.Controllers
         {
             Log.Information("Recebida solicitação de criação de conta.");
 
+
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
