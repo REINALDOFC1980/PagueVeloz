@@ -1,0 +1,13 @@
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\bin\Debug\net9.0\PagueVeloz.Shared.deps.json
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\bin\Debug\net9.0\PagueVeloz.Shared.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\bin\Debug\net9.0\PagueVeloz.Shared.pdb
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\obj\Debug\net9.0\PagueVeloz.Shared.csproj.AssemblyReference.cache
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\obj\Debug\net9.0\PagueVeloz.Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\obj\Debug\net9.0\PagueVeloz.Shared.AssemblyInfoInputs.cache
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\obj\Debug\net9.0\PagueVeloz.Shared.AssemblyInfo.cs
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\obj\Debug\net9.0\PagueVeloz.Shared.csproj.CoreCompileInputs.cache
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\obj\Debug\net9.0\PagueVeloz.Shared.sourcelink.json
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\obj\Debug\net9.0\PagueVeloz.Shared.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\obj\Debug\net9.0\refint\PagueVeloz.Shared.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\obj\Debug\net9.0\PagueVeloz.Shared.pdb
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Shared\obj\Debug\net9.0\ref\PagueVeloz.Shared.dll

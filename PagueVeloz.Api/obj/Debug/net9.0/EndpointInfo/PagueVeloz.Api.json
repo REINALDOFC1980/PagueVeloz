@@ -1,9 +1,8 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "PagueVeloz API",
-    "description": "API para processamento de transações financeiras",
-    "version": "v1"
+    "title": "PagueVeloz.Api",
+    "version": "1.0"
   },
   "paths": {
     "/api/Account/CriarConta": {
@@ -11,6 +10,8 @@
         "tags": [
           "Account"
         ],
+        "summary": "Cria uma nova conta bancária",
+        "description": "Exemplos de request:\r\n            \r\nCrédito:\r\nPOST /api/Account/CriarConta\r\n{\r\n  \"accountNumber\": \"CC-0001\",\r\n  \"balance\": \"0\",\r\n  \"reservedBalance\": 0,\r\n  \"creditLimit\": \"0\",\r\n  \"referenceId\": \"test-credit-001\"\r\n}",
         "requestBody": {
           "content": {
             "application/json": {
@@ -31,8 +32,48 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "201": {
+            "description": "Conta criada",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionCreateDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionCreateDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionCreateDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de validação",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno"
           }
         }
       }
@@ -42,6 +83,7 @@
         "tags": [
           "Account"
         ],
+        "summary": "Buscar conta bancária",
         "parameters": [
           {
             "name": "AccountNumber",
@@ -64,6 +106,7 @@
         "tags": [
           "Account"
         ],
+        "summary": "Atualizar conta bancária",
         "parameters": [
           {
             "name": "AccountNumber",
@@ -105,6 +148,8 @@
         "tags": [
           "Transaction"
         ],
+        "summary": "Processa uma operação financeira (Credit, Debit, Reserve, Capture, Reversal)",
+        "description": "Exemplos de request:\r\n            \r\nCrédito:\r\nPOST /api/Transaction\r\n{\r\n  \"operation\": \"Credit\",\r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"amount\": 50000,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"test-credit-001\"\r\n}\r\n            \r\nTransferência:\r\nPOST /api/transfer\r\n{\r\n  \"operation\": \"Transfer\",\r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"targetAccountId\": \"32317970-9624-40B4-B9EE-80D0146D2E3B\",\r\n  \"amount\": 10000,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"test-transfer-001\"\r\n}",
         "requestBody": {
           "content": {
             "application/json": {
@@ -125,17 +170,58 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "201": {
+            "description": "Transação criada",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionCreateDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionCreateDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionCreateDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de validação",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno"
           }
         }
       }
     },
-    "/api/Transaction/transfer": {
+    "/api/Transaction/transferencia": {
       "post": {
         "tags": [
           "Transaction"
         ],
+        "summary": "Realizar Trasnferencia bancária",
         "requestBody": {
           "content": {
             "application/json": {
@@ -224,22 +310,27 @@
           },
           "accountId": {
             "type": "string",
+            "description": "ID da conta de origem",
             "format": "uuid"
           },
           "amount": {
             "type": "number",
+            "description": "Valor da operação em centavos",
             "format": "double"
           },
           "currency": {
             "type": "string",
+            "description": "Moeda da transação",
             "nullable": true
           },
           "referenceId": {
             "type": "string",
+            "description": "ID de referência ou chave de idempotência",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "DTO para criação de transações"
       },
       "TransactionType": {
         "enum": [
@@ -277,6 +368,43 @@
           }
         },
         "additionalProperties": false
+      },
+      "ValidationProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          },
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
       }
     }
   }

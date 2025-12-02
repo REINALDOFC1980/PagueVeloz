@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "u+CG19oG9NM=",
+  "dgSpecHash": "hPRk1iq9Cwo=",
   "success": true,
   "projectFilePath": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\PagueVeloz.Application.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "E:\\NugetCache\\microsoft.extensions.logging.abstractions\\9.0.11\\microsoft.extensions.logging.abstractions.9.0.11.nupkg.sha512",
     "E:\\NugetCache\\microsoft.extensions.options\\9.0.11\\microsoft.extensions.options.9.0.11.nupkg.sha512",
     "E:\\NugetCache\\microsoft.extensions.primitives\\9.0.11\\microsoft.extensions.primitives.9.0.11.nupkg.sha512",
+    "E:\\NugetCache\\microsoft.openapi\\1.6.25\\microsoft.openapi.1.6.25.nupkg.sha512",
     "E:\\NugetCache\\polly\\8.6.5\\polly.8.6.5.nupkg.sha512",
     "E:\\NugetCache\\polly.core\\8.6.5\\polly.core.8.6.5.nupkg.sha512",
     "E:\\NugetCache\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
@@ -37,6 +38,9 @@
     "E:\\NugetCache\\serilog.sinks.console\\5.0.1\\serilog.sinks.console.5.0.1.nupkg.sha512",
     "E:\\NugetCache\\serilog.sinks.debug\\2.0.0\\serilog.sinks.debug.2.0.0.nupkg.sha512",
     "E:\\NugetCache\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
+    "E:\\NugetCache\\swashbuckle.aspnetcore.annotations\\9.0.6\\swashbuckle.aspnetcore.annotations.9.0.6.nupkg.sha512",
+    "E:\\NugetCache\\swashbuckle.aspnetcore.swagger\\9.0.6\\swashbuckle.aspnetcore.swagger.9.0.6.nupkg.sha512",
+    "E:\\NugetCache\\swashbuckle.aspnetcore.swaggergen\\9.0.6\\swashbuckle.aspnetcore.swaggergen.9.0.6.nupkg.sha512",
     "E:\\NugetCache\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
     "E:\\NugetCache\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "E:\\NugetCache\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"

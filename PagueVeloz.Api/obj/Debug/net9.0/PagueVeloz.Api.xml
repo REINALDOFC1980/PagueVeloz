@@ -4,14 +4,102 @@
         <name>PagueVeloz.Api</name>
     </assembly>
     <members>
-        <member name="M:TransactionController.CreateTransaction(PagueVeloz.API.DTOs.TransactionCreateDto)">
+        <member name="M:PagueVeloz.Api.Controllers.AccountController.CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto)">
             <summary>
-            Processa: credit, debit, reserve, capture, reversal.
+            Cria uma nova conta bancária
             </summary>
+             <remarks>
+             Exemplos de request:
+            
+             Crédito:
+             POST /api/Account/CriarConta
+             {
+               "accountNumber": "CC-0001",
+               "balance": "0",
+               "reservedBalance": 0,
+               "creditLimit": "0",
+               "referenceId": "test-credit-001"
+             }
+                    
+             </remarks>
+             <param name="request">Dados da conta a ser criada</param>
+             <returns>Conta criada com sucesso</returns>
+             <response code="201">Conta criada</response>
+             <response code="400">Erro de validação</response>
+             <response code="500">Erro interno</response>
+        </member>
+        <member name="M:PagueVeloz.Api.Controllers.AccountController.GetById(System.String)">
+            <summary>
+            Buscar conta bancária
+            </summary>
+        </member>
+        <member name="M:PagueVeloz.Api.Controllers.AccountController.Update(System.String,PagueVeloz.Application.DTOs.AccountUpdateDto)">
+            <summary>
+            Atualizar conta bancária
+            </summary>
+        </member>
+        <member name="T:PagueVeloz.API.DTOs.TransactionCreateDto">
+            <summary>
+            DTO para criação de transações
+            </summary>
+            
+        </member>
+        <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.Operation">
+            <summary>
+            Tipo da operação (crédito, débito, reserva, captura, estorno, transferência)
+            </summary>
+            
+        </member>
+        <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.AccountId">
+            <summary>ID da conta de origem</summary>
+        </member>
+        <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.Amount">
+            <summary>Valor da operação em centavos</summary>
+        </member>
+        <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.Currency">
+            <summary>Moeda da transação</summary>
+        </member>
+        <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.ReferenceId">
+            <summary>ID de referência ou chave de idempotência</summary>
+        </member>
+        <member name="M:TransactionController.CreateTransaction(PagueVeloz.API.DTOs.TransactionCreateDto)">
+             <summary>
+             Processa uma operação financeira (Credit, Debit, Reserve, Capture, Reversal)
+             </summary>
+             <remarks>
+             Exemplos de request:
+            
+             Crédito:
+             POST /api/Transaction
+             {
+               "operation": "Credit",
+               "accountId": "4D1746D2-5770-4820-8381-18EDB119846B",
+               "amount": 50000,
+               "currency": "BRL",
+               "referenceId": "test-credit-001"
+             }
+            
+             Transferência:
+             POST /api/transfer
+             {
+               "operation": "Transfer",
+               "accountId": "4D1746D2-5770-4820-8381-18EDB119846B",
+               "targetAccountId": "32317970-9624-40B4-B9EE-80D0146D2E3B",
+               "amount": 10000,
+               "currency": "BRL",
+               "referenceId": "test-transfer-001"
+             }
+            
+             </remarks>
+             <param name="request">Objeto com os dados da transação</param>
+             <returns>Transação processada com sucesso</returns>
+             <response code="201">Transação criada</response>
+             <response code="400">Erro de validação</response>
+             <response code="500">Erro interno</response>
         </member>
         <member name="M:TransactionController.Transfer(PagueVeloz.API.DTOs.TransferCreateDto)">
             <summary>
-            Endpoint exclusivo para transferências.
+            Realizar Trasnferencia bancária
             </summary>
         </member>
     </members>

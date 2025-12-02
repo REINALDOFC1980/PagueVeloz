@@ -1,4 +1,7 @@
-﻿public class RequestTimingMiddleware
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+
+public class RequestTimingMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger<RequestTimingMiddleware> _logger;

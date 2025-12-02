@@ -64,6 +64,19 @@
           }
         }
       },
+      "CommandLineParser/2.9.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CommandLine.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CommandLine.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Dapper/2.1.66": {
         "type": "package",
         "compile": {
@@ -1282,6 +1295,22 @@
           "buildMultiTargeting/Swashbuckle.AspNetCore.props": {}
         }
       },
+      "Swashbuckle.AspNetCore.Annotations/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore.SwaggerGen": "9.0.6"
+        },
+        "compile": {
+          "lib/net9.0/Swashbuckle.AspNetCore.Annotations.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Swashbuckle.AspNetCore.Annotations.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore.Swagger/9.0.6": {
         "type": "package",
         "dependencies": {
@@ -1624,6 +1653,7 @@
           "FluentValidation": "12.1.0",
           "PagueVeloz.Domain": "1.0.0",
           "PagueVeloz.Infrastructure": "1.0.0",
+          "PagueVeloz.Shared": "1.0.0",
           "Polly": "8.6.5"
         },
         "compile": {
@@ -1662,6 +1692,23 @@
         },
         "runtime": {
           "bin/placeholder/PagueVeloz.Infrastructure.dll": {}
+        }
+      },
+      "PagueVeloz.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Serilog.AspNetCore": "8.0.1",
+          "Serilog.Enrichers.Environment": "2.2.0",
+          "Serilog.Enrichers.Process": "2.0.2",
+          "Serilog.Enrichers.Thread": "3.1.0",
+          "Swashbuckle.AspNetCore.Annotations": "9.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PagueVeloz.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PagueVeloz.Shared.dll": {}
         }
       }
     }
@@ -1719,6 +1766,28 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "CommandLineParser/2.9.1": {
+      "sha512": "OE0sl1/sQ37bjVsPKKtwQlWDgqaxWgtme3xZz7JssWUzg5JpMIyHgCTY9MVMxOg48fJ1AgGT3tgdH5m/kQ5xhA==",
+      "type": "package",
+      "path": "commandlineparser/2.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CommandLine20.png",
+        "License.md",
+        "README.md",
+        "commandlineparser.2.9.1.nupkg.sha512",
+        "commandlineparser.nuspec",
+        "lib/net40/CommandLine.dll",
+        "lib/net40/CommandLine.xml",
+        "lib/net45/CommandLine.dll",
+        "lib/net45/CommandLine.xml",
+        "lib/net461/CommandLine.dll",
+        "lib/net461/CommandLine.xml",
+        "lib/netstandard2.0/CommandLine.dll",
+        "lib/netstandard2.0/CommandLine.xml"
       ]
     },
     "Dapper/2.1.66": {
@@ -3699,6 +3768,24 @@
         "swashbuckle.aspnetcore.nuspec"
       ]
     },
+    "Swashbuckle.AspNetCore.Annotations/9.0.6": {
+      "sha512": "NGrxo6pkPgzKGD0t6FalY57aWrwR6S2xNq1MJEK+R7rX5asZlEfFJLps8VapRjBKcYgTvyguAV1lDrgabF6Krg==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.annotations/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net8.0/Swashbuckle.AspNetCore.Annotations.dll",
+        "lib/net8.0/Swashbuckle.AspNetCore.Annotations.pdb",
+        "lib/net8.0/Swashbuckle.AspNetCore.Annotations.xml",
+        "lib/net9.0/Swashbuckle.AspNetCore.Annotations.dll",
+        "lib/net9.0/Swashbuckle.AspNetCore.Annotations.pdb",
+        "lib/net9.0/Swashbuckle.AspNetCore.Annotations.xml",
+        "package-readme.md",
+        "swashbuckle.aspnetcore.annotations.9.0.6.nupkg.sha512",
+        "swashbuckle.aspnetcore.annotations.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore.Swagger/9.0.6": {
       "sha512": "Bgyc8rWRAYwDrzjVHGbavvNE38G1Dfgf1McHYm+WUr4TxkvEAXv8F8B1z3Kmz4BkDCKv9A/1COa2t7+Ri5+pLg==",
       "type": "package",
@@ -4466,11 +4553,17 @@
       "type": "project",
       "path": "../PagueVeloz.Infrastructure/PagueVeloz.Infrastructure.csproj",
       "msbuildProject": "../PagueVeloz.Infrastructure/PagueVeloz.Infrastructure.csproj"
+    },
+    "PagueVeloz.Shared/1.0.0": {
+      "type": "project",
+      "path": "../PagueVeloz.Shared/PagueVeloz.Shared.csproj",
+      "msbuildProject": "../PagueVeloz.Shared/PagueVeloz.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
       "AspNetCore.HealthChecks.SqlServer >= 9.0.0",
+      "CommandLineParser >= 2.9.1",
       "FluentValidation.AspNetCore >= 11.3.1",
       "Microsoft.AspNetCore.OpenApi >= 9.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.11",
@@ -4483,10 +4576,7 @@
       "PagueVeloz.Application >= 1.0.0",
       "PagueVeloz.Domain >= 1.0.0",
       "PagueVeloz.Infrastructure >= 1.0.0",
-      "Serilog.AspNetCore >= 8.0.1",
-      "Serilog.Enrichers.Environment >= 2.2.0",
-      "Serilog.Enrichers.Process >= 2.0.2",
-      "Serilog.Enrichers.Thread >= 3.1.0",
+      "PagueVeloz.Shared >= 1.0.0",
       "Swashbuckle.AspNetCore >= 9.0.6"
     ]
   },
@@ -4531,6 +4621,9 @@
             },
             "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PAgueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj": {
               "projectPath": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PAgueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj"
+            },
+            "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Shared\\PagueVeloz.Shared.csproj": {
+              "projectPath": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Shared\\PagueVeloz.Shared.csproj"
             }
           }
         }
@@ -4554,6 +4647,10 @@
           "AspNetCore.HealthChecks.SqlServer": {
             "target": "Package",
             "version": "[9.0.0, )"
+          },
+          "CommandLineParser": {
+            "target": "Package",
+            "version": "[2.9.1, )"
           },
           "FluentValidation.AspNetCore": {
             "target": "Package",
@@ -4590,22 +4687,6 @@
           "OpenTelemetry.Instrumentation.Runtime": {
             "target": "Package",
             "version": "[1.13.0, )"
-          },
-          "Serilog.AspNetCore": {
-            "target": "Package",
-            "version": "[8.0.1, )"
-          },
-          "Serilog.Enrichers.Environment": {
-            "target": "Package",
-            "version": "[2.2.0, )"
-          },
-          "Serilog.Enrichers.Process": {
-            "target": "Package",
-            "version": "[2.0.2, )"
-          },
-          "Serilog.Enrichers.Thread": {
-            "target": "Package",
-            "version": "[3.1.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

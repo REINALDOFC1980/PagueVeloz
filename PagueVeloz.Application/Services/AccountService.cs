@@ -2,6 +2,7 @@
 using PagueVeloz.Application.Interfaces;
 using PagueVeloz.Domain.Entities;
 using PagueVeloz.Infrastructure.Repositories.Account;
+using PagueVeloz.Shared.Middlewares;
 using Serilog;
 using System.Data;
 using System.Text.Json;
@@ -42,12 +43,12 @@ namespace PagueVeloz.Application.Services
                 return contaexistente;
             }
 
-            var existingAccount = await _accountRepository.GetAccountByNumberAsync(account.AccountNumber);
+            var existingAccount = await GetAccountByNumberAsync(account.AccountNumber);
             if (existingAccount != null)
             {
-                throw new InvalidOperationException($"Conta '{account.AccountNumber}' já existe.");
+                throw new BusinessException("Conta já existe.");
             }
-                     
+
             account.Status = AccountStatus.Active;
             account.CreatedAt = DateTime.UtcNow;
             account.UpdatedAt = DateTime.UtcNow;
@@ -61,7 +62,6 @@ namespace PagueVeloz.Application.Services
             using var transaction = _connection.BeginTransaction();
             try
             {
-
                 var createdAccount = await _accountRepository.CreateAccountAsync(account, transaction);
                 transaction.Commit();
                 var responseJson = JsonSerializer.Serialize(createdAccount);
@@ -78,14 +78,10 @@ namespace PagueVeloz.Application.Services
             
         }
 
-
+       
         public async Task<AccountModel> GetAccountByNumberAsync(string AccountNumber)
         {
             var account = await _accountRepository.GetAccountByNumberAsync(AccountNumber);
-            if (account == null)
-            {
-                throw new Exception($"Conta com Id {AccountNumber} não encontrada.");
-            }
             return account;
         }
 
@@ -101,7 +97,7 @@ namespace PagueVeloz.Application.Services
                 bool updated = await _accountRepository.UpdateAccountAsync(account, transaction);
 
                 if (!updated)
-                    throw new InvalidOperationException("Falha ao atualizar a conta. Possível conflito de concorrência.");
+                    throw new BusinessException("Falha ao atualizar a conta. Possível conflito de concorrência.");
                 else
                 {
                     transaction.Commit();

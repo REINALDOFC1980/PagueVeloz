@@ -1,7 +1,8 @@
-﻿using Serilog;
+﻿using Microsoft.AspNetCore.Http;
+using Serilog;
 using System.Diagnostics;
 
-namespace PagueVeloz.Api.Middlewares
+namespace PagueVeloz.Shared.Middlewares
 {
     public class RequestLog
     {

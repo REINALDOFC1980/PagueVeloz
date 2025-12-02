@@ -1,10 +1,8 @@
 using FluentValidation.AspNetCore;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
-using PagueVeloz.Api.Middlewares;
 using PagueVeloz.Api.Validators;
 using PagueVeloz.Application.Interfaces;
 using PagueVeloz.Application.Services;
@@ -12,9 +10,11 @@ using PagueVeloz.Infrastructure.Repositories.Account;
 using PagueVeloz.Infrastructure.Repositories.Idempotency;
 using PagueVeloz.Infrastructure.Repositories.Transactions;
 using PagueVeloz.Infrastructure.Services;
+using PagueVeloz.Shared.Middlewares;
 using PagueVeloz.TransactionProcessor.Infrastructure.Database;
 using Serilog;
 using System.Data;
+using System.Reflection;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -95,12 +95,18 @@ builder.Services.AddOpenTelemetry()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "PagueVeloz API",
-        Version = "v1",
-        Description = "API para processamento de transações financeiras"
-    });
+    //c.SwaggerDoc("v1", new OpenApiInfo
+    //{
+    //    Title = "PagueVeloz API",
+    //    Version = "v1",
+    //    Description = "API para processamento de transações financeiras"
+    //});
+    // Pega o caminho do XML gerado
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+    // Adiciona o XML ao Swagger
+    c.IncludeXmlComments(xmlPath);
 });
 
 

@@ -15,5 +15,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\PagueVeloz.Domain\PagueVeloz.Domain.csproj" />
 		<ProjectReference Include="..\PAgueVeloz.Infrastructure\PagueVeloz.Infrastructure.csproj" />
+		<ProjectReference Include="..\PagueVeloz.Shared\PagueVeloz.Shared.csproj" />
 	</ItemGroup>
 </Project>

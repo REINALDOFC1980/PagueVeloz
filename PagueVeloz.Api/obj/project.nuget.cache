@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Z1/SgenBQNw=",
+  "dgSpecHash": "ON1aeMBqzVI=",
   "success": true,
   "projectFilePath": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\PagueVeloz.Api.csproj",
   "expectedPackageFiles": [
     "E:\\NugetCache\\aspnetcore.healthchecks.sqlserver\\9.0.0\\aspnetcore.healthchecks.sqlserver.9.0.0.nupkg.sha512",
     "E:\\NugetCache\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "E:\\NugetCache\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "E:\\NugetCache\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512",
     "E:\\NugetCache\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
     "E:\\NugetCache\\fluentvalidation\\12.1.0\\fluentvalidation.12.1.0.nupkg.sha512",
     "E:\\NugetCache\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
@@ -76,6 +77,7 @@
     "E:\\NugetCache\\serilog.sinks.debug\\2.0.0\\serilog.sinks.debug.2.0.0.nupkg.sha512",
     "E:\\NugetCache\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "E:\\NugetCache\\swashbuckle.aspnetcore\\9.0.6\\swashbuckle.aspnetcore.9.0.6.nupkg.sha512",
+    "E:\\NugetCache\\swashbuckle.aspnetcore.annotations\\9.0.6\\swashbuckle.aspnetcore.annotations.9.0.6.nupkg.sha512",
     "E:\\NugetCache\\swashbuckle.aspnetcore.swagger\\9.0.6\\swashbuckle.aspnetcore.swagger.9.0.6.nupkg.sha512",
     "E:\\NugetCache\\swashbuckle.aspnetcore.swaggergen\\9.0.6\\swashbuckle.aspnetcore.swaggergen.9.0.6.nupkg.sha512",
     "E:\\NugetCache\\swashbuckle.aspnetcore.swaggerui\\9.0.6\\swashbuckle.aspnetcore.swaggerui.9.0.6.nupkg.sha512",

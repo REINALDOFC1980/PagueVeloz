@@ -3,6 +3,7 @@ using PagueVeloz.API.DTOs;
 using PagueVeloz.Application.Interfaces;
 using PagueVeloz.Domain.Entities;
 using Serilog;
+using Swashbuckle.AspNetCore.Annotations;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -16,9 +17,45 @@ public class TransactionController : ControllerBase
     }
 
     /// <summary>
-    /// Processa: credit, debit, reserve, capture, reversal.
+    /// Processa uma operação financeira (Credit, Debit, Reserve, Capture, Reversal)
     /// </summary>
+    /// <remarks>
+    /// Exemplos de request:
+    ///
+    /// Crédito:
+    /// POST /api/Transaction
+    /// {
+    ///   "operation": "Credit",
+    ///   "accountId": "4D1746D2-5770-4820-8381-18EDB119846B",
+    ///   "amount": 50000,
+    ///   "currency": "BRL",
+    ///   "referenceId": "test-credit-001"
+    /// }
+    ///
+    /// Transferência:
+    /// POST /api/transfer
+    /// {
+    ///   "operation": "Transfer",
+    ///   "accountId": "4D1746D2-5770-4820-8381-18EDB119846B",
+    ///   "targetAccountId": "32317970-9624-40B4-B9EE-80D0146D2E3B",
+    ///   "amount": 10000,
+    ///   "currency": "BRL",
+    ///   "referenceId": "test-transfer-001"
+    /// }
+    ///
+    /// </remarks>
+    /// <param name="request">Objeto com os dados da transação</param>
+    /// <returns>Transação processada com sucesso</returns>
+    /// <response code="201">Transação criada</response>
+    /// <response code="400">Erro de validação</response>
+    /// <response code="500">Erro interno</response>
     [HttpPost]
+        [SwaggerOperation(Summary = "Processa uma transação", Description = "Inclui crédito, débito, reserva, captura, estorno ou transferência")]
+        [ProducesResponseType(typeof(TransactionCreateDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+    
     public async Task<IActionResult> CreateTransaction([FromBody] TransactionCreateDto dto)
     {
        
@@ -50,9 +87,9 @@ public class TransactionController : ControllerBase
 
 
     /// <summary>
-    /// Endpoint exclusivo para transferências.
+    /// Realizar Trasnferencia bancária
     /// </summary>
-    [HttpPost("transfer")]
+    [HttpPost("transferencia")]
     public async Task<IActionResult> Transfer([FromBody] TransferCreateDto dto)
     {
         Log.Information("Recebida solicitação de movimentação do tipo: {dto.Operation} .");

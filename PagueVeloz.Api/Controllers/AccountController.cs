@@ -1,14 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PagueVeloz.Api.DTOs;
+using PagueVeloz.API.DTOs;
 using PagueVeloz.Application.DTOs;
 using PagueVeloz.Application.Interfaces;
-
 using PagueVeloz.Domain.Entities;
+using PagueVeloz.Shared.Middlewares;
 using Serilog;
+using Swashbuckle.AspNetCore.Annotations;
 
 
 namespace PagueVeloz.Api.Controllers
 {
+
 
     [Route("api/[controller]")]
     [ApiController]
@@ -19,7 +22,32 @@ namespace PagueVeloz.Api.Controllers
         {
             _serviceAccount = autorService;
         }
+        /// <summary>
+        /// Cria uma nova conta bancária
+        /// </summary>
 
+        /// <remarks>
+        /// Exemplos de request:
+        ///
+        /// Crédito:
+        /// POST /api/Account/CriarConta
+        /// {
+        ///   "accountNumber": "CC-0001",
+        ///   "balance": "0",
+        ///   "reservedBalance": 0,
+        ///   "creditLimit": "0",
+        ///   "referenceId": "test-credit-001"
+        /// }
+        ///        
+        /// </remarks>
+        /// <param name="request">Dados da conta a ser criada</param>
+        /// <returns>Conta criada com sucesso</returns>
+        /// <response code="201">Conta criada</response>
+        /// <response code="400">Erro de validação</response>
+        /// <response code="500">Erro interno</response>
+        [ProducesResponseType(typeof(TransactionCreateDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [HttpPost("CriarConta")]
         public async Task<IActionResult> CriarConta([FromBody] AccountCreateDto dto)
         {
@@ -33,8 +61,10 @@ namespace PagueVeloz.Api.Controllers
                     Log.Warning("Idempotency-Key não enviada, gerando uma aleatória.");
                 }
 
-                // Mapeia DTO para Model
-                var account = new AccountModel
+          
+
+            // Mapeia DTO para Model
+            var account = new AccountModel
                 {
                     AccountNumber = dto.AccountNumber,
                     Balance = dto.Balance,
@@ -62,8 +92,11 @@ namespace PagueVeloz.Api.Controllers
                 return Ok(response);
             
         }
-    
 
+
+        /// <summary>
+        /// Buscar conta bancária
+        /// </summary>
         [HttpGet("BuscarConta/{AccountNumber}")]
         public async Task<IActionResult> GetById(string AccountNumber)
         {
@@ -71,6 +104,9 @@ namespace PagueVeloz.Api.Controllers
             return Ok(account);
         }
 
+        /// <summary>
+        /// Atualizar conta bancária
+        /// </summary>
         [HttpPut("AtualizarConta/{AccountNumber}")]
         public async Task<IActionResult> Update(string AccountNumber, AccountUpdateDto dto)
         {

@@ -3,6 +3,7 @@ using PagueVeloz.Application.Interfaces;
 using PagueVeloz.Domain.Entities;
 using PagueVeloz.Infrastructure.Repositories.Account;
 using PagueVeloz.Infrastructure.Repositories.Transactions;
+using PagueVeloz.Shared.Middlewares;
 using Serilog;
 using System;
 using System.Data;
@@ -55,7 +56,7 @@ namespace PagueVeloz.Application.Services
                 // Carrega a conta dentro da transação
                 var account = await _accountRepository.GetAccountByIdAsync(dto.AccountId);
                 if (account == null)
-                    throw new InvalidOperationException($"Numero da conta não existe!");
+                    throw new BusinessException($"Numero da conta não existe!");
 
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
@@ -73,7 +74,7 @@ namespace PagueVeloz.Application.Services
                         TransactionType.Capture => Capture(account, dto.Amount),
                         TransactionType.Reversal => Reversal(account, dto.Amount),
                         TransactionType.Transfer => await TransferAsync(account, dto.DestinationAccountId.Value, dto.Amount, transaction),
-                        _ => throw new InvalidOperationException("Operação inválida")
+                        _ => throw new BusinessException("Operação inválida")
                     };
 
                     // Atualiza conta principal
@@ -143,18 +144,22 @@ namespace PagueVeloz.Application.Services
 
         private TransactionModel Capture(AccountModel account, decimal amount)
         {
-            decimal available = account.Balance - account.ReservedBalance + account.CreditLimit;
-            if (amount > available)
-                return FailResult(account, "Saldo insuficiente: existem valores reservados");
+            if (amount > account.ReservedBalance)
+                return FailResult(account, "Não há reserva suficiente para capturar");
 
             account.ReservedBalance -= amount;
+      
 
             return SuccessResult(account, "Captura realizada com sucesso");
         }
 
         private TransactionModel Reversal(AccountModel account, decimal amount)
         {
-            account.Balance += amount;
+
+
+            decimal fromReserved = Math.Min(amount, account.ReservedBalance);
+            account.ReservedBalance -= fromReserved;
+            account.Balance += fromReserved;
             return SuccessResult(account, "Estorno realizado com sucesso");
         }
 
@@ -169,7 +174,7 @@ namespace PagueVeloz.Application.Services
             {
                 Log.Warning("Conta destino não encontrada. SourceId: {SourceId}, DestinationId: {DestinationId}",
                 source.AccountId, destinationId);
-                throw new InvalidOperationException("Conta destino não encontrada!");
+                throw new BusinessException("Conta destino não encontrada!");
             }
 
 

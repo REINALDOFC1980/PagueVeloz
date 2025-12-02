@@ -1,7 +1,10 @@
-﻿using Serilog;
-using System.Net;
+﻿using System.Net;
 using System.Text.Json;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
+using PagueVeloz.Shared.Middlewares;
+using Serilog;
+
 
 public class ExceptionHandlingMiddleware
 {
@@ -43,6 +46,11 @@ public class ExceptionHandlingMiddleware
                 error = "Not Found";
                 message = notFoundEx.Message;
                 break;
+            case BusinessException businessEx:  // <-- nova regra
+                code = (HttpStatusCode)businessEx.StatusCode;
+                error = "Business Error";
+                message = businessEx.Message;
+                break;
         }
 
         var result = JsonSerializer.Serialize(new
@@ -60,4 +68,5 @@ public class ExceptionHandlingMiddleware
 
         return context.Response.WriteAsync(result);
     }
+
 }
