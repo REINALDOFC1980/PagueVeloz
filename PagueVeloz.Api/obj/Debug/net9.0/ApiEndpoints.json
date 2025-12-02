@@ -2,7 +2,7 @@
   {
     "ContainingType": "PagueVeloz.Api.Controllers.AccountController",
     "Method": "Update",
-    "RelativePath": "api/Account/AtualizarConta/{accountId}",
+    "RelativePath": "api/Account/AtualizarConta/{AccountNumber}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -10,16 +10,11 @@
       {
         "Name": "AccountNumber",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "dto",
         "Type": "PagueVeloz.Application.DTOs.AccountUpdateDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "accountId",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -52,6 +47,38 @@
       {
         "Name": "dto",
         "Type": "PagueVeloz.Api.DTOs.AccountCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TransactionController",
+    "Method": "CreateTransaction",
+    "RelativePath": "api/Transaction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PagueVeloz.API.DTOs.TransactionCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TransactionController",
+    "Method": "Transfer",
+    "RelativePath": "api/Transaction/transfer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PagueVeloz.API.DTOs.TransferCreateDto",
         "IsRequired": true
       }
     ],

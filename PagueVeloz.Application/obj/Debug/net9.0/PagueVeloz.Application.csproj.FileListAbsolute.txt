@@ -1,3 +1,9 @@
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.csproj.AssemblyReference.cache
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.AssemblyInfoInputs.cache
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.AssemblyInfo.cs
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.csproj.CoreCompileInputs.cache
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.sourcelink.json
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\bin\Debug\net9.0\PagueVeloz.Application.deps.json
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\bin\Debug\net9.0\PagueVeloz.Application.dll
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\bin\Debug\net9.0\PagueVeloz.Application.pdb
@@ -5,12 +11,6 @@ E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\bin\Debug\net9.0\PagueVel
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\bin\Debug\net9.0\PagueVeloz.Infrastructure.dll
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\bin\Debug\net9.0\PagueVeloz.Domain.pdb
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\bin\Debug\net9.0\PagueVeloz.Infrastructure.pdb
-E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.csproj.AssemblyReference.cache
-E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.GeneratedMSBuildEditorConfig.editorconfig
-E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.AssemblyInfoInputs.cache
-E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.AssemblyInfo.cs
-E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.csproj.CoreCompileInputs.cache
-E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.sourcelink.json
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVel.4304EB3A.Up2Date
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\PagueVeloz.Application.dll
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\obj\Debug\net9.0\refint\PagueVeloz.Application.dll

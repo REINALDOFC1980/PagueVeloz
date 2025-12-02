@@ -48,37 +48,50 @@ namespace PagueVeloz.TransactionProcessor.Infrastructure.Database
             });
 
 
-            // Configurações da entidade Transaction
             modelBuilder.Entity<TransactionModel>(entity =>
             {
                 entity.HasKey(e => e.TransactionId);
 
                 entity.Property(e => e.Operation)
-                      .HasConversion<string>() // salva enum como string
+                      .HasConversion<string>() // enum como string
                       .IsRequired();
 
-                entity.Property(e => e.AccountId).IsRequired();
+                entity.Property(e => e.AccountId)
+                      .IsRequired();
 
-                // Conta de destino (opcional)
-                entity.Property(e => e.DestinationAccountId).IsRequired(false);
+                entity.Property(e => e.DestinationAccountId)
+                      .IsRequired(false);
 
-                entity.Property(e => e.Amount).IsRequired();
-                entity.Property(e => e.Currency).HasMaxLength(3).IsRequired();
-                entity.Property(e => e.ReferenceId).HasMaxLength(100).IsRequired();
-                entity.HasIndex(t => t.ReferenceId).IsUnique();
+                entity.Property(e => e.Amount)
+                      .IsRequired();
+
+                entity.Property(e => e.Currency)
+                      .HasMaxLength(3)
+                      .IsRequired();
+
+                entity.Property(e => e.ReferenceId)
+                      .HasMaxLength(100)
+                      .IsRequired();
+
+                entity.HasIndex(e => e.ReferenceId)
+                      .IsUnique();
 
                 entity.Property(e => e.Status)
                       .HasConversion<string>()
                       .IsRequired();
 
-                entity.Property(e => e.Balance).IsRequired();
-                entity.Property(e => e.ReservedBalance).IsRequired();
+                entity.Property(e => e.Balance)
+                      .IsRequired();
 
-                // Saldo da conta destino (opcional)
-                entity.Property(e => e.DestinationBalance).IsRequired(false);
+                entity.Property(e => e.AvailableBalance)
+                      .IsRequired();
 
-                entity.Property(e => e.Timestamp).IsRequired();
-                entity.Property(e => e.ErrorMessage).HasMaxLength(500);
+                entity.Property(e => e.Message)
+                      .HasMaxLength(500)
+                      .IsRequired(false);
+
+                entity.Property(e => e.CreatedAt)
+                      .IsRequired();
             });
 
 

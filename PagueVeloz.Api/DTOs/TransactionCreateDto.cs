@@ -1,10 +1,13 @@
 ﻿using PagueVeloz.Domain.Entities;
 
-public class TransactionCreateDto
+namespace PagueVeloz.API.DTOs
 {
-    public Guid AccountId { get; set; }                  // Conta de origem
-    public decimal Amount { get; set; }
-    public string ReferenceId { get; set; } = null!;
-    public TransactionOperation Operation { get; set; }
-    public Guid? DestinationAccountId { get; set; }     // Apenas usado para Transfer
+    public class TransactionCreateDto
+    {
+        public TransactionType Operation { get; set; }
+        public Guid AccountId { get; set; }
+        public decimal Amount { get; set; }
+        public string Currency { get; set; } = "BRL";
+        public string ReferenceId { get; set; }
+    }
 }

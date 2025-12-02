@@ -10,10 +10,12 @@ using PagueVeloz.Application.Interfaces;
 using PagueVeloz.Application.Services;
 using PagueVeloz.Infrastructure.Repositories.Account;
 using PagueVeloz.Infrastructure.Repositories.Idempotency;
+using PagueVeloz.Infrastructure.Repositories.Transactions;
 using PagueVeloz.Infrastructure.Services;
 using PagueVeloz.TransactionProcessor.Infrastructure.Database;
 using Serilog;
 using System.Data;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,8 +25,12 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 // Registro dos serviços e repositórios
 builder.Services.AddScoped<IAccountService, AccountService>();
-builder.Services.AddScoped<IAccountRepositoty, AccountRepositoty>();
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+
 builder.Services.AddScoped<IAuditService, AuditService>();
+
 builder.Services.AddScoped<IIdempotencyRepository, IdempotencyRepository>();
 builder.Services.AddScoped<IIdempotencyService, IdempotencyService>();
 
@@ -98,8 +104,12 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-// Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();

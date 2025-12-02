@@ -2268,7 +2268,7 @@ A instrução foi finalizada.
    at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
 --- End of stack trace from previous location ---
    at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 662
-   at PagueVeloz.Infrastructure.Repositories.Account.AccountRepositoty.CreateAccountAsync(AccountModel account) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\Repositories\Accounts\AccountRepositoty.cs:line 43
+   at PagueVeloz.Infrastructure.Repositories.Account.AccountRepository.CreateAccountAsync(AccountModel account) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\Repositories\Accounts\AccountRepository.cs:line 43
 ClientConnectionId:df8f141b-ccf4-4767-a8a2-e74d9760e052
 Error Number:515,State:2,Class:16
 2025-12-01 16:48:40.248 -03:00 [ERR] Erro ao criar conta.
@@ -2287,7 +2287,7 @@ A instrução foi finalizada.
    at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
 --- End of stack trace from previous location ---
    at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 662
-   at PagueVeloz.Infrastructure.Repositories.Account.AccountRepositoty.CreateAccountAsync(AccountModel account) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\Repositories\Accounts\AccountRepositoty.cs:line 43
+   at PagueVeloz.Infrastructure.Repositories.Account.AccountRepository.CreateAccountAsync(AccountModel account) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\Repositories\Accounts\AccountRepository.cs:line 43
    at PagueVeloz.Application.Services.AccountService.CreateAccountAsync(AccountModel account, String idempotencyKey) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\Services\AccountService.cs:line 48
 ClientConnectionId:df8f141b-ccf4-4767-a8a2-e74d9760e052
 Error Number:515,State:2,Class:16
@@ -2307,7 +2307,7 @@ A instrução foi finalizada.
    at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
 --- End of stack trace from previous location ---
    at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 662
-   at PagueVeloz.Infrastructure.Repositories.Account.AccountRepositoty.CreateAccountAsync(AccountModel account) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\Repositories\Accounts\AccountRepositoty.cs:line 43
+   at PagueVeloz.Infrastructure.Repositories.Account.AccountRepository.CreateAccountAsync(AccountModel account) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\Repositories\Accounts\AccountRepository.cs:line 43
    at PagueVeloz.Application.Services.AccountService.CreateAccountAsync(AccountModel account, String idempotencyKey) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\Services\AccountService.cs:line 48
    at PagueVeloz.Api.Controllers.AccountController.CriarConta(AccountCreateDto dto) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\Controllers\AccountController.cs:line 48
 ClientConnectionId:df8f141b-ccf4-4767-a8a2-e74d9760e052

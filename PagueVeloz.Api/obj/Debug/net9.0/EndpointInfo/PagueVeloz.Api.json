@@ -59,7 +59,7 @@
         }
       }
     },
-    "/api/Account/AtualizarConta/{accountId}": {
+    "/api/Account/AtualizarConta/{AccountNumber}": {
       "put": {
         "tags": [
           "Account"
@@ -67,13 +67,6 @@
         "parameters": [
           {
             "name": "AccountNumber",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "accountId",
             "in": "path",
             "required": true,
             "schema": {
@@ -96,6 +89,68 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/AccountUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Transaction": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransactionCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransactionCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransactionCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Transaction/transfer": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransferCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransferCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransferCreateDto"
               }
             }
           }
@@ -157,6 +212,68 @@
             "minLength": 1,
             "pattern": "Active|Inactive|Blocked",
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransactionCreateDto": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "$ref": "#/components/schemas/TransactionType"
+          },
+          "accountId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "referenceId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransactionType": {
+        "enum": [
+          "Credit",
+          "Debit",
+          "Reserve",
+          "Capture",
+          "Reversal",
+          "Transfer"
+        ],
+        "type": "string"
+      },
+      "TransferCreateDto": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "destinationAccountId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "referenceId": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

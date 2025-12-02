@@ -4,5 +4,15 @@
         <name>PagueVeloz.Api</name>
     </assembly>
     <members>
+        <member name="M:TransactionController.CreateTransaction(PagueVeloz.API.DTOs.TransactionCreateDto)">
+            <summary>
+            Processa: credit, debit, reserve, capture, reversal.
+            </summary>
+        </member>
+        <member name="M:TransactionController.Transfer(PagueVeloz.API.DTOs.TransferCreateDto)">
+            <summary>
+            Endpoint exclusivo para transferências.
+            </summary>
+        </member>
     </members>
 </doc>

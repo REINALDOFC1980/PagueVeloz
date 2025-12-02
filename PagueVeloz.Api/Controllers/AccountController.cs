@@ -74,14 +74,14 @@ namespace PagueVeloz.Api.Controllers
         [HttpGet("BuscarConta/{AccountNumber}")]
         public async Task<IActionResult> GetById(string AccountNumber)
         {
-            var account = await _serviceAccount.GetAccountByIdAsync(AccountNumber);
+            var account = await _serviceAccount.GetAccountByNumberAsync(AccountNumber);
             return Ok(account);
         }
 
         [HttpPut("AtualizarConta/{AccountNumber}")]
         public async Task<IActionResult> Update(string AccountNumber, AccountUpdateDto dto)
         {
-            var account = await _serviceAccount.GetAccountByIdAsync(AccountNumber);
+            var account = await _serviceAccount.GetAccountByNumberAsync(AccountNumber);
 
             account.Balance = dto.Balance;
             account.ReservedBalance = dto.ReservedBalance;
