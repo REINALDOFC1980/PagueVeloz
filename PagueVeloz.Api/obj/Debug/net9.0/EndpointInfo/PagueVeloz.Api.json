@@ -37,19 +37,18 @@
         }
       }
     },
-    "/api/Account/BuscarConta/{accountId}": {
+    "/api/Account/BuscarConta/{AccountNumber}": {
       "get": {
         "tags": [
           "Account"
         ],
         "parameters": [
           {
-            "name": "accountId",
+            "name": "AccountNumber",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -67,12 +66,18 @@
         ],
         "parameters": [
           {
+            "name": "AccountNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "accountId",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -108,6 +113,10 @@
       "AccountCreateDto": {
         "type": "object",
         "properties": {
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
           "balance": {
             "type": "integer",
             "format": "int64"

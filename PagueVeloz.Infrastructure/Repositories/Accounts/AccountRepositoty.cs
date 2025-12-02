@@ -36,15 +36,15 @@ namespace PagueVeloz.Infrastructure.Repositories.Account
 
                 var sql = @"
                             INSERT INTO Accounts 
-                            (AccountId, Balance, ReservedBalance, CreditLimit, Status, CreatedAt, UpdatedAt)
+                            (AccountId, AccountNumber, Balance, ReservedBalance, CreditLimit, Status, CreatedAt, UpdatedAt)
                             VALUES 
-                            (@AccountId, @Balance, @ReservedBalance, @CreditLimit, @Status, @CreatedAt, @UpdatedAt)";
+                            (@AccountId,@AccountNumber, @Balance, @ReservedBalance, @CreditLimit, @Status, @CreatedAt, @UpdatedAt)";
 
                 await _connection.ExecuteAsync(sql, account, transaction);
 
                 transaction.Commit();
 
-                Log.Information("Conta {AccountId} criada com sucesso.", account.AccountId);
+                Log.Information("Conta {AccountNumber} criada com sucesso.", account.AccountNumber);
                 return account;
             }
 
@@ -59,10 +59,10 @@ namespace PagueVeloz.Infrastructure.Repositories.Account
         }
 
 
-        public async Task<AccountModel> GetAccountByIdAsync(Guid accountId)
+        public async Task<AccountModel> GetAccountByIdAsync(string AccountNumber)
         {
-            var sql = "SELECT * FROM Accounts WHERE AccountId = @accountId";
-            return await _connection.QueryFirstOrDefaultAsync<AccountModel>(sql, new { accountId });
+            var sql = "SELECT * FROM Accounts WHERE AccountNumber = @AccountNumber";
+            return await _connection.QueryFirstOrDefaultAsync<AccountModel>(sql, new { AccountNumber });
         }
 
         public async Task<bool> UpdateAccountAsync(AccountModel account)

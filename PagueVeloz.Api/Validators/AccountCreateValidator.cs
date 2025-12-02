@@ -7,6 +7,15 @@ namespace PagueVeloz.Api.Validators
     {
         public AccountCreateValidator()
         {
+
+            RuleFor(x => x.AccountNumber)
+                 .NotNull()
+                 .WithMessage("O número da conta não pode ser nulo.")
+                 .NotEmpty()
+                 .WithMessage("O número da conta não pode ser vazio.")
+                 .MaximumLength(20)
+                 .WithMessage("O número da conta não pode ter mais que 20 caracteres.");
+
             RuleFor(x => x.Balance)
                 .GreaterThanOrEqualTo(0)
                 .WithMessage("O saldo inicial não pode ser negativo.");

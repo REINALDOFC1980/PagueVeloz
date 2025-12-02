@@ -1,0 +1,1301 @@
+2025-12-02 06:32:43.134 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-02 06:32:44.535 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 06:32:44.541 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 06:32:44.545 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 06:32:44.548 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 06:32:44.551 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 06:32:44.554 -03:00 [WRN] No store type was specified for the decimal property 'DestinationBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 06:32:44.556 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 06:32:44.722 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: EngineType=SqlServer 
+2025-12-02 06:32:44.767 -03:00 [DBG] Creating DbConnection.
+2025-12-02 06:32:44.879 -03:00 [DBG] Created DbConnection. (111ms).
+2025-12-02 06:32:44.897 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 06:32:45.530 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 06:32:45.546 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 06:32:45.568 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (19ms).
+2025-12-02 06:32:45.577 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (36ms).
+2025-12-02 06:32:45.598 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 06:32:45.653 -03:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 06:32:45.663 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 06:32:45.682 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (13ms).
+2025-12-02 06:32:45.690 -03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2025-12-02 06:32:45.693 -03:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2025-12-02 06:32:45.696 -03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (6ms).
+2025-12-02 06:32:45.699 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 06:32:45.703 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 06:32:45.706 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-02 06:32:45.817 -03:00 [INF] Executed DbCommand (111ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-02 06:32:45.822 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 06:32:45.825 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (2ms).
+2025-12-02 06:32:45.830 -03:00 [DBG] 'PagueVelozDbContext' disposed.
+2025-12-02 06:32:45.835 -03:00 [DBG] Disposing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 06:32:45.840 -03:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2025-12-02 06:32:46.261 -03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-12-02 06:32:46.421 -03:00 [DBG] Hosting starting
+2025-12-02 06:32:46.474 -03:00 [DBG] Middleware loaded
+2025-12-02 06:32:46.484 -03:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16513 B).
+2025-12-02 06:32:46.489 -03:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-12-02 06:32:46.662 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-02 06:32:46.668 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-02 06:32:46.711 -03:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-12-02 06:32:46.957 -03:00 [INF] Now listening on: https://localhost:7249
+2025-12-02 06:32:46.960 -03:00 [INF] Now listening on: http://localhost:5247
+2025-12-02 06:32:46.962 -03:00 [DBG] Loaded hosting startup assembly PagueVeloz.Api
+2025-12-02 06:32:46.964 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-12-02 06:32:46.966 -03:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-12-02 06:32:46.968 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-12-02 06:32:46.982 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 06:32:46.986 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 06:32:47.400 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-02 06:32:47.403 -03:00 [INF] Hosting environment: Development
+2025-12-02 06:32:47.405 -03:00 [INF] Content root path: E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api
+2025-12-02 06:32:47.409 -03:00 [DBG] Hosting started
+2025-12-02 06:33:16.294 -03:00 [DBG] Connection id "0HNHHGN95QHFH" accepted.
+2025-12-02 06:33:16.348 -03:00 [DBG] Connection id "0HNHHGN95QHFH" started.
+2025-12-02 06:33:16.421 -03:00 [DBG] Connection 0HNHHGN95QHFH established using the following protocol: "Tls13"
+2025-12-02 06:33:16.538 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-02 06:33:16.611 -03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-12-02 06:33:16.615 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 06:33:16.726 -03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-12-02 06:33:16.734 -03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-12-02 06:33:16.748 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 217.7676ms
+2025-12-02 06:33:16.804 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-02 06:33:16.824 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-02 06:33:16.827 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 24.5458ms
+2025-12-02 06:33:17.030 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-02 06:33:17.037 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-02 06:33:17.040 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 06:33:17.065 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.7522ms
+2025-12-02 07:13:19.253 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-02 07:13:20.368 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:13:20.374 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:13:20.378 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:13:20.381 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:13:20.385 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:13:20.388 -03:00 [WRN] No store type was specified for the decimal property 'DestinationBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:13:20.391 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:13:20.545 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: EngineType=SqlServer 
+2025-12-02 07:13:20.565 -03:00 [DBG] Creating DbConnection.
+2025-12-02 07:13:20.628 -03:00 [DBG] Created DbConnection. (60ms).
+2025-12-02 07:13:20.636 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:21.312 -03:00 [DBG] An error occurred using the connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:21.888 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:22.221 -03:00 [DBG] An error occurred using the connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:22.515 -03:00 [DBG] Creating DbConnection.
+2025-12-02 07:13:22.517 -03:00 [DBG] Created DbConnection. (2ms).
+2025-12-02 07:13:22.519 -03:00 [DBG] Opening connection to database 'master' on server 'GRDESENVN40'.
+2025-12-02 07:13:22.551 -03:00 [DBG] Opened connection to database 'master' on server 'GRDESENVN40'.
+2025-12-02 07:13:22.577 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:13:22.602 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (15ms).
+2025-12-02 07:13:22.610 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (40ms).
+2025-12-02 07:13:22.626 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [PagueVelozDB];
+2025-12-02 07:13:23.141 -03:00 [INF] Executed DbCommand (495ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [PagueVelozDB];
+2025-12-02 07:13:23.148 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:13:23.151 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2025-12-02 07:13:23.154 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (5ms).
+2025-12-02 07:13:23.157 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [PagueVelozDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2025-12-02 07:13:23.337 -03:00 [INF] Executed DbCommand (179ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [PagueVelozDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2025-12-02 07:13:23.354 -03:00 [DBG] Closing connection to database 'master' on server 'GRDESENVN40'.
+2025-12-02 07:13:23.375 -03:00 [DBG] Closed connection to database 'master' on server 'GRDESENVN40' (13ms).
+2025-12-02 07:13:23.385 -03:00 [DBG] Disposing connection to database 'master' on server 'GRDESENVN40'.
+2025-12-02 07:13:23.391 -03:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2025-12-02 07:13:23.395 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:23.406 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:23.410 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:13:23.414 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (3ms).
+2025-12-02 07:13:23.417 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (6ms).
+2025-12-02 07:13:23.421 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 07:13:23.436 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 07:13:23.440 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:23.443 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (2ms).
+2025-12-02 07:13:23.568 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:23.572 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:23.577 -03:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2025-12-02 07:13:23.590 -03:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2025-12-02 07:13:23.593 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:13:23.596 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2025-12-02 07:13:23.600 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (6ms).
+2025-12-02 07:13:23.603 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Accounts] (
+    [AccountId] uniqueidentifier NOT NULL,
+    [AccountNumber] nvarchar(max) NULL,
+    [Balance] decimal(18,2) NOT NULL,
+    [ReservedBalance] decimal(18,2) NOT NULL,
+    [CreditLimit] decimal(18,2) NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NOT NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_Accounts] PRIMARY KEY ([AccountId])
+);
+2025-12-02 07:13:23.621 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Accounts] (
+    [AccountId] uniqueidentifier NOT NULL,
+    [AccountNumber] nvarchar(max) NULL,
+    [Balance] decimal(18,2) NOT NULL,
+    [ReservedBalance] decimal(18,2) NOT NULL,
+    [CreditLimit] decimal(18,2) NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NOT NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_Accounts] PRIMARY KEY ([AccountId])
+);
+2025-12-02 07:13:23.625 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:13:23.628 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2025-12-02 07:13:23.631 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (5ms).
+2025-12-02 07:13:23.635 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [IdempotencyRecords] (
+    [Id] uniqueidentifier NOT NULL,
+    [Key] nvarchar(450) NOT NULL,
+    [Response] nvarchar(max) NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    CONSTRAINT [PK_IdempotencyRecords] PRIMARY KEY ([Id])
+);
+2025-12-02 07:13:23.641 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [IdempotencyRecords] (
+    [Id] uniqueidentifier NOT NULL,
+    [Key] nvarchar(450) NOT NULL,
+    [Response] nvarchar(max) NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    CONSTRAINT [PK_IdempotencyRecords] PRIMARY KEY ([Id])
+);
+2025-12-02 07:13:23.646 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:13:23.649 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2025-12-02 07:13:23.652 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (5ms).
+2025-12-02 07:13:23.654 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Transactions] (
+    [TransactionId] uniqueidentifier NOT NULL,
+    [AccountId] uniqueidentifier NOT NULL,
+    [DestinationAccountId] uniqueidentifier NULL,
+    [Operation] nvarchar(max) NOT NULL,
+    [Amount] decimal(18,2) NOT NULL,
+    [Currency] nvarchar(3) NOT NULL,
+    [ReferenceId] nvarchar(100) NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    [Balance] decimal(18,2) NOT NULL,
+    [ReservedBalance] decimal(18,2) NOT NULL,
+    [DestinationBalance] decimal(18,2) NULL,
+    [ErrorMessage] nvarchar(500) NULL,
+    [Timestamp] datetime2 NOT NULL,
+    CONSTRAINT [PK_Transactions] PRIMARY KEY ([TransactionId]),
+    CONSTRAINT [FK_Transactions_Accounts_AccountId] FOREIGN KEY ([AccountId]) REFERENCES [Accounts] ([AccountId]) ON DELETE CASCADE
+);
+2025-12-02 07:13:23.665 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Transactions] (
+    [TransactionId] uniqueidentifier NOT NULL,
+    [AccountId] uniqueidentifier NOT NULL,
+    [DestinationAccountId] uniqueidentifier NULL,
+    [Operation] nvarchar(max) NOT NULL,
+    [Amount] decimal(18,2) NOT NULL,
+    [Currency] nvarchar(3) NOT NULL,
+    [ReferenceId] nvarchar(100) NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    [Balance] decimal(18,2) NOT NULL,
+    [ReservedBalance] decimal(18,2) NOT NULL,
+    [DestinationBalance] decimal(18,2) NULL,
+    [ErrorMessage] nvarchar(500) NULL,
+    [Timestamp] datetime2 NOT NULL,
+    CONSTRAINT [PK_Transactions] PRIMARY KEY ([TransactionId]),
+    CONSTRAINT [FK_Transactions_Accounts_AccountId] FOREIGN KEY ([AccountId]) REFERENCES [Accounts] ([AccountId]) ON DELETE CASCADE
+);
+2025-12-02 07:13:23.670 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:13:23.672 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2025-12-02 07:13:23.674 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (4ms).
+2025-12-02 07:13:23.677 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_IdempotencyRecords_Key] ON [IdempotencyRecords] ([Key]);
+2025-12-02 07:13:23.684 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_IdempotencyRecords_Key] ON [IdempotencyRecords] ([Key]);
+2025-12-02 07:13:23.689 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:13:23.691 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2025-12-02 07:13:23.695 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (5ms).
+2025-12-02 07:13:23.698 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Transactions_AccountId] ON [Transactions] ([AccountId]);
+2025-12-02 07:13:23.704 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Transactions_AccountId] ON [Transactions] ([AccountId]);
+2025-12-02 07:13:23.708 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:13:23.710 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2025-12-02 07:13:23.714 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (5ms).
+2025-12-02 07:13:23.717 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Transactions_ReferenceId] ON [Transactions] ([ReferenceId]);
+2025-12-02 07:13:23.721 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Transactions_ReferenceId] ON [Transactions] ([ReferenceId]);
+2025-12-02 07:13:23.728 -03:00 [DBG] Committing transaction.
+2025-12-02 07:13:23.735 -03:00 [DBG] Committed transaction.
+2025-12-02 07:13:23.740 -03:00 [DBG] Disposing transaction.
+2025-12-02 07:13:23.742 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:23.744 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (2ms).
+2025-12-02 07:13:23.750 -03:00 [DBG] 'PagueVelozDbContext' disposed.
+2025-12-02 07:13:23.753 -03:00 [DBG] Disposing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:13:23.756 -03:00 [DBG] Disposed connection to database '' on server '' (3ms).
+2025-12-02 07:13:23.996 -03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-12-02 07:13:24.093 -03:00 [DBG] Hosting starting
+2025-12-02 07:13:24.123 -03:00 [DBG] Middleware loaded
+2025-12-02 07:13:24.127 -03:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16513 B).
+2025-12-02 07:13:24.131 -03:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-12-02 07:13:24.225 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-02 07:13:24.230 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-02 07:13:24.245 -03:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-12-02 07:13:24.410 -03:00 [INF] Now listening on: https://localhost:7249
+2025-12-02 07:13:24.412 -03:00 [INF] Now listening on: http://localhost:5247
+2025-12-02 07:13:24.415 -03:00 [DBG] Loaded hosting startup assembly PagueVeloz.Api
+2025-12-02 07:13:24.417 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-12-02 07:13:24.419 -03:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-12-02 07:13:24.421 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-12-02 07:13:24.432 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:13:24.437 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:13:24.594 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-02 07:13:24.596 -03:00 [INF] Hosting environment: Development
+2025-12-02 07:13:24.598 -03:00 [INF] Content root path: E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api
+2025-12-02 07:13:24.601 -03:00 [DBG] Hosting started
+2025-12-02 07:26:08.616 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-02 07:26:09.642 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:26:09.647 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:26:09.651 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:26:09.653 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:26:09.656 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:26:09.659 -03:00 [WRN] No store type was specified for the decimal property 'DestinationBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:26:09.662 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:26:09.784 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: EngineType=SqlServer 
+2025-12-02 07:26:09.801 -03:00 [DBG] Creating DbConnection.
+2025-12-02 07:26:09.857 -03:00 [DBG] Created DbConnection. (53ms).
+2025-12-02 07:26:09.865 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:26:10.165 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:26:10.175 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:26:10.184 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (7ms).
+2025-12-02 07:26:10.190 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (17ms).
+2025-12-02 07:26:10.200 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 07:26:10.240 -03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 07:26:10.248 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:26:10.259 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (7ms).
+2025-12-02 07:26:10.265 -03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2025-12-02 07:26:10.267 -03:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2025-12-02 07:26:10.270 -03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (5ms).
+2025-12-02 07:26:10.273 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:26:10.276 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:26:10.280 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-02 07:26:10.360 -03:00 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-02 07:26:10.366 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:26:10.370 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (4ms).
+2025-12-02 07:26:10.376 -03:00 [DBG] 'PagueVelozDbContext' disposed.
+2025-12-02 07:26:10.380 -03:00 [DBG] Disposing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:26:10.383 -03:00 [DBG] Disposed connection to database '' on server '' (3ms).
+2025-12-02 07:26:10.575 -03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-12-02 07:26:10.655 -03:00 [DBG] Hosting starting
+2025-12-02 07:26:10.685 -03:00 [DBG] Middleware loaded
+2025-12-02 07:26:10.689 -03:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16513 B).
+2025-12-02 07:26:10.692 -03:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-12-02 07:26:10.796 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-02 07:26:10.801 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-02 07:26:10.817 -03:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-12-02 07:26:10.990 -03:00 [INF] Now listening on: https://localhost:7249
+2025-12-02 07:26:10.992 -03:00 [INF] Now listening on: http://localhost:5247
+2025-12-02 07:26:10.995 -03:00 [DBG] Loaded hosting startup assembly PagueVeloz.Api
+2025-12-02 07:26:10.997 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-12-02 07:26:11.000 -03:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-12-02 07:26:11.003 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-12-02 07:26:11.014 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:26:11.018 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:26:11.178 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-02 07:26:11.180 -03:00 [INF] Hosting environment: Development
+2025-12-02 07:26:11.182 -03:00 [INF] Content root path: E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api
+2025-12-02 07:26:11.185 -03:00 [DBG] Hosting started
+2025-12-02 07:26:19.335 -03:00 [DBG] Connection id "0HNHHHKTPLLTU" accepted.
+2025-12-02 07:26:19.349 -03:00 [DBG] Connection id "0HNHHHKTPLLTU" started.
+2025-12-02 07:26:19.414 -03:00 [DBG] Connection 0HNHHHKTPLLTU established using the following protocol: "Tls13"
+2025-12-02 07:26:19.496 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-02 07:26:19.549 -03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-12-02 07:26:19.553 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:26:19.664 -03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-12-02 07:26:19.672 -03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-12-02 07:26:19.678 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 190.3411ms
+2025-12-02 07:26:19.719 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-02 07:26:19.737 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-02 07:26:19.741 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 21.5114ms
+2025-12-02 07:26:19.947 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-02 07:26:19.954 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-02 07:26:19.958 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:26:19.973 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.8767ms
+2025-12-02 07:28:05.327 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-02 07:28:05.335 -03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-12-02 07:28:05.338 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:28:05.341 -03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-12-02 07:28:05.343 -03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-12-02 07:28:05.345 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 18.1278ms
+2025-12-02 07:28:05.386 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-02 07:28:05.398 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-02 07:28:05.402 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 16.6392ms
+2025-12-02 07:28:05.568 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-02 07:28:05.597 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-02 07:28:05.599 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:28:05.601 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:28:05.606 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:28:05.619 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 50.7854ms
+2025-12-02 07:28:55.340 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-02 07:28:55.352 -03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-12-02 07:28:55.354 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:28:55.356 -03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-12-02 07:28:55.358 -03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-12-02 07:28:55.367 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 27.017ms
+2025-12-02 07:28:55.390 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-02 07:28:55.406 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-02 07:28:55.409 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 18.9447ms
+2025-12-02 07:28:55.493 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-02 07:28:55.502 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-02 07:28:55.504 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:28:55.509 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.4016ms
+2025-12-02 07:30:09.264 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-02 07:30:09.270 -03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-12-02 07:30:09.272 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:30:09.275 -03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-12-02 07:30:09.278 -03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-12-02 07:30:09.280 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 16.222ms
+2025-12-02 07:30:09.330 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-02 07:30:09.341 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-02 07:30:09.344 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 13.8112ms
+2025-12-02 07:30:09.527 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-02 07:30:09.534 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-02 07:30:09.536 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:30:09.538 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:30:09.542 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:30:09.550 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.0063ms
+2025-12-02 07:30:39.977 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 98
+2025-12-02 07:30:40.026 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:30:40.029 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:30:40.033 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:30:40.064 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="e93b923c-3f38-4962-b67e-dd5b89ed34af"
+2025-12-02 07:30:40.070 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHKTPLLTU:00000019
+2025-12-02 07:30:40.077 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:30:40.117 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:30:40.123 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:30:40.127 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:30:40.130 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:30:40.134 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:30:40.136 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:30:40.141 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:30:40.146 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:30:40.154 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:30:40.160 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:30:40.168 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:30:40.187 -03:00 [DBG] Connection id "0HNHHHKTPLLTU", Request id "0HNHHHKTPLLTU:00000019": started reading request body.
+2025-12-02 07:30:40.190 -03:00 [DBG] Connection id "0HNHHHKTPLLTU", Request id "0HNHHHKTPLLTU:00000019": done reading request body.
+2025-12-02 07:30:40.214 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:30:40.218 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:30:40.221 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:30:40.224 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:30:40.301 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:30:40.308 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:30:40.310 -03:00 [WRN] Idempotency-Key não enviada, gerando uma aleatória.
+2025-12-02 07:30:40.313 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:30:40.438 -03:00 [INF] [AUDIT] Conta criada com sucesso:
+2025-12-02 07:30:40.449 -03:00 [DBG] Iniciando INSERT de conta {"AccountId":"00000000-0000-0000-0000-000000000000","AccountNumber":null,"Balance":100,"ReservedBalance":0,"CreditLimit":0,"Status":"Active","CreatedAt":"2025-12-02T10:30:40.4372635Z","UpdatedAt":"2025-12-02T10:30:40.4373571Z","RowVersion":null,"$type":"AccountModel"}
+2025-12-02 07:30:40.504 -03:00 [INF] Conta null criada com sucesso.
+2025-12-02 07:30:40.547 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:30:40.553 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:30:40.555 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:30:40.557 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:30:40.560 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:30:40.564 -03:00 [INF] Executing OkObjectResult, writing value of type 'AccountResponseDto'.
+2025-12-02 07:30:40.577 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 434.8244ms
+2025-12-02 07:30:40.580 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:30:40.584 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=200 TraceId=0HNHHHKTPLLTU:00000019 Elapsed=513ms
+2025-12-02 07:30:40.589 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 200 524ms CorrelationId="e93b923c-3f38-4962-b67e-dd5b89ed34af"
+2025-12-02 07:30:40.595 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 200 null application/json; charset=utf-8 618.7953ms
+2025-12-02 07:30:44.658 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 98
+2025-12-02 07:30:44.666 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:30:44.669 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:30:44.673 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:30:44.675 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="2afcd34b-637c-42e0-838b-bd4764568b9a"
+2025-12-02 07:30:44.678 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHKTPLLTU:0000001B
+2025-12-02 07:30:44.681 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:30:44.683 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:30:44.687 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:30:44.690 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:30:44.692 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:30:44.695 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:30:44.697 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:30:44.700 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:30:44.703 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:30:44.706 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:30:44.709 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:30:44.717 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:30:44.720 -03:00 [DBG] Connection id "0HNHHHKTPLLTU", Request id "0HNHHHKTPLLTU:0000001B": started reading request body.
+2025-12-02 07:30:44.724 -03:00 [DBG] Connection id "0HNHHHKTPLLTU", Request id "0HNHHHKTPLLTU:0000001B": done reading request body.
+2025-12-02 07:30:44.728 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:30:44.730 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:30:44.732 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:30:44.735 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:30:44.738 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:30:44.741 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:30:44.743 -03:00 [WRN] Idempotency-Key não enviada, gerando uma aleatória.
+2025-12-02 07:30:44.744 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:30:44.748 -03:00 [INF] [AUDIT] Conta criada com sucesso:
+2025-12-02 07:30:44.749 -03:00 [DBG] Iniciando INSERT de conta {"AccountId":"00000000-0000-0000-0000-000000000000","AccountNumber":null,"Balance":100,"ReservedBalance":0,"CreditLimit":0,"Status":"Active","CreatedAt":"2025-12-02T10:30:44.7480642Z","UpdatedAt":"2025-12-02T10:30:44.7480643Z","RowVersion":null,"$type":"AccountModel"}
+2025-12-02 07:30:44.767 -03:00 [INF] Conta null criada com sucesso.
+2025-12-02 07:30:44.770 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:30:44.775 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:30:44.777 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:30:44.779 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:30:44.781 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:30:44.783 -03:00 [INF] Executing OkObjectResult, writing value of type 'AccountResponseDto'.
+2025-12-02 07:30:44.786 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 86.1704ms
+2025-12-02 07:30:44.789 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:30:44.791 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=200 TraceId=0HNHHHKTPLLTU:0000001B Elapsed=113ms
+2025-12-02 07:30:44.795 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 200 120ms CorrelationId="2afcd34b-637c-42e0-838b-bd4764568b9a"
+2025-12-02 07:30:44.799 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 200 null application/json; charset=utf-8 140.4729ms
+2025-12-02 07:31:28.623 -03:00 [DBG] Connection id "0HNHHHKTPLLTU" received FIN.
+2025-12-02 07:31:28.680 -03:00 [DBG] Connection id "0HNHHHKTPLLTU" is closed. The last processed stream ID was 27.
+2025-12-02 07:31:28.682 -03:00 [DBG] The connection queue processing loop for 0HNHHHKTPLLTU completed.
+2025-12-02 07:31:28.684 -03:00 [DBG] Connection id "0HNHHHKTPLLTU" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-12-02 07:31:28.697 -03:00 [DBG] Connection id "0HNHHHKTPLLTU" stopped.
+2025-12-02 07:34:02.238 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-02 07:34:03.208 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:34:03.214 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:34:03.218 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:34:03.221 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:34:03.223 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:34:03.227 -03:00 [WRN] No store type was specified for the decimal property 'DestinationBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:34:03.229 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:34:03.349 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: EngineType=SqlServer 
+2025-12-02 07:34:03.368 -03:00 [DBG] Creating DbConnection.
+2025-12-02 07:34:03.419 -03:00 [DBG] Created DbConnection. (47ms).
+2025-12-02 07:34:03.427 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:34:03.774 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:34:03.785 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:34:03.795 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (9ms).
+2025-12-02 07:34:03.800 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (18ms).
+2025-12-02 07:34:03.809 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 07:34:03.856 -03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 07:34:03.863 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:34:03.878 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (9ms).
+2025-12-02 07:34:03.884 -03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2025-12-02 07:34:03.886 -03:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2025-12-02 07:34:03.890 -03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (5ms).
+2025-12-02 07:34:03.893 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:34:03.897 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:34:03.900 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-02 07:34:03.936 -03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-02 07:34:03.942 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:34:03.946 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (3ms).
+2025-12-02 07:34:03.952 -03:00 [DBG] 'PagueVelozDbContext' disposed.
+2025-12-02 07:34:03.956 -03:00 [DBG] Disposing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:34:03.961 -03:00 [DBG] Disposed connection to database '' on server '' (4ms).
+2025-12-02 07:34:04.150 -03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-12-02 07:34:04.245 -03:00 [DBG] Hosting starting
+2025-12-02 07:34:04.278 -03:00 [DBG] Middleware loaded
+2025-12-02 07:34:04.282 -03:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16513 B).
+2025-12-02 07:34:04.285 -03:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-12-02 07:34:04.377 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-02 07:34:04.381 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-02 07:34:04.394 -03:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-12-02 07:34:04.627 -03:00 [INF] Now listening on: https://localhost:7249
+2025-12-02 07:34:04.630 -03:00 [INF] Now listening on: http://localhost:5247
+2025-12-02 07:34:04.632 -03:00 [DBG] Loaded hosting startup assembly PagueVeloz.Api
+2025-12-02 07:34:04.634 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-12-02 07:34:04.637 -03:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-12-02 07:34:04.639 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-12-02 07:34:04.652 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:34:04.657 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:34:05.012 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-02 07:34:05.014 -03:00 [INF] Hosting environment: Development
+2025-12-02 07:34:05.016 -03:00 [INF] Content root path: E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api
+2025-12-02 07:34:05.018 -03:00 [DBG] Hosting started
+2025-12-02 07:34:24.239 -03:00 [DBG] Connection id "0HNHHHPEA2RUI" accepted.
+2025-12-02 07:34:24.252 -03:00 [DBG] Connection id "0HNHHHPEA2RUI" started.
+2025-12-02 07:34:24.319 -03:00 [DBG] Connection 0HNHHHPEA2RUI established using the following protocol: "Tls13"
+2025-12-02 07:34:24.399 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-02 07:34:24.453 -03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-12-02 07:34:24.457 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:34:24.564 -03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-12-02 07:34:24.571 -03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-12-02 07:34:24.576 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 182.4275ms
+2025-12-02 07:34:24.613 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-02 07:34:24.635 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-02 07:34:24.639 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 26.721ms
+2025-12-02 07:34:24.774 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-02 07:34:24.787 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-02 07:34:24.789 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:34:24.802 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.4231ms
+2025-12-02 07:34:48.298 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 101
+2025-12-02 07:34:48.317 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:34:48.321 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:34:48.325 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:34:48.342 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="bc42a9b3-7487-4b7c-a8b8-79e2d03bdf39"
+2025-12-02 07:34:48.348 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHPEA2RUI:00000007
+2025-12-02 07:34:48.354 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:34:48.382 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:34:48.388 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:34:48.391 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:34:48.395 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:34:48.399 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:34:48.402 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:34:48.410 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:34:48.414 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:34:48.431 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:34:48.438 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:34:48.443 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:34:48.462 -03:00 [DBG] Connection id "0HNHHHPEA2RUI", Request id "0HNHHHPEA2RUI:00000007": started reading request body.
+2025-12-02 07:34:48.466 -03:00 [DBG] Connection id "0HNHHHPEA2RUI", Request id "0HNHHHPEA2RUI:00000007": done reading request body.
+2025-12-02 07:34:48.491 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:34:48.495 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:34:48.498 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:34:48.501 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:34:48.581 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:34:48.589 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:34:48.592 -03:00 [WRN] Idempotency-Key não enviada, gerando uma aleatória.
+2025-12-02 07:34:48.598 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:34:48.726 -03:00 [INF] [AUDIT] Conta criada com sucesso:
+2025-12-02 07:35:54.471 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-02 07:35:55.510 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:35:55.515 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:35:55.519 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:35:55.523 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:35:55.526 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:35:55.530 -03:00 [WRN] No store type was specified for the decimal property 'DestinationBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:35:55.533 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:35:55.694 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: EngineType=SqlServer 
+2025-12-02 07:35:55.717 -03:00 [DBG] Creating DbConnection.
+2025-12-02 07:35:55.785 -03:00 [DBG] Created DbConnection. (64ms).
+2025-12-02 07:35:55.794 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:35:56.085 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:35:56.096 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:35:56.104 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (8ms).
+2025-12-02 07:35:56.110 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (17ms).
+2025-12-02 07:35:56.119 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 07:35:56.170 -03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 07:35:56.179 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:35:56.198 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (12ms).
+2025-12-02 07:35:56.205 -03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2025-12-02 07:35:56.208 -03:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2025-12-02 07:35:56.211 -03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (6ms).
+2025-12-02 07:35:56.215 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:35:56.220 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:35:56.225 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-02 07:35:56.273 -03:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-02 07:35:56.279 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:35:56.283 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (3ms).
+2025-12-02 07:35:56.289 -03:00 [DBG] 'PagueVelozDbContext' disposed.
+2025-12-02 07:35:56.296 -03:00 [DBG] Disposing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:35:56.300 -03:00 [DBG] Disposed connection to database '' on server '' (4ms).
+2025-12-02 07:35:56.516 -03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-12-02 07:35:56.612 -03:00 [DBG] Hosting starting
+2025-12-02 07:35:56.636 -03:00 [DBG] Middleware loaded
+2025-12-02 07:35:56.641 -03:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16513 B).
+2025-12-02 07:35:56.646 -03:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-12-02 07:35:56.762 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-02 07:35:56.768 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-02 07:35:56.786 -03:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-12-02 07:35:56.984 -03:00 [INF] Now listening on: https://localhost:7249
+2025-12-02 07:35:56.986 -03:00 [INF] Now listening on: http://localhost:5247
+2025-12-02 07:35:56.989 -03:00 [DBG] Loaded hosting startup assembly PagueVeloz.Api
+2025-12-02 07:35:56.991 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-12-02 07:35:56.994 -03:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-12-02 07:35:56.997 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-12-02 07:35:57.012 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:35:57.017 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:35:57.464 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-02 07:35:57.467 -03:00 [INF] Hosting environment: Development
+2025-12-02 07:35:57.469 -03:00 [INF] Content root path: E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api
+2025-12-02 07:35:57.471 -03:00 [DBG] Hosting started
+2025-12-02 07:36:39.601 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-02 07:36:40.710 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:36:40.716 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:36:40.719 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:36:40.723 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:36:40.725 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:36:40.728 -03:00 [WRN] No store type was specified for the decimal property 'DestinationBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:36:40.731 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-02 07:36:40.877 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: EngineType=SqlServer 
+2025-12-02 07:36:40.901 -03:00 [DBG] Creating DbConnection.
+2025-12-02 07:36:40.966 -03:00 [DBG] Created DbConnection. (61ms).
+2025-12-02 07:36:40.974 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:36:41.375 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:36:41.389 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-02 07:36:41.400 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (13ms).
+2025-12-02 07:36:41.406 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (22ms).
+2025-12-02 07:36:41.418 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 07:36:41.480 -03:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-02 07:36:41.488 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:36:41.506 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (11ms).
+2025-12-02 07:36:41.512 -03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2025-12-02 07:36:41.515 -03:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2025-12-02 07:36:41.518 -03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (6ms).
+2025-12-02 07:36:41.522 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:36:41.527 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:36:41.530 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-02 07:36:41.576 -03:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-02 07:36:41.582 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:36:41.585 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (3ms).
+2025-12-02 07:36:41.591 -03:00 [DBG] 'PagueVelozDbContext' disposed.
+2025-12-02 07:36:41.595 -03:00 [DBG] Disposing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-02 07:36:41.599 -03:00 [DBG] Disposed connection to database '' on server '' (4ms).
+2025-12-02 07:36:41.795 -03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-12-02 07:36:41.894 -03:00 [DBG] Hosting starting
+2025-12-02 07:36:41.929 -03:00 [DBG] Middleware loaded
+2025-12-02 07:36:41.936 -03:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16513 B).
+2025-12-02 07:36:41.940 -03:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-12-02 07:36:42.050 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-02 07:36:42.054 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-02 07:36:42.070 -03:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-12-02 07:36:42.269 -03:00 [INF] Now listening on: https://localhost:7249
+2025-12-02 07:36:42.272 -03:00 [INF] Now listening on: http://localhost:5247
+2025-12-02 07:36:42.275 -03:00 [DBG] Loaded hosting startup assembly PagueVeloz.Api
+2025-12-02 07:36:42.278 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-12-02 07:36:42.280 -03:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-12-02 07:36:42.283 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-12-02 07:36:42.299 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:36:42.304 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:36:42.491 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-02 07:36:42.493 -03:00 [INF] Hosting environment: Development
+2025-12-02 07:36:42.496 -03:00 [INF] Content root path: E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api
+2025-12-02 07:36:42.499 -03:00 [DBG] Hosting started
+2025-12-02 07:36:51.060 -03:00 [DBG] Connection id "0HNHHHQQ28VI0" accepted.
+2025-12-02 07:36:51.076 -03:00 [DBG] Connection id "0HNHHHQQ28VI0" started.
+2025-12-02 07:36:51.137 -03:00 [DBG] Connection 0HNHHHQQ28VI0 established using the following protocol: "Tls13"
+2025-12-02 07:36:51.220 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-02 07:36:51.278 -03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-12-02 07:36:51.282 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:36:51.391 -03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-12-02 07:36:51.400 -03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-12-02 07:36:51.406 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 192.085ms
+2025-12-02 07:36:51.441 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-02 07:36:51.463 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-02 07:36:51.467 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 26.6415ms
+2025-12-02 07:36:51.570 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-02 07:36:51.581 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-02 07:36:51.584 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:36:51.600 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.1673ms
+2025-12-02 07:37:10.571 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 96
+2025-12-02 07:37:10.582 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:37:10.585 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:37:10.589 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:37:10.608 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="234843a4-d1db-466b-a0a4-3194516dff9e"
+2025-12-02 07:37:10.615 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHQQ28VI0:00000007
+2025-12-02 07:37:10.619 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:37:10.650 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:37:10.657 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:37:10.660 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:37:10.664 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:37:10.668 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:37:10.670 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:37:10.675 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:37:10.679 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:37:10.701 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:37:10.707 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:37:10.713 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:37:10.731 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000007": started reading request body.
+2025-12-02 07:37:10.736 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000007": done reading request body.
+2025-12-02 07:37:10.759 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:37:10.763 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:37:10.766 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:37:10.768 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:37:10.842 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:37:10.851 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:37:10.855 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:37:11.013 -03:00 [INF] [AUDIT] Conta criada com sucesso:
+2025-12-02 07:37:19.771 -03:00 [DBG] Iniciando INSERT de conta {"AccountId":"00000000-0000-0000-0000-000000000000","AccountNumber":"CC-12025","Balance":1000,"ReservedBalance":0,"CreditLimit":0,"Status":"Active","CreatedAt":"2025-12-02T10:37:11.0118573Z","UpdatedAt":"2025-12-02T10:37:11.0119509Z","RowVersion":null,"$type":"AccountModel"}
+2025-12-02 07:37:24.450 -03:00 [INF] Conta CC-12025 criada com sucesso.
+2025-12-02 07:37:29.367 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:37:29.374 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:37:29.376 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:37:29.377 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:37:29.380 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:37:29.383 -03:00 [INF] Executing OkObjectResult, writing value of type 'AccountResponseDto'.
+2025-12-02 07:37:29.396 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 18719.1669ms
+2025-12-02 07:37:29.399 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:37:29.402 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=200 TraceId=0HNHHHQQ28VI0:00000007 Elapsed=18787ms
+2025-12-02 07:37:29.408 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 200 18800ms CorrelationId="234843a4-d1db-466b-a0a4-3194516dff9e"
+2025-12-02 07:37:29.414 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 200 null application/json; charset=utf-8 18843.7515ms
+2025-12-02 07:37:35.173 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 96
+2025-12-02 07:37:35.179 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:37:35.182 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:37:35.187 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:37:35.189 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="197c36f1-806c-48be-9a99-0311c3904827"
+2025-12-02 07:37:35.193 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHQQ28VI0:00000009
+2025-12-02 07:37:35.196 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:37:35.198 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:37:35.202 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:37:35.205 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:37:35.209 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:37:35.213 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:37:35.216 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:37:35.219 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:37:35.222 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:37:35.225 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:37:35.228 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:37:35.231 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:37:35.234 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000009": started reading request body.
+2025-12-02 07:37:35.237 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000009": done reading request body.
+2025-12-02 07:37:35.240 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:37:35.242 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:37:35.245 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:37:35.249 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:37:35.253 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:37:35.256 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:37:35.258 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:37:35.283 -03:00 [INF] Idempotência encontrada para a chave CC-12025
+2025-12-02 07:37:35.294 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:37:35.299 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:37:35.300 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:37:35.301 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:37:35.303 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:37:35.305 -03:00 [INF] Executing OkObjectResult, writing value of type 'AccountResponseDto'.
+2025-12-02 07:37:35.308 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 88.2743ms
+2025-12-02 07:37:35.311 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:37:35.313 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=200 TraceId=0HNHHHQQ28VI0:00000009 Elapsed=120ms
+2025-12-02 07:37:35.316 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 200 126ms CorrelationId="197c36f1-806c-48be-9a99-0311c3904827"
+2025-12-02 07:37:35.319 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 200 null application/json; charset=utf-8 146.492ms
+2025-12-02 07:37:43.512 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 96
+2025-12-02 07:37:43.517 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:37:43.520 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:37:43.524 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:37:43.527 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="f46991df-2bf9-46df-915f-0b57bcea9f3e"
+2025-12-02 07:37:43.530 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHQQ28VI0:0000000B
+2025-12-02 07:37:43.533 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:37:43.535 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:37:43.538 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:37:43.541 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:37:43.544 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:37:43.548 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:37:43.551 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:37:43.554 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:37:43.562 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:37:43.564 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:37:43.567 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:37:43.569 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:37:43.572 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:0000000B": started reading request body.
+2025-12-02 07:37:43.576 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:0000000B": done reading request body.
+2025-12-02 07:37:43.578 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:37:43.581 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:37:43.583 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:37:43.585 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:37:43.590 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:37:43.593 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:37:43.595 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:37:43.597 -03:00 [INF] Idempotência encontrada para a chave CC-12025
+2025-12-02 07:37:43.599 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:37:43.603 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:37:43.605 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:37:43.607 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:37:43.609 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:37:43.612 -03:00 [INF] Executing OkObjectResult, writing value of type 'AccountResponseDto'.
+2025-12-02 07:37:43.615 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 60.4281ms
+2025-12-02 07:37:43.617 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:37:43.619 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=200 TraceId=0HNHHHQQ28VI0:0000000B Elapsed=89ms
+2025-12-02 07:37:43.624 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 200 97ms CorrelationId="f46991df-2bf9-46df-915f-0b57bcea9f3e"
+2025-12-02 07:37:43.629 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 200 null application/json; charset=utf-8 116.8612ms
+2025-12-02 07:38:10.611 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 96
+2025-12-02 07:38:10.621 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:38:10.624 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:38:10.627 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:38:10.631 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="1296b89c-4437-4167-b79e-e7ce14bf3733"
+2025-12-02 07:38:10.633 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHQQ28VI0:0000000D
+2025-12-02 07:38:10.638 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:38:10.640 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:38:10.644 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:38:10.648 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:38:10.651 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:38:10.655 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:38:10.658 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:38:10.662 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:38:10.665 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:38:10.668 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:38:10.672 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:38:10.676 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:38:10.679 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:0000000D": started reading request body.
+2025-12-02 07:38:10.682 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:0000000D": done reading request body.
+2025-12-02 07:38:10.685 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:38:10.687 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:38:10.690 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:38:10.693 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:38:10.697 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:38:10.699 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:38:10.701 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:38:10.846 -03:00 [ERR] Erro ao criar conta.
+System.InvalidOperationException: O AccountNumber 'CC-12025' já existe.
+   at PagueVeloz.Application.Services.AccountService.CreateAccountAsync(AccountModel account, String idempotencyKey) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Application\Services\AccountService.cs:line 41
+   at PagueVeloz.Api.Controllers.AccountController.CriarConta(AccountCreateDto dto) in E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api\Controllers\AccountController.cs:line 49
+2025-12-02 07:38:10.913 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:38:10.916 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:38:10.918 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:38:10.920 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:38:10.922 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:38:10.925 -03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-02 07:38:10.932 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 270.1078ms
+2025-12-02 07:38:10.935 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:38:10.938 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=500 TraceId=0HNHHHQQ28VI0:0000000D Elapsed=304ms
+2025-12-02 07:38:10.942 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 500 311ms CorrelationId="1296b89c-4437-4167-b79e-e7ce14bf3733"
+2025-12-02 07:38:10.946 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 500 null application/json; charset=utf-8 338.8509ms
+2025-12-02 07:39:04.280 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-02 07:39:04.292 -03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-12-02 07:39:04.294 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:39:04.296 -03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-12-02 07:39:04.298 -03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-12-02 07:39:04.301 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 20.643ms
+2025-12-02 07:39:04.335 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-02 07:39:04.344 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-02 07:39:04.347 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 11.8093ms
+2025-12-02 07:39:04.478 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-02 07:39:04.486 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-02 07:39:04.488 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:39:04.493 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.6433ms
+2025-12-02 07:39:22.928 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 95
+2025-12-02 07:39:22.934 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:39:22.936 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:39:22.940 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:22.942 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="dbe83ede-8708-4ac4-930c-1260a43efc82"
+2025-12-02 07:39:22.946 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHQQ28VI0:00000015
+2025-12-02 07:39:22.949 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:22.952 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:39:22.956 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:39:22.960 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:39:22.963 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:39:22.968 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:39:22.971 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:39:22.975 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:39:22.978 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:39:22.980 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:39:22.984 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:39:22.988 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:39:22.991 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000015": started reading request body.
+2025-12-02 07:39:22.994 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000015": done reading request body.
+2025-12-02 07:39:22.997 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:39:23.000 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:23.003 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:23.006 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:39:23.009 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:23.012 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:39:23.014 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:39:23.021 -03:00 [INF] [AUDIT] Conta criada com sucesso:
+2025-12-02 07:39:25.910 -03:00 [DBG] Iniciando INSERT de conta {"AccountId":"00000000-0000-0000-0000-000000000000","AccountNumber":"CC-5555","Balance":1000,"ReservedBalance":0,"CreditLimit":0,"Status":"Active","CreatedAt":"2025-12-02T10:39:23.0214072Z","UpdatedAt":"2025-12-02T10:39:23.0214073Z","RowVersion":null,"$type":"AccountModel"}
+2025-12-02 07:39:25.932 -03:00 [INF] Conta CC-5555 criada com sucesso.
+2025-12-02 07:39:25.938 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:39:25.944 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:39:25.946 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:39:25.952 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:39:25.955 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:39:25.958 -03:00 [INF] Executing OkObjectResult, writing value of type 'AccountResponseDto'.
+2025-12-02 07:39:25.962 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 2986.4838ms
+2025-12-02 07:39:25.965 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:25.969 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=200 TraceId=0HNHHHQQ28VI0:00000015 Elapsed=3022ms
+2025-12-02 07:39:25.973 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 200 3030ms CorrelationId="dbe83ede-8708-4ac4-930c-1260a43efc82"
+2025-12-02 07:39:25.976 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 200 null application/json; charset=utf-8 3048.8944ms
+2025-12-02 07:39:30.995 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 95
+2025-12-02 07:39:31.001 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:39:31.004 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:39:31.009 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:31.011 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="dba5d069-c111-4a3b-bddf-c226e5e2ef60"
+2025-12-02 07:39:31.015 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHQQ28VI0:00000017
+2025-12-02 07:39:31.018 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:31.021 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:39:31.025 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:39:31.028 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:39:31.031 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:39:31.036 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:39:31.039 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:39:31.043 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:39:31.045 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:39:31.047 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:39:31.050 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:39:31.054 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:39:31.056 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000017": started reading request body.
+2025-12-02 07:39:31.059 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000017": done reading request body.
+2025-12-02 07:39:31.061 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:39:31.063 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:31.066 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:31.069 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:39:31.072 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:31.075 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:39:31.076 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:39:31.079 -03:00 [INF] Idempotência encontrada para a chave CC-5555
+2025-12-02 07:39:31.081 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:39:31.086 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:39:31.088 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:39:31.090 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:39:31.092 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:39:31.095 -03:00 [INF] Executing OkObjectResult, writing value of type 'AccountResponseDto'.
+2025-12-02 07:39:31.098 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 55.4135ms
+2025-12-02 07:39:31.102 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:31.104 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=200 TraceId=0HNHHHQQ28VI0:00000017 Elapsed=89ms
+2025-12-02 07:39:31.109 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 200 97ms CorrelationId="dba5d069-c111-4a3b-bddf-c226e5e2ef60"
+2025-12-02 07:39:31.112 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 200 null application/json; charset=utf-8 117.2284ms
+2025-12-02 07:39:36.752 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 95
+2025-12-02 07:39:36.757 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:39:36.760 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:39:36.763 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:36.767 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="9f914a4c-8ef1-4d56-8f12-e263b6926231"
+2025-12-02 07:39:36.771 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHQQ28VI0:00000019
+2025-12-02 07:39:36.774 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:36.776 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:39:36.781 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:39:36.784 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:39:36.787 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:39:36.790 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:39:36.794 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:39:36.798 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:39:36.802 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:39:36.805 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:39:36.807 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:39:36.810 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:39:36.814 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000019": started reading request body.
+2025-12-02 07:39:36.817 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000019": done reading request body.
+2025-12-02 07:39:36.820 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:39:36.823 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:36.827 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:36.830 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:39:36.834 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:36.836 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:39:36.838 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:39:36.840 -03:00 [INF] Idempotência encontrada para a chave CC-5555
+2025-12-02 07:39:36.843 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:39:36.850 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:39:36.852 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:39:36.853 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:39:36.855 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:39:36.858 -03:00 [INF] Executing OkObjectResult, writing value of type 'AccountResponseDto'.
+2025-12-02 07:39:36.861 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 63.3056ms
+2025-12-02 07:39:36.864 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:36.867 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=200 TraceId=0HNHHHQQ28VI0:00000019 Elapsed=96ms
+2025-12-02 07:39:36.872 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 200 105ms CorrelationId="9f914a4c-8ef1-4d56-8f12-e263b6926231"
+2025-12-02 07:39:36.878 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 200 null application/json; charset=utf-8 126.1618ms
+2025-12-02 07:39:56.394 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 95
+2025-12-02 07:39:56.400 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:39:56.403 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:39:56.406 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:56.409 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="8ccddb70-6d1b-4286-8dce-86ae7564975a"
+2025-12-02 07:39:56.413 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHQQ28VI0:0000001B
+2025-12-02 07:39:56.416 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:56.418 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:39:56.423 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:39:56.426 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:39:56.429 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:39:56.432 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:39:56.436 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:39:56.440 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:39:56.443 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:39:56.445 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:39:56.448 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:39:56.452 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:39:56.455 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:0000001B": started reading request body.
+2025-12-02 07:39:56.458 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:0000001B": done reading request body.
+2025-12-02 07:39:56.460 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:39:56.462 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:56.464 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:56.467 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:39:56.471 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:39:56.473 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:39:56.475 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:39:56.477 -03:00 [INF] Idempotência encontrada para a chave CC-5555
+2025-12-02 07:39:56.478 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:39:56.483 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:39:56.485 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:39:56.487 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:39:56.489 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:39:56.492 -03:00 [INF] Executing OkObjectResult, writing value of type 'AccountResponseDto'.
+2025-12-02 07:39:56.494 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 54.304ms
+2025-12-02 07:39:56.497 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:39:56.500 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=200 TraceId=0HNHHHQQ28VI0:0000001B Elapsed=87ms
+2025-12-02 07:39:56.505 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 200 95ms CorrelationId="8ccddb70-6d1b-4286-8dce-86ae7564975a"
+2025-12-02 07:39:56.510 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 200 null application/json; charset=utf-8 115.4697ms
+2025-12-02 07:40:03.316 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7249/api/Account/CriarConta - application/json 95
+2025-12-02 07:40:03.322 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/CriarConta'
+2025-12-02 07:40:03.325 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)' with route pattern 'api/Account/CriarConta' is valid for the request path '/api/Account/CriarConta'
+2025-12-02 07:40:03.328 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:40:03.331 -03:00 [INF] [REQUEST] POST /api/Account/CriarConta CorrelationId="4e1b0d1b-f3f4-4c19-b6aa-0d16acda6d78"
+2025-12-02 07:40:03.334 -03:00 [INF] Request started: POST /api/Account/CriarConta TraceId=0HNHHHQQ28VI0:0000001D
+2025-12-02 07:40:03.338 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:40:03.340 -03:00 [INF] Route matched with {action = "CriarConta", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CriarConta(PagueVeloz.Api.DTOs.AccountCreateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:40:03.344 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:40:03.347 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:40:03.350 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:40:03.355 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:40:03.358 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:40:03.361 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:40:03.365 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:40:03.367 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:40:03.371 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' using the name '' in request data ...
+2025-12-02 07:40:03.374 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:40:03.376 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:0000001D": started reading request body.
+2025-12-02 07:40:03.379 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:0000001D": done reading request body.
+2025-12-02 07:40:03.382 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Api.DTOs.AccountCreateDto'
+2025-12-02 07:40:03.385 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:40:03.389 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:40:03.391 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto' ...
+2025-12-02 07:40:03.394 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Api.DTOs.AccountCreateDto'.
+2025-12-02 07:40:03.397 -03:00 [INF] Recebida solicitação de criação de conta.
+2025-12-02 07:40:03.399 -03:00 [INF] Iniciando abertura de conta.
+2025-12-02 07:40:03.403 -03:00 [INF] [AUDIT] Conta criada com sucesso:
+2025-12-02 07:40:07.834 -03:00 [DBG] Iniciando INSERT de conta {"AccountId":"00000000-0000-0000-0000-000000000000","AccountNumber":"CC-1111","Balance":1000,"ReservedBalance":0,"CreditLimit":0,"Status":"Active","CreatedAt":"2025-12-02T10:40:03.4033859Z","UpdatedAt":"2025-12-02T10:40:03.4033861Z","RowVersion":null,"$type":"AccountModel"}
+2025-12-02 07:40:07.849 -03:00 [INF] Conta CC-1111 criada com sucesso.
+2025-12-02 07:40:07.853 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:40:07.857 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:40:07.859 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:40:07.860 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:40:07.862 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:40:07.864 -03:00 [INF] Executing OkObjectResult, writing value of type 'AccountResponseDto'.
+2025-12-02 07:40:07.868 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api) in 4506.4747ms
+2025-12-02 07:40:07.871 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.CriarConta (PagueVeloz.Api)'
+2025-12-02 07:40:07.873 -03:00 [INF] Request finished: POST /api/Account/CriarConta StatusCode=200 TraceId=0HNHHHQQ28VI0:0000001D Elapsed=4539ms
+2025-12-02 07:40:07.877 -03:00 [INF] [RESPONSE] POST /api/Account/CriarConta 200 4546ms CorrelationId="4e1b0d1b-f3f4-4c19-b6aa-0d16acda6d78"
+2025-12-02 07:40:07.881 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7249/api/Account/CriarConta - 200 null application/json; charset=utf-8 4565.0488ms
+2025-12-02 07:40:47.359 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/api/Account/BuscarConta/CC-1111 - null null
+2025-12-02 07:40:47.365 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/BuscarConta/CC-1111'
+2025-12-02 07:40:47.368 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.GetById (PagueVeloz.Api)' with route pattern 'api/Account/BuscarConta/{AccountNumber}' is valid for the request path '/api/Account/BuscarConta/CC-1111'
+2025-12-02 07:40:47.372 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.GetById (PagueVeloz.Api)'
+2025-12-02 07:40:47.375 -03:00 [INF] [REQUEST] GET /api/Account/BuscarConta/CC-1111 CorrelationId="2a9acae4-d282-43c1-a79f-a14bfd581317"
+2025-12-02 07:40:47.378 -03:00 [INF] Request started: GET /api/Account/BuscarConta/CC-1111 TraceId=0HNHHHQQ28VI0:0000001F
+2025-12-02 07:40:47.382 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.GetById (PagueVeloz.Api)'
+2025-12-02 07:40:47.390 -03:00 [INF] Route matched with {action = "GetById", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.String) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:40:47.395 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:40:47.398 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:40:47.401 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:40:47.405 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:40:47.409 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:40:47.411 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:40:47.415 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:40:47.417 -03:00 [DBG] Attempting to bind parameter 'AccountNumber' of type 'System.String' ...
+2025-12-02 07:40:47.420 -03:00 [DBG] Attempting to bind parameter 'AccountNumber' of type 'System.String' using the name 'AccountNumber' in request data ...
+2025-12-02 07:40:47.424 -03:00 [DBG] Done attempting to bind parameter 'AccountNumber' of type 'System.String'.
+2025-12-02 07:40:47.427 -03:00 [DBG] Done attempting to bind parameter 'AccountNumber' of type 'System.String'.
+2025-12-02 07:40:47.430 -03:00 [DBG] Attempting to validate the bound parameter 'AccountNumber' of type 'System.String' ...
+2025-12-02 07:40:47.432 -03:00 [DBG] Done attempting to validate the bound parameter 'AccountNumber' of type 'System.String'.
+2025-12-02 07:40:47.440 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:40:47.445 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:40:47.447 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:40:47.448 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:40:47.450 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:40:47.452 -03:00 [INF] Executing OkObjectResult, writing value of type 'PagueVeloz.Domain.Entities.AccountModel'.
+2025-12-02 07:40:47.457 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.GetById (PagueVeloz.Api) in 45.7869ms
+2025-12-02 07:40:47.461 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.GetById (PagueVeloz.Api)'
+2025-12-02 07:40:47.463 -03:00 [INF] Request finished: GET /api/Account/BuscarConta/CC-1111 StatusCode=200 TraceId=0HNHHHQQ28VI0:0000001F Elapsed=85ms
+2025-12-02 07:40:47.467 -03:00 [INF] [RESPONSE] GET /api/Account/BuscarConta/CC-1111 200 91ms CorrelationId="2a9acae4-d282-43c1-a79f-a14bfd581317"
+2025-12-02 07:40:47.471 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/api/Account/BuscarConta/CC-1111 - 200 null application/json; charset=utf-8 112.5572ms
+2025-12-02 07:41:41.603 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-02 07:41:41.609 -03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-12-02 07:41:41.613 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:41:41.616 -03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-12-02 07:41:41.618 -03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-12-02 07:41:41.620 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 16.3616ms
+2025-12-02 07:41:41.681 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-02 07:41:41.689 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-02 07:41:41.692 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 11.2396ms
+2025-12-02 07:41:41.930 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-02 07:41:41.937 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-02 07:41:41.940 -03:00 [DBG] Request did not match any endpoints
+2025-12-02 07:41:41.942 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:41:41.946 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-02 07:41:41.953 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.0921ms
+2025-12-02 07:41:58.142 -03:00 [INF] Request starting HTTP/2 PUT https://localhost:7249/api/Account/AtualizarConta/CC-1111 - application/json 84
+2025-12-02 07:41:58.158 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/AtualizarConta/CC-1111'
+2025-12-02 07:41:58.161 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.Update (PagueVeloz.Api)' with route pattern 'api/Account/AtualizarConta/{AccountNumber}' is valid for the request path '/api/Account/AtualizarConta/CC-1111'
+2025-12-02 07:41:58.164 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.Update (PagueVeloz.Api)'
+2025-12-02 07:41:58.167 -03:00 [INF] [REQUEST] PUT /api/Account/AtualizarConta/CC-1111 CorrelationId="ef20f428-031d-439e-b241-946657e24ac2"
+2025-12-02 07:41:58.170 -03:00 [INF] Request started: PUT /api/Account/AtualizarConta/CC-1111 TraceId=0HNHHHQQ28VI0:00000027
+2025-12-02 07:41:58.173 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.Update (PagueVeloz.Api)'
+2025-12-02 07:41:58.180 -03:00 [INF] Route matched with {action = "Update", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String, PagueVeloz.Application.DTOs.AccountUpdateDto) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-02 07:41:58.184 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-02 07:41:58.187 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-02 07:41:58.190 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-02 07:41:58.194 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-02 07:41:58.198 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-02 07:41:58.201 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:41:58.204 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-02 07:41:58.207 -03:00 [DBG] Attempting to bind parameter 'AccountNumber' of type 'System.String' ...
+2025-12-02 07:41:58.210 -03:00 [DBG] Attempting to bind parameter 'AccountNumber' of type 'System.String' using the name 'AccountNumber' in request data ...
+2025-12-02 07:41:58.213 -03:00 [DBG] Done attempting to bind parameter 'AccountNumber' of type 'System.String'.
+2025-12-02 07:41:58.216 -03:00 [DBG] Done attempting to bind parameter 'AccountNumber' of type 'System.String'.
+2025-12-02 07:41:58.219 -03:00 [DBG] Attempting to validate the bound parameter 'AccountNumber' of type 'System.String' ...
+2025-12-02 07:41:58.222 -03:00 [DBG] Done attempting to validate the bound parameter 'AccountNumber' of type 'System.String'.
+2025-12-02 07:41:58.224 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Application.DTOs.AccountUpdateDto' ...
+2025-12-02 07:41:58.227 -03:00 [DBG] Attempting to bind parameter 'dto' of type 'PagueVeloz.Application.DTOs.AccountUpdateDto' using the name '' in request data ...
+2025-12-02 07:41:58.230 -03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-12-02 07:41:58.234 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000027": started reading request body.
+2025-12-02 07:41:58.236 -03:00 [DBG] Connection id "0HNHHHQQ28VI0", Request id "0HNHHHQQ28VI0:00000027": done reading request body.
+2025-12-02 07:41:58.240 -03:00 [DBG] JSON input formatter succeeded, deserializing to type 'PagueVeloz.Application.DTOs.AccountUpdateDto'
+2025-12-02 07:41:58.242 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Application.DTOs.AccountUpdateDto'.
+2025-12-02 07:41:58.244 -03:00 [DBG] Done attempting to bind parameter 'dto' of type 'PagueVeloz.Application.DTOs.AccountUpdateDto'.
+2025-12-02 07:41:58.247 -03:00 [DBG] Attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Application.DTOs.AccountUpdateDto' ...
+2025-12-02 07:41:58.251 -03:00 [DBG] Done attempting to validate the bound parameter 'dto' of type 'PagueVeloz.Application.DTOs.AccountUpdateDto'.
+2025-12-02 07:41:58.271 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-02 07:41:58.276 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-02 07:41:58.279 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-02 07:41:58.281 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-02 07:41:58.282 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-02 07:41:58.286 -03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`7[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-02 07:41:58.295 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.Update (PagueVeloz.Api) in 94.3445ms
+2025-12-02 07:41:58.298 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.Update (PagueVeloz.Api)'
+2025-12-02 07:41:58.301 -03:00 [INF] Request finished: PUT /api/Account/AtualizarConta/CC-1111 StatusCode=200 TraceId=0HNHHHQQ28VI0:00000027 Elapsed=131ms
+2025-12-02 07:41:58.306 -03:00 [INF] [RESPONSE] PUT /api/Account/AtualizarConta/CC-1111 200 138ms CorrelationId="ef20f428-031d-439e-b241-946657e24ac2"
+2025-12-02 07:41:58.310 -03:00 [INF] Request finished HTTP/2 PUT https://localhost:7249/api/Account/AtualizarConta/CC-1111 - 200 null application/json; charset=utf-8 167.5646ms

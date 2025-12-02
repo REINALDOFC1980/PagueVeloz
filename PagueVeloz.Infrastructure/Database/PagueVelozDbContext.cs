@@ -20,28 +20,33 @@ namespace PagueVeloz.TransactionProcessor.Infrastructure.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Configurações da entidade Account
             modelBuilder.Entity<AccountModel>(entity =>
             {
                 entity.HasKey(e => e.AccountId);
+
+                entity.Property(e => e.AccountNumber)
+                      .IsRequired();
+
+                entity.HasIndex(e => e.AccountNumber)
+                      .IsUnique(); 
 
                 entity.Property(e => e.Balance).IsRequired();
                 entity.Property(e => e.ReservedBalance).IsRequired();
                 entity.Property(e => e.CreditLimit).IsRequired();
                 entity.Property(e => e.RowVersion)
-                       .IsRowVersion()     
-                       .IsRequired();
-
-                entity.Property(e => e.Status)
-                      .HasConversion<string>() 
+                      .IsRowVersion()
                       .IsRequired();
 
-             
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .IsRequired();
+
                 entity.HasMany<TransactionModel>()
                       .WithOne()
                       .HasForeignKey(t => t.AccountId)
                       .OnDelete(DeleteBehavior.Cascade);
             });
+
 
             // Configurações da entidade Transaction
             modelBuilder.Entity<TransactionModel>(entity =>
@@ -53,10 +58,14 @@ namespace PagueVeloz.TransactionProcessor.Infrastructure.Database
                       .IsRequired();
 
                 entity.Property(e => e.AccountId).IsRequired();
+
+                // Conta de destino (opcional)
+                entity.Property(e => e.DestinationAccountId).IsRequired(false);
+
                 entity.Property(e => e.Amount).IsRequired();
                 entity.Property(e => e.Currency).HasMaxLength(3).IsRequired();
                 entity.Property(e => e.ReferenceId).HasMaxLength(100).IsRequired();
-                entity.HasIndex(t => t.ReferenceId).IsUnique(); // garante idempotência
+                entity.HasIndex(t => t.ReferenceId).IsUnique();
 
                 entity.Property(e => e.Status)
                       .HasConversion<string>()
@@ -64,10 +73,14 @@ namespace PagueVeloz.TransactionProcessor.Infrastructure.Database
 
                 entity.Property(e => e.Balance).IsRequired();
                 entity.Property(e => e.ReservedBalance).IsRequired();
-                entity.Property(e => e.AvailableBalance).IsRequired();
+
+                // Saldo da conta destino (opcional)
+                entity.Property(e => e.DestinationBalance).IsRequired(false);
+
                 entity.Property(e => e.Timestamp).IsRequired();
                 entity.Property(e => e.ErrorMessage).HasMaxLength(500);
             });
+
 
             // Configurações da entidade IdempotencyRecord
             modelBuilder.Entity<IdempotencyRecord>(entity =>

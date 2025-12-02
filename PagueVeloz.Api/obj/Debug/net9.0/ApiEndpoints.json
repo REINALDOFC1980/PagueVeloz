@@ -8,13 +8,18 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "accountId",
-        "Type": "System.Guid",
-        "IsRequired": true
+        "Name": "AccountNumber",
+        "Type": "System.String",
+        "IsRequired": false
       },
       {
         "Name": "dto",
         "Type": "PagueVeloz.Application.DTOs.AccountUpdateDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "accountId",
+        "Type": "",
         "IsRequired": true
       }
     ],
@@ -23,14 +28,14 @@
   {
     "ContainingType": "PagueVeloz.Api.Controllers.AccountController",
     "Method": "GetById",
-    "RelativePath": "api/Account/BuscarConta/{accountId}",
+    "RelativePath": "api/Account/BuscarConta/{AccountNumber}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "accountId",
-        "Type": "System.Guid",
+        "Name": "AccountNumber",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

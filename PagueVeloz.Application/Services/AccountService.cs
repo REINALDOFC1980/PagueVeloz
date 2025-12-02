@@ -35,6 +35,12 @@ namespace PagueVeloz.Application.Services
                 return System.Text.Json.JsonSerializer.Deserialize<AccountModel>(savedResponse)!;
             }
 
+            var existingAccount = await _accountRepository.GetAccountByIdAsync(account.AccountNumber);
+            if (existingAccount != null)
+            {
+                throw new InvalidOperationException($"O AccountNumber '{account.AccountNumber}' já existe.");
+            }
+
             try
             {
                 account.Status = AccountStatus.Active;
@@ -61,12 +67,12 @@ namespace PagueVeloz.Application.Services
         }
 
 
-        public async Task<AccountModel> GetAccountByIdAsync(Guid accountId)
+        public async Task<AccountModel> GetAccountByIdAsync(string AccountNumber)
         {
-            var account = await _accountRepository.GetAccountByIdAsync(accountId);
+            var account = await _accountRepository.GetAccountByIdAsync(AccountNumber);
             if (account == null)
             {
-                throw new Exception($"Conta com Id {accountId} não encontrada.");
+                throw new Exception($"Conta com Id {AccountNumber} não encontrada.");
             }
             return account;
         }

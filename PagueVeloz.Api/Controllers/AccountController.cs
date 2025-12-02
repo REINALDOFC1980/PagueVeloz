@@ -28,7 +28,7 @@ namespace PagueVeloz.Api.Controllers
                 Log.Information("Recebida solicitação de criação de conta.");
 
                 
-                string idempotencyKey = Request.Headers["Idempotency-Key"];
+                string idempotencyKey = dto.AccountNumber;
 
                 if (string.IsNullOrEmpty(idempotencyKey))
                 {                
@@ -39,6 +39,7 @@ namespace PagueVeloz.Api.Controllers
                 // Mapeia DTO para Model
                 var account = new AccountModel
                 {
+                    AccountNumber = dto.AccountNumber,
                     Balance = dto.Balance,
                     CreditLimit = dto.CreditLimit,
                     ReservedBalance = 0
@@ -50,6 +51,7 @@ namespace PagueVeloz.Api.Controllers
                 var response = new AccountResponseDto
                 {
                     AccountId = createdAccount.AccountId,
+                    AccountNumber = createdAccount.AccountNumber,
                     Balance = createdAccount.Balance,
                     ReservedBalance = createdAccount.ReservedBalance,
                     CreditLimit = createdAccount.CreditLimit,
@@ -69,17 +71,17 @@ namespace PagueVeloz.Api.Controllers
         }
     
 
-        [HttpGet("BuscarConta/{accountId}")]
-        public async Task<IActionResult> GetById(Guid accountId)
+        [HttpGet("BuscarConta/{AccountNumber}")]
+        public async Task<IActionResult> GetById(string AccountNumber)
         {
-            var account = await _serviceAccount.GetAccountByIdAsync(accountId);
+            var account = await _serviceAccount.GetAccountByIdAsync(AccountNumber);
             return Ok(account);
         }
 
-        [HttpPut("AtualizarConta/{accountId}")]
-        public async Task<IActionResult> Update(Guid accountId, AccountUpdateDto dto)
+        [HttpPut("AtualizarConta/{AccountNumber}")]
+        public async Task<IActionResult> Update(string AccountNumber, AccountUpdateDto dto)
         {
-            var account = await _serviceAccount.GetAccountByIdAsync(accountId);
+            var account = await _serviceAccount.GetAccountByIdAsync(AccountNumber);
 
             account.Balance = dto.Balance;
             account.ReservedBalance = dto.ReservedBalance;
