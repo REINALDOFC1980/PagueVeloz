@@ -21,7 +21,6 @@ namespace PagueVeloz.Domain.Entities
         public AccountStatus Status { get; set; } = AccountStatus.Active;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
-
         public byte[] RowVersion { get; set; }
     }
 }

@@ -9,6 +9,6 @@ namespace PagueVeloz.Application.Interfaces
 {
     public interface ITransactionService
     {
-        Task<TransactionModel> ProcessTransactionAsync(TransactionModel dto);
+        Task<TransactionModel> ProcessTransactionAsync(TransactionModel dto, string idempotencyKey);
     }
 }

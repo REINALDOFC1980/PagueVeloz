@@ -23,13 +23,10 @@ namespace PagueVeloz.Api.Controllers
         [HttpPost("CriarConta")]
         public async Task<IActionResult> CriarConta([FromBody] AccountCreateDto dto)
         {
-            try
-            {
+            
                 Log.Information("Recebida solicitação de criação de conta.");
 
-                
-                string idempotencyKey = dto.AccountNumber;
-
+                string idempotencyKey = Request.Headers["Idempotency-Key"];
                 if (string.IsNullOrEmpty(idempotencyKey))
                 {                
                     idempotencyKey = Guid.NewGuid().ToString();
@@ -58,16 +55,12 @@ namespace PagueVeloz.Api.Controllers
                     Status = createdAccount.Status.ToString(),
                     CreatedAt = createdAccount.CreatedAt,
                     UpdatedAt = createdAccount.UpdatedAt
+
                 };
 
 
                 return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex, "Erro ao criar conta.");
-                return StatusCode(500, new { message = ex.Message });
-            }
+            
         }
     
 

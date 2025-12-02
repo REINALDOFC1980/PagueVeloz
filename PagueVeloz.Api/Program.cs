@@ -143,7 +143,7 @@ app.UseMiddleware<RequestLog>();
 app.MapPrometheusScrapingEndpoint();
 
 // Endpoints de health check
-app.MapHealthChecks("/health");         // Verifica o serviço geral
+app.MapHealthChecks("/health");        
 app.MapHealthChecks("/health/ready");
 
 app.UseMiddleware<RequestTimingMiddleware>();

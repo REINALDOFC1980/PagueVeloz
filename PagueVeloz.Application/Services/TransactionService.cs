@@ -3,8 +3,10 @@ using PagueVeloz.Application.Interfaces;
 using PagueVeloz.Domain.Entities;
 using PagueVeloz.Infrastructure.Repositories.Account;
 using PagueVeloz.Infrastructure.Repositories.Transactions;
+using Serilog;
 using System;
 using System.Data;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace PagueVeloz.Application.Services
@@ -13,97 +15,106 @@ namespace PagueVeloz.Application.Services
     {
         private readonly IAccountRepository _accountRepository;
         private readonly ITransactionRepository _transactionRepository;
+        private readonly IIdempotencyService _idempotencyService;
+        private readonly IAuditService _serviceAudi;
         private readonly IDbConnection _connection;
 
         public TransactionService(
             IAccountRepository accountRepository,
             ITransactionRepository transactionRepository,
+            IIdempotencyService idempotencyService,
+            IAuditService serviceAudi,
             IDbConnection connection)
         {
             _accountRepository = accountRepository;
             _transactionRepository = transactionRepository;
+            _idempotencyService = idempotencyService;
+            _serviceAudi = serviceAudi;
             _connection = connection;
         }
 
-        public async Task<TransactionModel> ProcessTransactionAsync(TransactionModel dto)
+        public async Task<TransactionModel> ProcessTransactionAsync(TransactionModel dto, string idempotencyKey)
         {
-            // -------------------------------
-            // Idempotência – antes da transação
-            // -------------------------------
-            if (await _transactionRepository.ExistsByReferenceIdAsync(dto.ReferenceId))
+            var retryPolicy = RetryPolicyProvider.GetRetryPolicy();
+
+            return await retryPolicy.ExecuteAsync(async () =>
             {
-                return new TransactionModel
+
+                Log.Information("Iniciando a movimentação de conta.", dto.AccountId);
+
+                if (await _transactionRepository.ExistsByReferenceIdAsync(dto.ReferenceId))
                 {
-                    TransactionId = Guid.Empty,
-                    Status = TransactionStatus.Failed,
-                    Message = "Transação já processada"
-                };
-            }
+                    var savedResponse = await _idempotencyService.GetSavedResponseAsync(dto.ReferenceId);
+                    Log.Information("Idempotência encontrada para a chave {IdempotencyKey}", dto.ReferenceId);
 
+                    var contaexistente = JsonSerializer.Deserialize<TransactionModel>(savedResponse)!;
+                    return contaexistente;
 
-          
+                }
+
                 // Carrega a conta dentro da transação
                 var account = await _accountRepository.GetAccountByIdAsync(dto.AccountId);
                 if (account == null)
-                    throw new Exception("Conta não encontrada");
+                    throw new InvalidOperationException($"Numero da conta não existe!");
 
-            if (_connection.State != ConnectionState.Open)
-                _connection.Open();
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
 
-            using var transaction = _connection.BeginTransaction();
-
-            try
-            {
-
-                // Executa operação
-                TransactionModel result = dto.Operation switch
+                using var transaction = _connection.BeginTransaction();
+                try
                 {
-                    TransactionType.Credit => Credit(account, dto.Amount),
-                    TransactionType.Debit => Debit(account, dto.Amount),
-                    TransactionType.Reserve => Reserve(account, dto.Amount),
-                    TransactionType.Capture => Capture(account, dto.Amount),
-                    TransactionType.Reversal => Reversal(account, dto.Amount),
-                    TransactionType.Transfer => await TransferAsync(account, dto.DestinationAccountId.Value, dto.Amount, transaction),
-                    _ => throw new Exception("Operação inválida")
-                };
 
-                // Atualiza conta principal
-                await _accountRepository.UpdateAccountAsync(account, transaction);
+                    // Executa operação
+                    TransactionModel result = dto.Operation switch
+                    {
+                        TransactionType.Credit => Credit(account, dto.Amount),
+                        TransactionType.Debit => Debit(account, dto.Amount),
+                        TransactionType.Reserve => Reserve(account, dto.Amount),
+                        TransactionType.Capture => Capture(account, dto.Amount),
+                        TransactionType.Reversal => Reversal(account, dto.Amount),
+                        TransactionType.Transfer => await TransferAsync(account, dto.DestinationAccountId.Value, dto.Amount, transaction),
+                        _ => throw new InvalidOperationException("Operação inválida")
+                    };
 
-                // Persiste a transação
-                var transactionToSave = new TransactionModel
+                    // Atualiza conta principal
+                    await _accountRepository.UpdateAccountAsync(account, transaction);
+
+
+                    // Persiste a transação
+                    var transactionToSave = new TransactionModel
+                    {
+                        TransactionId = Guid.NewGuid(),
+                        Operation = dto.Operation,
+                        AccountId = dto.AccountId,
+                        DestinationAccountId = dto.DestinationAccountId,
+                        Amount = dto.Amount,
+                        Currency = dto.Currency,
+                        ReferenceId = dto.ReferenceId,
+                        Status = result.Status,
+                        CreatedAt = DateTime.UtcNow,
+                        Balance = result.Balance,
+                        AvailableBalance = result.AvailableBalance,
+                        Message = result.Message
+                    };
+
+                    _serviceAudi.LogTransaction(transactionToSave);
+
+                    await _transactionRepository.SaveAsync(transactionToSave, transaction);
+
+                    transaction.Commit();
+                    return result;
+                }
+                catch
                 {
-                    TransactionId = Guid.NewGuid(),
-                    Operation = dto.Operation,
-                    AccountId = dto.AccountId,
-                    DestinationAccountId = dto.DestinationAccountId,
-                    Amount = dto.Amount,
-                    Currency = dto.Currency,
-                    ReferenceId = dto.ReferenceId,
-                    Status = result.Status,
-                    CreatedAt = DateTime.UtcNow,
-                    Balance = result.Balance,
-                    AvailableBalance = result.AvailableBalance,
-                    Message = result.Message
-                };
-
-                await _transactionRepository.SaveAsync(transactionToSave, transaction);
-
-                transaction.Commit();
-                return result;
-            }
-            catch
-            {
-                transaction.Rollback();
-                throw;
-            }
+                    transaction.Rollback();
+                    throw;
+                }
+            });
         }
 
 
-        // -----------------------------
-        // OPERACOES FINANCEIRAS
-        // -----------------------------
 
+        #region Operações Financeiras
         private TransactionModel Credit(AccountModel account, decimal amount)
         {
             account.Balance += amount;
@@ -155,7 +166,12 @@ namespace PagueVeloz.Application.Services
         {
             var destination = await _accountRepository.GetAccountByIdAsync(destinationId);
             if (destination == null)
-                return FailResult(source, "Conta destino não encontrada");
+            {
+                Log.Warning("Conta destino não encontrada. SourceId: {SourceId}, DestinationId: {DestinationId}",
+                source.AccountId, destinationId);
+                throw new InvalidOperationException("Conta destino não encontrada!");
+            }
+
 
             decimal available = source.Balance - source.ReservedBalance + source.CreditLimit;
 
@@ -174,10 +190,9 @@ namespace PagueVeloz.Application.Services
         }
 
 
-        // -----------------------------
-        // RESULTADOS PADRONIZADOS
-        // -----------------------------
+        #endregion
 
+        #region Resultados
         private TransactionModel SuccessResult(AccountModel account, string message) =>
             new()
             {
@@ -199,5 +214,7 @@ namespace PagueVeloz.Application.Services
                 Message = message,
                 CreatedAt = DateTime.UtcNow
             };
+        #endregion
     }
 }
+

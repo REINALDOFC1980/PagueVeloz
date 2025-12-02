@@ -14,5 +14,16 @@ namespace PagueVeloz.Infrastructure.Services
                .ForContext("CreatedAt", account.CreatedAt)
                .Information("[AUDIT] Conta criada com sucesso:");
         }
+
+        public void LogTransaction(TransactionModel transaction)
+        {
+            Log.ForContext("TransactionId", transaction.TransactionId)
+               .ForContext("AccountId", transaction.AccountId)
+               .ForContext("DestinationAccountId", transaction.DestinationAccountId)
+               .ForContext("Operation", transaction.Operation)
+               .ForContext("Amount", transaction.Amount)
+               .ForContext("Currency", transaction.Currency)
+               .Information("[AUDIT] Transação processada com sucesso:");
+        }
     }
 }

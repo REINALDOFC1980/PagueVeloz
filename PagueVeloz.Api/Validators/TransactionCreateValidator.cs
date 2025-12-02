@@ -26,7 +26,9 @@ namespace PagueVeloz.Api.Validators
 
             RuleFor(x => x.Currency)
                 .NotEmpty()
-                .WithMessage("A moeda é obrigatória.");
+                .WithMessage("A moeda é obrigatória.")
+                .Length(3)
+                .WithMessage("A moeda deve ter exatamente 3 caracteres.");
 
             RuleFor(x => x.ReferenceId)
                 .NotEmpty()

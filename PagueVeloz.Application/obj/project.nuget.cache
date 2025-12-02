@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QYCapfBVLuc=",
+  "dgSpecHash": "u+CG19oG9NM=",
   "success": true,
   "projectFilePath": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\PagueVeloz.Application.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,8 @@
     "E:\\NugetCache\\microsoft.extensions.logging.abstractions\\9.0.11\\microsoft.extensions.logging.abstractions.9.0.11.nupkg.sha512",
     "E:\\NugetCache\\microsoft.extensions.options\\9.0.11\\microsoft.extensions.options.9.0.11.nupkg.sha512",
     "E:\\NugetCache\\microsoft.extensions.primitives\\9.0.11\\microsoft.extensions.primitives.9.0.11.nupkg.sha512",
+    "E:\\NugetCache\\polly\\8.6.5\\polly.8.6.5.nupkg.sha512",
+    "E:\\NugetCache\\polly.core\\8.6.5\\polly.core.8.6.5.nupkg.sha512",
     "E:\\NugetCache\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
     "E:\\NugetCache\\serilog.aspnetcore\\8.0.1\\serilog.aspnetcore.8.0.1.nupkg.sha512",
     "E:\\NugetCache\\serilog.enrichers.environment\\2.2.0\\serilog.enrichers.environment.2.2.0.nupkg.sha512",

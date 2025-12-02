@@ -202,6 +202,10 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[12.1.0, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[8.6.5, )"
             }
           },
           "imports": [

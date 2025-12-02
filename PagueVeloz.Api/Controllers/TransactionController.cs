@@ -2,6 +2,7 @@
 using PagueVeloz.API.DTOs;
 using PagueVeloz.Application.Interfaces;
 using PagueVeloz.Domain.Entities;
+using Serilog;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -20,8 +21,17 @@ public class TransactionController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateTransaction([FromBody] TransactionCreateDto dto)
     {
-        try
-        {
+       
+            Log.Information("Recebida solicitação de movimentação do tipo: {dto.Operation} .");
+
+
+            string idempotencyKey = Request.Headers["Idempotency-Key"];
+            if (string.IsNullOrEmpty(idempotencyKey))
+            {
+                idempotencyKey = Guid.NewGuid().ToString();
+                Log.Warning("Idempotency-Key não enviada, gerando uma aleatória.");
+            }
+
             var model = new TransactionModel
             {
                 TransactionId = Guid.NewGuid(),
@@ -32,17 +42,10 @@ public class TransactionController : ControllerBase
                 ReferenceId = dto.ReferenceId
             };
 
-            var result = await _transactionService.ProcessTransactionAsync(model);
+            var result = await _transactionService.ProcessTransactionAsync(model,idempotencyKey);
             return Ok(result);
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, new
-            {
-                error = ex.Message,
-                detail = ex.StackTrace
-            });
-        }
+       
+       
     }
 
 
@@ -52,19 +55,33 @@ public class TransactionController : ControllerBase
     [HttpPost("transfer")]
     public async Task<IActionResult> Transfer([FromBody] TransferCreateDto dto)
     {
-        var model = new TransactionModel
-        {
-            TransactionId = Guid.NewGuid(),
-            AccountId = dto.AccountId,
-            DestinationAccountId = dto.DestinationAccountId,
-            Amount = dto.Amount,
-            Currency = dto.Currency,
-            Operation = TransactionType.Transfer,
-            ReferenceId = dto.ReferenceId
-        };
+        Log.Information("Recebida solicitação de movimentação do tipo: {dto.Operation} .");
 
-        var result = await _transactionService.ProcessTransactionAsync(model);
-        return Ok(result);
+
+        string idempotencyKey = Request.Headers["Idempotency-Key"];
+        if (string.IsNullOrEmpty(idempotencyKey))
+        {
+            idempotencyKey = Guid.NewGuid().ToString();
+            Log.Warning("Idempotency-Key não enviada, gerando uma aleatória.");
+        }
+
+       
+            var model = new TransactionModel
+            {
+                TransactionId = Guid.NewGuid(),
+                AccountId = dto.AccountId,
+                DestinationAccountId = dto.DestinationAccountId,
+                Amount = dto.Amount,
+                Currency = dto.Currency,
+                Operation = TransactionType.Transfer,
+                ReferenceId = dto.ReferenceId
+            };
+
+            var result = await _transactionService.ProcessTransactionAsync(model, idempotencyKey);
+            return Ok(result);
+        
+
+        
     }
 
 }

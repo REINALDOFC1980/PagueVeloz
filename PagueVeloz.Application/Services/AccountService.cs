@@ -4,6 +4,7 @@ using PagueVeloz.Domain.Entities;
 using PagueVeloz.Infrastructure.Repositories.Account;
 using Serilog;
 using System.Data;
+using System.Text.Json;
 using System.Transactions;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -31,22 +32,20 @@ namespace PagueVeloz.Application.Services
 
         public async Task<AccountModel> CreateAccountAsync(AccountModel account, string idempotencyKey)
         {
-       
-
-                Log.Information("Iniciando abertura de conta.");
-
-       
+              Log.Information("Iniciando abertura de conta.");
+                 
             var savedResponse = await _idempotencyService.GetSavedResponseAsync(idempotencyKey);
             if (!string.IsNullOrEmpty(savedResponse))
             {
                 Log.Information("Idempotência encontrada para a chave {IdempotencyKey}", idempotencyKey);
-                return System.Text.Json.JsonSerializer.Deserialize<AccountModel>(savedResponse)!;
+                var contaexistente = JsonSerializer.Deserialize<AccountModel>(savedResponse)!;
+                return contaexistente;
             }
 
             var existingAccount = await _accountRepository.GetAccountByNumberAsync(account.AccountNumber);
             if (existingAccount != null)
             {
-                throw new InvalidOperationException($"O AccountNumber '{account.AccountNumber}' já existe.");
+                throw new InvalidOperationException($"Conta '{account.AccountNumber}' já existe.");
             }
                      
             account.Status = AccountStatus.Active;
@@ -55,6 +54,7 @@ namespace PagueVeloz.Application.Services
 
 
             _serviceAudi.LogAccountCreation(account);
+
             if (_connection.State != ConnectionState.Open)
                 _connection.Open();
 
@@ -64,7 +64,7 @@ namespace PagueVeloz.Application.Services
 
                 var createdAccount = await _accountRepository.CreateAccountAsync(account, transaction);
                 transaction.Commit();
-                var responseJson = System.Text.Json.JsonSerializer.Serialize(createdAccount);
+                var responseJson = JsonSerializer.Serialize(createdAccount);
                 await _idempotencyService.SaveResponseAsync(idempotencyKey, responseJson);
 
                 return createdAccount;
