@@ -43,7 +43,7 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 
 # Expor portas da API
-EXPOSE 8080
+EXPOSE 8080 9090
 
 # ENTRYPOINT para iniciar a API
 ENTRYPOINT ["dotnet", "PagueVeloz.Api.dll"]

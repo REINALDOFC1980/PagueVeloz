@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\REINALDO.DEV (C#)\\PagueVeloz\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\REINALDO.DEV (C#)\\PagueVeloz\\docker-compose-img.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docker-compose-img.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.application\\services\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|solutionrelative:pagueveloz.application\\services\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.application\\services\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|solutionrelative:pagueveloz.application\\services\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -23,36 +31,12 @@
       "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\pagueveloz.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AC17905A-5659-4F21-B551-7BE7AB7D5F9B}|PagueVeloz.Api\\PagueVeloz.Api.csproj|solutionrelative:pagueveloz.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E13A632-BF12-E2E8-8E50-8ABC3421BFBE}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.infrastructure\\database\\paguevelozdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E13A632-BF12-E2E8-8E50-8ABC3421BFBE}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|solutionrelative:pagueveloz.infrastructure\\database\\paguevelozdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E13A632-BF12-E2E8-8E50-8ABC3421BFBE}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.infrastructure\\pagueveloz.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{2E13A632-BF12-E2E8-8E50-8ABC3421BFBE}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|solutionrelative:pagueveloz.infrastructure\\pagueveloz.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0E1889-B0C0-476A-B4D5-A833E98ABF56}|PagueVeloz.Shared\\PagueVeloz.Shared.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.shared\\pagueveloz.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5F0E1889-B0C0-476A-B4D5-A833E98ABF56}|PagueVeloz.Shared\\PagueVeloz.Shared.csproj|solutionrelative:pagueveloz.shared\\pagueveloz.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DABACB82-84BE-430C-BFB8-24F91140BFC2}|PagueVeloz.Domain\\PagueVeloz.Domain.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.domain\\pagueveloz.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{DABACB82-84BE-430C-BFB8-24F91140BFC2}|PagueVeloz.Domain\\PagueVeloz.Domain.csproj|solutionrelative:pagueveloz.domain\\pagueveloz.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.application\\pagueveloz.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|solutionrelative:pagueveloz.application\\pagueveloz.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E13A632-BF12-E2E8-8E50-8ABC3421BFBE}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.infrastructure\\database\\paguevelozdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E13A632-BF12-E2E8-8E50-8ABC3421BFBE}|PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj|solutionrelative:pagueveloz.infrastructure\\database\\paguevelozdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|e:\\reinaldo.dev (c#)\\pagueveloz\\pagueveloz.application\\interfaces\\irabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17152E82-11C8-4EFA-A2A6-9B34AEF8914C}|PagueVeloz.Application\\PagueVeloz.Application.csproj|solutionrelative:pagueveloz.application\\interfaces\\irabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -61,8 +45,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 121,
-          "SelectedChildIndex": 11,
+          "DockedWidth": 102,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,166 +54,120 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PagueVelozDbContext.cs",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
-              "RelativeDocumentMoniker": "PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
-              "RelativeToolTip": "PagueVeloz.Infrastructure\\Database\\PagueVelozDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T15:00:24.795Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PagueVeloz.Infrastructure.csproj",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj",
-              "RelativeToolTip": "PagueVeloz.Infrastructure\\PagueVeloz.Infrastructure.csproj",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-03T15:29:21.361Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PagueVeloz.Application.csproj",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\PagueVeloz.Application.csproj",
-              "RelativeDocumentMoniker": "PagueVeloz.Application\\PagueVeloz.Application.csproj",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\PagueVeloz.Application.csproj",
-              "RelativeToolTip": "PagueVeloz.Application\\PagueVeloz.Application.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-03T15:37:33.811Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PagueVeloz.Shared.csproj",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Shared\\PagueVeloz.Shared.csproj",
-              "RelativeDocumentMoniker": "PagueVeloz.Shared\\PagueVeloz.Shared.csproj",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Shared\\PagueVeloz.Shared.csproj",
-              "RelativeToolTip": "PagueVeloz.Shared\\PagueVeloz.Shared.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-03T15:37:44.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PagueVelozDbContextFactory.cs",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Database\\PagueVelozDbContextFactory.cs",
-              "RelativeDocumentMoniker": "PagueVeloz.Infrastructure\\Database\\PagueVelozDbContextFactory.cs",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Infrastructure\\Database\\PagueVelozDbContextFactory.cs",
-              "RelativeToolTip": "PagueVeloz.Infrastructure\\Database\\PagueVelozDbContextFactory.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAowBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T15:41:55.503Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "PagueVeloz.Api\\appsettings.json",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.json",
-              "RelativeToolTip": "PagueVeloz.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-03T15:44:08.812Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "PagueVeloz.Api\\appsettings.Development.json",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.Development.json",
-              "RelativeToolTip": "PagueVeloz.Api\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-03T15:44:36.679Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-12-03T15:06:46.136Z",
+              "Title": "RabbitMQService.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Services\\RabbitMQService.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Application\\Services\\RabbitMQService.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Services\\RabbitMQService.cs",
+              "RelativeToolTip": "PagueVeloz.Application\\Services\\RabbitMQService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T22:02:55.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Dockerfile",
-              "RelativeDocumentMoniker": "PagueVeloz.Api\\Dockerfile",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Dockerfile",
-              "RelativeToolTip": "PagueVeloz.Api\\Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-03T15:59:34.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "PagueVeloz.Api\\Properties\\launchSettings.json",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Properties\\launchSettings.json",
-              "RelativeToolTip": "PagueVeloz.Api\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "PagueVeloz.Api\\appsettings.json",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\appsettings.json",
+              "RelativeToolTip": "PagueVeloz.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-03T18:23:12.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Program.cs",
-              "RelativeDocumentMoniker": "PagueVeloz.Api\\Program.cs",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Program.cs",
-              "RelativeToolTip": "PagueVeloz.Api\\Program.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAAwGkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T12:43:17.56Z",
+              "WhenOpened": "2025-12-03T22:08:10.274Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PagueVeloz.Api.csproj",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\PagueVeloz.Api.csproj",
-              "RelativeDocumentMoniker": "PagueVeloz.Api\\PagueVeloz.Api.csproj",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\PagueVeloz.Api.csproj",
-              "RelativeToolTip": "PagueVeloz.Api\\PagueVeloz.Api.csproj",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-03T14:53:47.278Z",
+              "Title": "TransactionService.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Services\\TransactionService.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Application\\Services\\TransactionService.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Services\\TransactionService.cs",
+              "RelativeToolTip": "PagueVeloz.Application\\Services\\TransactionService.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAqwHoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T22:09:12.823Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PagueVeloz.Domain.csproj",
-              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Domain\\PagueVeloz.Domain.csproj",
-              "RelativeDocumentMoniker": "PagueVeloz.Domain\\PagueVeloz.Domain.csproj",
-              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Domain\\PagueVeloz.Domain.csproj",
-              "RelativeToolTip": "PagueVeloz.Domain\\PagueVeloz.Domain.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-12-03T22:14:52.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "docker-compose-img.yml",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\docker-compose-img.yml",
+              "RelativeDocumentMoniker": "docker-compose-img.yml",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\docker-compose-img.yml",
+              "RelativeToolTip": "docker-compose-img.yml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-12-03T22:14:52.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Program.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Api\\Program.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\Program.cs",
+              "RelativeToolTip": "PagueVeloz.Api\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T22:16:33.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PagueVeloz.Api",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\PagueVeloz.Api.csproj",
+              "RelativeDocumentMoniker": "PagueVeloz.Api\\PagueVeloz.Api.csproj",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\PagueVeloz.Api.csproj",
+              "RelativeToolTip": "PagueVeloz.Api\\PagueVeloz.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-03T14:54:05.724Z"
+              "WhenOpened": "2025-12-03T22:01:34.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PagueVeloz.Application",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\PagueVeloz.Application.csproj",
+              "RelativeDocumentMoniker": "PagueVeloz.Application\\PagueVeloz.Application.csproj",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\PagueVeloz.Application.csproj",
+              "RelativeToolTip": "PagueVeloz.Application\\PagueVeloz.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-03T22:01:46.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IRabbitMQService.cs",
+              "DocumentMoniker": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Interfaces\\IRabbitMQService.cs",
+              "RelativeDocumentMoniker": "PagueVeloz.Application\\Interfaces\\IRabbitMQService.cs",
+              "ToolTip": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\Interfaces\\IRabbitMQService.cs",
+              "RelativeToolTip": "PagueVeloz.Application\\Interfaces\\IRabbitMQService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T22:02:28.875Z",
+              "EditorCaption": ""
             }
           ]
         }

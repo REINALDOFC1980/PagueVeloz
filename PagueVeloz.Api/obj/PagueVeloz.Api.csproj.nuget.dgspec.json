@@ -210,6 +210,10 @@
             "Polly": {
               "target": "Package",
               "version": "[8.6.5, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.8.0, )"
             }
           },
           "imports": [

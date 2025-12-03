@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Er5y6aIdrQI=",
+  "dgSpecHash": "GCxLj8TUQRI=",
   "success": true,
   "projectFilePath": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Api\\PagueVeloz.Api.csproj",
   "expectedPackageFiles": [
@@ -74,6 +74,7 @@
     "E:\\NugetCache\\opentelemetry.instrumentation.runtime\\1.13.0\\opentelemetry.instrumentation.runtime.1.13.0.nupkg.sha512",
     "E:\\NugetCache\\polly\\8.6.5\\polly.8.6.5.nupkg.sha512",
     "E:\\NugetCache\\polly.core\\8.6.5\\polly.core.8.6.5.nupkg.sha512",
+    "E:\\NugetCache\\rabbitmq.client\\6.8.0\\rabbitmq.client.6.8.0.nupkg.sha512",
     "E:\\NugetCache\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
     "E:\\NugetCache\\serilog.aspnetcore\\8.0.1\\serilog.aspnetcore.8.0.1.nupkg.sha512",
     "E:\\NugetCache\\serilog.enrichers.environment\\2.2.0\\serilog.enrichers.environment.2.2.0.nupkg.sha512",

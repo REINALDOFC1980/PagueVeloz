@@ -16,6 +16,8 @@
 		<ProjectReference Include="..\PagueVeloz.Domain\PagueVeloz.Domain.csproj" />
 		<ProjectReference Include="..\PagueVeloz.Infrastructure\PagueVeloz.Infrastructure.csproj" />
 		<ProjectReference Include="..\PagueVeloz.Shared\PagueVeloz.Shared.csproj" />
+
+		<PackageReference Include="RabbitMQ.Client" Version="6.8.0" />
 	</ItemGroup>
 
 

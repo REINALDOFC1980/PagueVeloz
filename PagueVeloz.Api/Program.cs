@@ -18,6 +18,8 @@ using System;
 using System.Data;
 using System.Reflection;
 using System.Text.Json.Serialization;
+using WebApiBiblioteca.Infra;
+using WebApiBiblioteca.Service.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +37,8 @@ builder.Services.AddScoped<IAuditService, AuditService>();
 
 builder.Services.AddScoped<IIdempotencyRepository, IdempotencyRepository>();
 builder.Services.AddScoped<IIdempotencyService, IdempotencyService>();
+
+builder.Services.AddScoped<IRabbitMQService, RabbitMQService>();
 
 
 
@@ -134,7 +138,9 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<PagueVelozDbContext>();
-    db.Database.EnsureCreated();
+    //db.Database.EnsureCreated();
+    db.Database.Migrate();
+
 }
 
 

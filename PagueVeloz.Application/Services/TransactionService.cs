@@ -9,6 +9,7 @@ using System;
 using System.Data;
 using System.Text.Json;
 using System.Threading.Tasks;
+using WebApiBiblioteca.Service.RabbitMQ;
 
 
 namespace PagueVeloz.Application.Services
@@ -19,17 +20,21 @@ namespace PagueVeloz.Application.Services
         private readonly ITransactionRepository _transactionRepository;
         private readonly IIdempotencyService _idempotencyService;
         private readonly IDbConnection _connection;
+        private readonly IRabbitMQService _rabbitMQService;
+
 
         public TransactionService(
             IAccountRepository accountRepository,
             ITransactionRepository transactionRepository,
             IIdempotencyService idempotencyService,
-            IDbConnection connection)
+            IDbConnection connection,
+            IRabbitMQService rabbitMQService)
         {
             _accountRepository = accountRepository;
             _transactionRepository = transactionRepository;
             _idempotencyService = idempotencyService;
             _connection = connection;
+            _rabbitMQService = rabbitMQService;
         }
 
         public async Task<TransactionModel> ProcessTransactionAsync(TransactionModel dto, string idempotencyKey)
@@ -98,6 +103,22 @@ namespace PagueVeloz.Application.Services
                     await _transactionRepository.SaveAsync(transactionToSave, transaction);
 
                     transaction.Commit();
+
+                    // Publica a transação no RabbitMQ
+                    _rabbitMQService.PublicarMensagem(new
+                    {
+                        transactionToSave.TransactionId,
+                        transactionToSave.Operation,
+                        transactionToSave.AccountId,
+                        transactionToSave.DestinationAccountId,
+                        transactionToSave.Amount,
+                        transactionToSave.Currency,
+                        transactionToSave.ReferenceId,
+                        transactionToSave.Status,
+                        transactionToSave.CreatedAt
+                    }, "transaction");
+
+
                     return result;
                 }
                 catch (Exception ex)

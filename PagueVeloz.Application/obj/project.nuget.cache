@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RB6YPHWZ8Ys=",
+  "dgSpecHash": "WEEVqmKavR8=",
   "success": true,
   "projectFilePath": "E:\\REINALDO.DEV (C#)\\PagueVeloz\\PagueVeloz.Application\\PagueVeloz.Application.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "E:\\NugetCache\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "E:\\NugetCache\\polly\\8.6.5\\polly.8.6.5.nupkg.sha512",
     "E:\\NugetCache\\polly.core\\8.6.5\\polly.core.8.6.5.nupkg.sha512",
+    "E:\\NugetCache\\rabbitmq.client\\6.8.0\\rabbitmq.client.6.8.0.nupkg.sha512",
     "E:\\NugetCache\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
     "E:\\NugetCache\\serilog.aspnetcore\\8.0.1\\serilog.aspnetcore.8.0.1.nupkg.sha512",
     "E:\\NugetCache\\serilog.enrichers.environment\\2.2.0\\serilog.enrichers.environment.2.2.0.nupkg.sha512",
@@ -67,7 +68,7 @@
     "E:\\NugetCache\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "E:\\NugetCache\\system.formats.asn1\\9.0.11\\system.formats.asn1.9.0.11.nupkg.sha512",
     "E:\\NugetCache\\system.identitymodel.tokens.jwt\\6.35.0\\system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512",
-    "E:\\NugetCache\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "E:\\NugetCache\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
     "E:\\NugetCache\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
     "E:\\NugetCache\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "E:\\NugetCache\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
@@ -82,6 +83,7 @@
     "E:\\NugetCache\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "E:\\NugetCache\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "E:\\NugetCache\\system.text.json\\9.0.11\\system.text.json.9.0.11.nupkg.sha512",
+    "E:\\NugetCache\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "E:\\NugetCache\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "E:\\NugetCache\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
