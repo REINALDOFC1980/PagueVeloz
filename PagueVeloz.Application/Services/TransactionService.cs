@@ -10,6 +10,7 @@ using System.Data;
 using System.Text.Json;
 using System.Threading.Tasks;
 
+
 namespace PagueVeloz.Application.Services
 {
     public class TransactionService : ITransactionService

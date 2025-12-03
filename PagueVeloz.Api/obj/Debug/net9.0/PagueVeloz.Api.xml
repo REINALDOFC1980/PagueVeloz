@@ -55,12 +55,14 @@
             Tipo de operação: (Credit, Debit, Reserve, Capture, Reversal)
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:PagueVeloz.API.DTOs.TransactionCreateDto.AccountId" -->
+        <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.AccountId">
+            <summary>ID da conta de origem | ex:D4F55942-79E4-4080-B14E-7F9F6FBC5394</summary>
+        </member>
         <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.Amount">
             <summary>Valor da operação em centavos | ex:1000.00</summary>
         </member>
         <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.Currency">
-            <summary>Moeda da transação | ex:"BRL"</summary>
+            <summary>Moeda da transação | ex:BRL</summary>
         </member>
         <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.ReferenceId">
             <summary>ID de referência ou chave de idempotência | ex:credit-001</summary>
@@ -73,24 +75,23 @@
              Exemplos de request:
             
              Crédito:
-             POST /api/transaction
+             POST /api/Transaction/operacao
              {
                "operation": "Credit",
                "accountId": "4D1746D2-5770-4820-8381-18EDB119846B",
-               "amount": 50000,
+               "amount": 100.00,
                "currency": "BRL",
-               "referenceId": "test-credit-001"
+               "referenceId": "credit-001"
              }
             
              Transferência:
-             POST /api/transfer
-             {
-               "operation": "Transfer",
+             POST /api/Transaction/transferencia
+             {   
                "accountId": "4D1746D2-5770-4820-8381-18EDB119846B",
                "targetAccountId": "32317970-9624-40B4-B9EE-80D0146D2E3B",
-               "amount": 10000,
+               "amount": 100.00,
                "currency": "BRL",
-               "referenceId": "test-transfer-001"
+               "referenceId": "transfer-001"
              }
             
              </remarks>

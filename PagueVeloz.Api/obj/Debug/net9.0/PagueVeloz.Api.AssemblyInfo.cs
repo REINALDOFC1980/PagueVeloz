@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("a5de3971-15fd-41af-9a19-d98a52b3c52a")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("PagueVeloz.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c0e2d9fd5ca3c7a5df45bf907c7c77411b00584")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f0dca31866ab7b27d8c9961bd5b4610da34bb16")]
 [assembly: System.Reflection.AssemblyProductAttribute("PagueVeloz.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PagueVeloz.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

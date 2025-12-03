@@ -14,3 +14,5 @@ E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\obj\Debug\net9.0\Pague
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\obj\Debug\net9.0\refint\PagueVeloz.Infrastructure.dll
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\obj\Debug\net9.0\PagueVeloz.Infrastructure.pdb
 E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\obj\Debug\net9.0\ref\PagueVeloz.Infrastructure.dll
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\bin\Debug\net9.0\PagueVeloz.Infrastructure.runtimeconfig.json
+E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Infrastructure\obj\Debug\net9.0\PagueVeloz.Infrastructure.genruntimeconfig.cache

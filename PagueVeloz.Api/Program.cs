@@ -14,6 +14,7 @@ using PagueVeloz.Infrastructure.Services;
 using PagueVeloz.Shared.Middlewares;
 using PagueVeloz.TransactionProcessor.Infrastructure.Database;
 using Serilog;
+using System;
 using System.Data;
 using System.Reflection;
 using System.Text.Json.Serialization;
@@ -43,8 +44,13 @@ builder.Services.AddScoped<IDbConnection>(sp =>
     new SqlConnection(connectionString));
 
 // Registro o DbContext do EF Core 
+//builder.Services.AddDbContext<PagueVelozDbContext>(options =>
+//    options.UseSqlServer(connectionString));
+
 builder.Services.AddDbContext<PagueVelozDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+        x => x.MigrationsAssembly("PagueVeloz.Infrastructure")));
+
 
 
 builder.Services.AddControllers()
@@ -122,13 +128,35 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
+// Aplica migrations automaticamente
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<PagueVelozDbContext>();
+    try
+    {
+        db.Database.Migrate();
+        Console.WriteLine("Database migrated successfully.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error migrating database: {ex.Message}");
+        throw;
+    }
+}
 
-// Cria o banco via EF Core (se estiver usando EF)
+
+//Cria o banco via EF Core (se estiver usando EF)
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<PagueVelozDbContext>();
     db.Database.EnsureCreated();
 }
+
+//using (var scope = app.Services.CreateScope())
+//{
+//    var db = scope.ServiceProvider.GetRequiredService<PagueVelozDbContext>();
+//    db.Database.Migrate();
+//}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
