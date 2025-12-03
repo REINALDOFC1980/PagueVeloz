@@ -38,29 +38,32 @@
             Atualizar conta bancária
             </summary>
         </member>
-        <member name="T:PagueVeloz.API.DTOs.TransactionCreateDto">
-            <summary>
-            DTO para criação de transações
-            </summary>
-            
+        <member name="P:PagueVeloz.Api.DTOs.AccountCreateDto.AccountNumber">
+            <summary>Número da conta</summary>
+        </member>
+        <member name="P:PagueVeloz.Api.DTOs.AccountCreateDto.Balance">
+            <summary>Saldo da conta ex:1000.00</summary>
+        </member>
+        <member name="P:PagueVeloz.Api.DTOs.AccountCreateDto.ReservedBalance">
+            <summary>Saldo reservado ex:1000.00</summary>
+        </member>
+        <member name="P:PagueVeloz.Api.DTOs.AccountCreateDto.CreditLimit">
+            <summary>Limite de crédito ex:1000.00</summary>
         </member>
         <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.Operation">
             <summary>
-            Tipo da operação (crédito, débito, reserva, captura, estorno, transferência)
+            Tipo de operação: (Credit, Debit, Reserve, Capture, Reversal)
             </summary>
-            
         </member>
-        <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.AccountId">
-            <summary>ID da conta de origem</summary>
-        </member>
+        <!-- Badly formed XML comment ignored for member "P:PagueVeloz.API.DTOs.TransactionCreateDto.AccountId" -->
         <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.Amount">
-            <summary>Valor da operação em centavos</summary>
+            <summary>Valor da operação em centavos | ex:1000.00</summary>
         </member>
         <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.Currency">
-            <summary>Moeda da transação</summary>
+            <summary>Moeda da transação | ex:"BRL"</summary>
         </member>
         <member name="P:PagueVeloz.API.DTOs.TransactionCreateDto.ReferenceId">
-            <summary>ID de referência ou chave de idempotência</summary>
+            <summary>ID de referência ou chave de idempotência | ex:credit-001</summary>
         </member>
         <member name="M:TransactionController.CreateTransaction(PagueVeloz.API.DTOs.TransactionCreateDto)">
              <summary>
@@ -70,7 +73,7 @@
              Exemplos de request:
             
              Crédito:
-             POST /api/Transaction
+             POST /api/transaction
              {
                "operation": "Credit",
                "accountId": "4D1746D2-5770-4820-8381-18EDB119846B",
@@ -98,9 +101,24 @@
              <response code="500">Erro interno</response>
         </member>
         <member name="M:TransactionController.Transfer(PagueVeloz.API.DTOs.TransferCreateDto)">
-            <summary>
-            Realizar Trasnferencia bancária
-            </summary>
+             <summary>
+             Realizar Trasnferencia bancária
+             </summary>
+             <remarks>
+             Exemplos de request:
+            
+             Transferência:
+             POST /api/transfer
+             {
+               "operation": "Transfer",
+               "accountId": "4D1746D2-5770-4820-8381-18EDB119846B",
+               "targetAccountId": "32317970-9624-40B4-B9EE-80D0146D2E3B",
+               "amount": 10000,
+               "currency": "BRL",
+               "referenceId": "test-transfer-001"
+             }
+            
+             </remarks>
         </member>
     </members>
 </doc>

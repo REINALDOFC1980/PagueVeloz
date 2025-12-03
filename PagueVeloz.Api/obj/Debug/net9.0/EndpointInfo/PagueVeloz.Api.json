@@ -1,8 +1,9 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "PagueVeloz.Api",
-    "version": "1.0"
+    "title": "PagueVeloz API",
+    "description": "API para processamento de transações financeiras",
+    "version": "v1"
   },
   "paths": {
     "/api/Account/CriarConta": {
@@ -37,17 +38,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransactionCreateDto"
+                  "$ref": "#/components/schemas/AccountCreateDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransactionCreateDto"
+                  "$ref": "#/components/schemas/AccountCreateDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransactionCreateDto"
+                  "$ref": "#/components/schemas/AccountCreateDto"
                 }
               }
             }
@@ -143,13 +144,13 @@
         }
       }
     },
-    "/api/Transaction": {
+    "/api/Transaction/operacao": {
       "post": {
         "tags": [
           "Transaction"
         ],
         "summary": "Processa uma operação financeira (Credit, Debit, Reserve, Capture, Reversal)",
-        "description": "Exemplos de request:\r\n            \r\nCrédito:\r\nPOST /api/Transaction\r\n{\r\n  \"operation\": \"Credit\",\r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"amount\": 50000,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"test-credit-001\"\r\n}\r\n            \r\nTransferência:\r\nPOST /api/transfer\r\n{\r\n  \"operation\": \"Transfer\",\r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"targetAccountId\": \"32317970-9624-40B4-B9EE-80D0146D2E3B\",\r\n  \"amount\": 10000,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"test-transfer-001\"\r\n}",
+        "description": "Exemplos de request:\r\n            \r\nCrédito:\r\nPOST /api/transaction\r\n{\r\n  \"operation\": \"Credit\",\r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"amount\": 50000,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"test-credit-001\"\r\n}\r\n            \r\nTransferência:\r\nPOST /api/transfer\r\n{\r\n  \"operation\": \"Transfer\",\r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"targetAccountId\": \"32317970-9624-40B4-B9EE-80D0146D2E3B\",\r\n  \"amount\": 10000,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"test-transfer-001\"\r\n}",
         "requestBody": {
           "content": {
             "application/json": {
@@ -222,6 +223,7 @@
           "Transaction"
         ],
         "summary": "Realizar Trasnferencia bancária",
+        "description": "Exemplos de request:\r\n            \r\nTransferência:\r\nPOST /api/transfer\r\n{\r\n  \"operation\": \"Transfer\",\r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"targetAccountId\": \"32317970-9624-40B4-B9EE-80D0146D2E3B\",\r\n  \"amount\": 10000,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"test-transfer-001\"\r\n}",
         "requestBody": {
           "content": {
             "application/json": {
@@ -256,19 +258,23 @@
         "properties": {
           "accountNumber": {
             "type": "string",
+            "description": "Número da conta",
             "nullable": true
           },
           "balance": {
-            "type": "integer",
-            "format": "int64"
+            "type": "number",
+            "description": "Saldo da conta ex:1000.00",
+            "format": "double"
           },
           "reservedBalance": {
-            "type": "integer",
-            "format": "int64"
+            "type": "number",
+            "description": "Saldo reservado ex:1000.00",
+            "format": "double"
           },
           "creditLimit": {
-            "type": "integer",
-            "format": "int64"
+            "type": "number",
+            "description": "Limite de crédito ex:1000.00",
+            "format": "double"
           }
         },
         "additionalProperties": false
@@ -283,16 +289,16 @@
         "type": "object",
         "properties": {
           "balance": {
-            "type": "integer",
-            "format": "int64"
+            "type": "number",
+            "format": "double"
           },
           "reservedBalance": {
-            "type": "integer",
-            "format": "int64"
+            "type": "number",
+            "format": "double"
           },
           "creditLimit": {
-            "type": "integer",
-            "format": "int64"
+            "type": "number",
+            "format": "double"
           },
           "status": {
             "minLength": 1,
@@ -310,27 +316,25 @@
           },
           "accountId": {
             "type": "string",
-            "description": "ID da conta de origem",
             "format": "uuid"
           },
           "amount": {
             "type": "number",
-            "description": "Valor da operação em centavos",
+            "description": "Valor da operação em centavos | ex:1000.00",
             "format": "double"
           },
           "currency": {
             "type": "string",
-            "description": "Moeda da transação",
+            "description": "Moeda da transação | ex:\"BRL\"",
             "nullable": true
           },
           "referenceId": {
             "type": "string",
-            "description": "ID de referência ou chave de idempotência",
+            "description": "ID de referência ou chave de idempotência | ex:credit-001",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "DTO para criação de transações"
+        "additionalProperties": false
       },
       "TransactionType": {
         "enum": [

@@ -52,7 +52,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "PagueVeloz.API.DTOs.TransactionCreateDto",
+        "Type": "PagueVeloz.Api.DTOs.AccountCreateDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -79,7 +79,7 @@
   {
     "ContainingType": "TransactionController",
     "Method": "CreateTransaction",
-    "RelativePath": "api/Transaction",
+    "RelativePath": "api/Transaction/operacao",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

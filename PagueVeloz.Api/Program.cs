@@ -1,6 +1,7 @@
 using FluentValidation.AspNetCore;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using PagueVeloz.Api.Validators;
@@ -95,13 +96,14 @@ builder.Services.AddOpenTelemetry()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    //c.SwaggerDoc("v1", new OpenApiInfo
-    //{
-    //    Title = "PagueVeloz API",
-    //    Version = "v1",
-    //    Description = "API para processamento de transações financeiras"
-    //});
-    // Pega o caminho do XML gerado
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "PagueVeloz API",
+        Version = "v1",
+        Description = "API para processamento de transações financeiras"
+    });
+  
+
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 

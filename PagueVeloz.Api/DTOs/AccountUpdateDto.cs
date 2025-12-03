@@ -8,13 +8,13 @@ namespace PagueVeloz.Application.DTOs
     public class AccountUpdateDto
     {
         [Required]
-        public long Balance { get; set; }
+        public decimal Balance { get; set; }
 
         [Required]
-        public long ReservedBalance { get; set; }
+        public decimal ReservedBalance { get; set; }
 
         [Required]
-        public long CreditLimit { get; set; }
+        public decimal CreditLimit { get; set; }
 
         [Required]
         [RegularExpression("Active|Inactive|Blocked",

@@ -17,20 +17,17 @@ namespace PagueVeloz.Application.Services
         private readonly IAccountRepository _accountRepository;
         private readonly ITransactionRepository _transactionRepository;
         private readonly IIdempotencyService _idempotencyService;
-        private readonly IAuditService _serviceAudi;
         private readonly IDbConnection _connection;
 
         public TransactionService(
             IAccountRepository accountRepository,
             ITransactionRepository transactionRepository,
             IIdempotencyService idempotencyService,
-            IAuditService serviceAudi,
             IDbConnection connection)
         {
             _accountRepository = accountRepository;
             _transactionRepository = transactionRepository;
             _idempotencyService = idempotencyService;
-            _serviceAudi = serviceAudi;
             _connection = connection;
         }
 
@@ -39,24 +36,24 @@ namespace PagueVeloz.Application.Services
             var retryPolicy = RetryPolicyProvider.GetRetryPolicy();
 
             return await retryPolicy.ExecuteAsync(async () =>
-            {
+            { 
+               
+                    Log.Information("Iniciando movimentação de conta. IdempotencyKey: {IdempotencyKey}", idempotencyKey);
 
-                Log.Information("Iniciando a movimentação de conta.", dto.AccountId);
+                    // Idempotência
+                    var savedResponse = await _idempotencyService.GetSavedResponseAsync(idempotencyKey);
+                    if (!string.IsNullOrEmpty(savedResponse))
+                        return JsonSerializer.Deserialize<TransactionModel>(savedResponse)!;
 
-                if (await _transactionRepository.ExistsByReferenceIdAsync(dto.ReferenceId))
-                {
-                    var savedResponse = await _idempotencyService.GetSavedResponseAsync(dto.ReferenceId);
-                    Log.Information("Idempotência encontrada para a chave {IdempotencyKey}", dto.ReferenceId);
+                    // Verifica referência
+                    if (await _transactionRepository.ExistsByReferenceIdAsync(dto.ReferenceId))
+                        throw new BusinessException("Transação já foi realizada.");
 
-                    var contaexistente = JsonSerializer.Deserialize<TransactionModel>(savedResponse)!;
-                    return contaexistente;
+                    // Carrega conta principal
+                    var account = await _accountRepository.GetAccountByIdAsync(dto.AccountId);
+                    if (account == null)
+                        throw new BusinessException("Número da conta não existe!");
 
-                }
-
-                // Carrega a conta dentro da transação
-                var account = await _accountRepository.GetAccountByIdAsync(dto.AccountId);
-                if (account == null)
-                    throw new BusinessException($"Numero da conta não existe!");
 
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
@@ -64,7 +61,6 @@ namespace PagueVeloz.Application.Services
                 using var transaction = _connection.BeginTransaction();
                 try
                 {
-
                     // Executa operação
                     TransactionModel result = dto.Operation switch
                     {
@@ -73,15 +69,15 @@ namespace PagueVeloz.Application.Services
                         TransactionType.Reserve => Reserve(account, dto.Amount),
                         TransactionType.Capture => Capture(account, dto.Amount),
                         TransactionType.Reversal => Reversal(account, dto.Amount),
-                        TransactionType.Transfer => await TransferAsync(account, dto.DestinationAccountId.Value, dto.Amount, transaction),
+                        TransactionType.Transfer => await TransferAsync(account, dto.DestinationAccountId!.Value, dto.Amount, transaction),
                         _ => throw new BusinessException("Operação inválida")
                     };
 
+                 
                     // Atualiza conta principal
                     await _accountRepository.UpdateAccountAsync(account, transaction);
 
-
-                    // Persiste a transação
+                    // Persiste transação
                     var transactionToSave = new TransactionModel
                     {
                         TransactionId = Guid.NewGuid(),
@@ -98,14 +94,12 @@ namespace PagueVeloz.Application.Services
                         Message = result.Message
                     };
 
-                    _serviceAudi.LogTransaction(transactionToSave);
-
                     await _transactionRepository.SaveAsync(transactionToSave, transaction);
 
                     transaction.Commit();
                     return result;
                 }
-                catch
+                catch (Exception ex)
                 {
                     transaction.Rollback();
                     throw;
@@ -113,21 +107,29 @@ namespace PagueVeloz.Application.Services
             });
         }
 
-
-
         #region Operações Financeiras
         private TransactionModel Credit(AccountModel account, decimal amount)
         {
+            
             account.Balance += amount;
             return SuccessResult(account, "Crédito realizado com sucesso");
         }
 
         private TransactionModel Debit(AccountModel account, decimal amount)
         {
-            if (amount > account.Balance + account.CreditLimit)
+            decimal available = account.Balance + account.CreditLimit;
+            if (amount > available)
                 return FailResult(account, "Saldo insuficiente");
 
-            account.Balance -= amount;
+            if (amount <= account.Balance)
+                account.Balance -= amount;
+            else
+            {
+                decimal remaining = amount - account.Balance;
+                account.Balance = 0;
+                account.CreditLimit -= remaining;
+            }
+
             return SuccessResult(account, "Débito realizado com sucesso");
         }
 
@@ -138,7 +140,6 @@ namespace PagueVeloz.Application.Services
 
             account.Balance -= amount;
             account.ReservedBalance += amount;
-
             return SuccessResult(account, "Reserva realizada com sucesso");
         }
 
@@ -148,52 +149,53 @@ namespace PagueVeloz.Application.Services
                 return FailResult(account, "Não há reserva suficiente para capturar");
 
             account.ReservedBalance -= amount;
-      
-
             return SuccessResult(account, "Captura realizada com sucesso");
         }
 
         private TransactionModel Reversal(AccountModel account, decimal amount)
         {
-
+            if (account.ReservedBalance <= 0)
+                return FailResult(account, "Não é possível estornar: valor já capturado.");
 
             decimal fromReserved = Math.Min(amount, account.ReservedBalance);
             account.ReservedBalance -= fromReserved;
             account.Balance += fromReserved;
+
+            decimal remaining = amount - fromReserved;
+            if (remaining > 0)
+                account.Balance += remaining;
+
             return SuccessResult(account, "Estorno realizado com sucesso");
         }
 
+        #endregion
+
+        #region Transferência
         private async Task<TransactionModel> TransferAsync(
             AccountModel source,
             Guid destinationId,
             decimal amount,
             IDbTransaction dbTransaction)
         {
-            var destination = await _accountRepository.GetAccountByIdAsync(destinationId);
+            var destination = await _accountRepository.GetAccountByIdAsync(destinationId, dbTransaction);
             if (destination == null)
-            {
-                Log.Warning("Conta destino não encontrada. SourceId: {SourceId}, DestinationId: {DestinationId}",
-                source.AccountId, destinationId);
                 throw new BusinessException("Conta destino não encontrada!");
-            }
 
-
-            decimal available = source.Balance - source.ReservedBalance + source.CreditLimit;
-
+            decimal available = source.Balance;
             if (amount > available)
                 return FailResult(source, "Saldo insuficiente para transferência");
 
-            // Débita origem
+            // Débito origem
             source.Balance -= amount;
 
-            // Credita destino
+            // Crédito destino
             destination.Balance += amount;
 
+            // Atualiza conta destino dentro da MESMA transação
             await _accountRepository.UpdateAccountAsync(destination, dbTransaction);
 
             return SuccessResult(source, "Transferência realizada com sucesso");
         }
-
 
         #endregion
 
@@ -222,4 +224,3 @@ namespace PagueVeloz.Application.Services
         #endregion
     }
 }
-

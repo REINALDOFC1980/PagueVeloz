@@ -45,7 +45,7 @@ namespace PagueVeloz.Api.Controllers
         /// <response code="201">Conta criada</response>
         /// <response code="400">Erro de validação</response>
         /// <response code="500">Erro interno</response>
-        [ProducesResponseType(typeof(TransactionCreateDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(AccountCreateDto), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [HttpPost("CriarConta")]

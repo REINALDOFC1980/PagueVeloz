@@ -1,4 +1,5 @@
 ﻿using PagueVeloz.Domain.Entities;
+using System.Data;
 
 
 namespace PagueVeloz.Application.Interfaces
