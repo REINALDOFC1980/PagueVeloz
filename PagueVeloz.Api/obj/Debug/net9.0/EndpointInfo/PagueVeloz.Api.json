@@ -150,7 +150,7 @@
           "Transaction"
         ],
         "summary": "Processa uma operação financeira (Credit, Debit, Reserve, Capture, Reversal)",
-        "description": "Exemplos de request:\r\n            \r\nCrédito:\r\nPOST /api/transaction\r\n{\r\n  \"operation\": \"Credit\",\r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"amount\": 50000,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"test-credit-001\"\r\n}\r\n            \r\nTransferência:\r\nPOST /api/transfer\r\n{\r\n  \"operation\": \"Transfer\",\r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"targetAccountId\": \"32317970-9624-40B4-B9EE-80D0146D2E3B\",\r\n  \"amount\": 10000,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"test-transfer-001\"\r\n}",
+        "description": "Exemplos de request:\r\n            \r\nCrédito:\r\nPOST /api/Transaction/operacao\r\n{\r\n  \"operation\": \"Credit\",\r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"amount\": 100.00,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"credit-001\"\r\n}\r\n            \r\nTransferência:\r\nPOST /api/Transaction/transferencia\r\n{   \r\n  \"accountId\": \"4D1746D2-5770-4820-8381-18EDB119846B\",\r\n  \"targetAccountId\": \"32317970-9624-40B4-B9EE-80D0146D2E3B\",\r\n  \"amount\": 100.00,\r\n  \"currency\": \"BRL\",\r\n  \"referenceId\": \"transfer-001\"\r\n}",
         "requestBody": {
           "content": {
             "application/json": {
@@ -316,6 +316,7 @@
           },
           "accountId": {
             "type": "string",
+            "description": "ID da conta de origem | ex:D4F55942-79E4-4080-B14E-7F9F6FBC5394",
             "format": "uuid"
           },
           "amount": {
@@ -325,7 +326,7 @@
           },
           "currency": {
             "type": "string",
-            "description": "Moeda da transação | ex:\"BRL\"",
+            "description": "Moeda da transação | ex:BRL",
             "nullable": true
           },
           "referenceId": {

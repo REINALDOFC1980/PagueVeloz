@@ -129,21 +129,6 @@ builder.Services.AddOpenApi();
 var app = builder.Build();
 
 // Aplica migrations automaticamente
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<PagueVelozDbContext>();
-    try
-    {
-        db.Database.Migrate();
-        Console.WriteLine("Database migrated successfully.");
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Error migrating database: {ex.Message}");
-        throw;
-    }
-}
-
 
 //Cria o banco via EF Core (se estiver usando EF)
 using (var scope = app.Services.CreateScope())
@@ -152,13 +137,7 @@ using (var scope = app.Services.CreateScope())
     db.Database.EnsureCreated();
 }
 
-//using (var scope = app.Services.CreateScope())
-//{
-//    var db = scope.ServiceProvider.GetRequiredService<PagueVelozDbContext>();
-//    db.Database.Migrate();
-//}
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -168,8 +147,6 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = "swagger";
     });
 }
-
-
 // Middleware para tratamento global de exceções
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 

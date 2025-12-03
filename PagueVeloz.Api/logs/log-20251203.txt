@@ -7346,3 +7346,280 @@ SELECT 1 ELSE SELECT 0
 2025-12-03 11:55:49.741 -03:00 [DBG] Migrating using database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
 2025-12-03 11:55:49.759 -03:00 [DBG] Opening connection to database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
 2025-12-03 11:56:05.720 -03:00 [DBG] An error occurred using the connection to database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
+2025-12-03 15:08:19.837 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-03 15:08:21.658 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:08:21.667 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:08:21.677 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:08:21.681 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:08:21.685 -03:00 [WRN] No store type was specified for the decimal property 'AvailableBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:08:21.690 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:08:22.070 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: MigrationsAssembly=PagueVeloz.Infrastructure EngineType=SqlServer 
+2025-12-03 15:08:22.368 -03:00 [DBG] Creating DbConnection.
+2025-12-03 15:08:22.487 -03:00 [DBG] Created DbConnection. (111ms).
+2025-12-03 15:08:22.499 -03:00 [DBG] Migrating using database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
+2025-12-03 15:08:22.533 -03:00 [DBG] Opening connection to database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
+2025-12-03 15:08:39.901 -03:00 [DBG] An error occurred using the connection to database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
+2025-12-03 15:16:06.624 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-03 15:16:08.056 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:16:08.063 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:16:08.067 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:16:08.071 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:16:08.074 -03:00 [WRN] No store type was specified for the decimal property 'AvailableBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:16:08.077 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:16:08.249 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: MigrationsAssembly=PagueVeloz.Infrastructure EngineType=SqlServer 
+2025-12-03 15:16:08.298 -03:00 [DBG] Creating DbConnection.
+2025-12-03 15:16:08.352 -03:00 [DBG] Created DbConnection. (50ms).
+2025-12-03 15:16:08.362 -03:00 [DBG] Opening connection to database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
+2025-12-03 15:16:24.171 -03:00 [DBG] An error occurred using the connection to database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
+2025-12-03 15:16:25.054 -03:00 [DBG] 'PagueVelozDbContext' disposed.
+2025-12-03 15:16:25.063 -03:00 [DBG] Disposing connection to database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
+2025-12-03 15:16:25.072 -03:00 [DBG] Disposed connection to database '' on server '' (4ms).
+2025-12-03 15:18:16.943 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-03 15:18:18.165 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:18:18.171 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:18:18.174 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:18:18.178 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:18:18.181 -03:00 [WRN] No store type was specified for the decimal property 'AvailableBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:18:18.184 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:18:18.351 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: MigrationsAssembly=PagueVeloz.Infrastructure EngineType=SqlServer 
+2025-12-03 15:18:18.582 -03:00 [DBG] Creating DbConnection.
+2025-12-03 15:18:18.636 -03:00 [DBG] Created DbConnection. (48ms).
+2025-12-03 15:18:18.642 -03:00 [DBG] Migrating using database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
+2025-12-03 15:18:18.654 -03:00 [DBG] Opening connection to database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
+2025-12-03 15:18:34.426 -03:00 [DBG] An error occurred using the connection to database 'PagueVeloz' on server 'pagueveloz-sql,1433'.
+2025-12-03 15:22:12.318 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-03 15:22:13.532 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:13.538 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:13.541 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:13.544 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:13.548 -03:00 [WRN] No store type was specified for the decimal property 'AvailableBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:13.551 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:13.684 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: MigrationsAssembly=PagueVeloz.Infrastructure EngineType=SqlServer 
+2025-12-03 15:22:13.710 -03:00 [DBG] Creating DbConnection.
+2025-12-03 15:22:13.760 -03:00 [DBG] Created DbConnection. (47ms).
+2025-12-03 15:22:13.768 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:14.203 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:14.216 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-03 15:22:14.245 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (27ms).
+2025-12-03 15:22:14.253 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (42ms).
+2025-12-03 15:22:14.269 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-03 15:22:14.359 -03:00 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-03 15:22:14.368 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:14.386 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (11ms).
+2025-12-03 15:22:14.393 -03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2025-12-03 15:22:14.396 -03:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2025-12-03 15:22:14.399 -03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (6ms).
+2025-12-03 15:22:14.403 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:14.407 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:14.411 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-03 15:22:14.505 -03:00 [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-03 15:22:14.511 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:14.516 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (4ms).
+2025-12-03 15:22:14.523 -03:00 [DBG] 'PagueVelozDbContext' disposed.
+2025-12-03 15:22:14.528 -03:00 [DBG] Disposing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:14.534 -03:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2025-12-03 15:22:14.932 -03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-12-03 15:22:15.069 -03:00 [DBG] Hosting starting
+2025-12-03 15:22:15.134 -03:00 [DBG] Middleware loaded
+2025-12-03 15:22:15.140 -03:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16513 B).
+2025-12-03 15:22:15.144 -03:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-12-03 15:22:15.339 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-03 15:22:15.346 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-03 15:22:15.400 -03:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-12-03 15:22:15.752 -03:00 [INF] Now listening on: https://localhost:7249
+2025-12-03 15:22:15.754 -03:00 [INF] Now listening on: http://localhost:5247
+2025-12-03 15:22:15.756 -03:00 [DBG] Loaded hosting startup assembly PagueVeloz.Api
+2025-12-03 15:22:15.759 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-12-03 15:22:15.761 -03:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-12-03 15:22:15.763 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-12-03 15:22:15.784 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-03 15:22:15.790 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-03 15:22:16.042 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-03 15:22:16.044 -03:00 [INF] Hosting environment: Development
+2025-12-03 15:22:16.047 -03:00 [INF] Content root path: E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api
+2025-12-03 15:22:16.051 -03:00 [DBG] Hosting started
+2025-12-03 15:22:37.512 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-12-03 15:22:39.452 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:39.458 -03:00 [WRN] No store type was specified for the decimal property 'CreditLimit' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:39.462 -03:00 [WRN] No store type was specified for the decimal property 'ReservedBalance' on entity type 'AccountModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:39.465 -03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:39.469 -03:00 [WRN] No store type was specified for the decimal property 'AvailableBalance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:39.472 -03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'TransactionModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-12-03 15:22:39.651 -03:00 [DBG] Entity Framework Core 9.0.11 initialized 'PagueVelozDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.11' with options: MigrationsAssembly=PagueVeloz.Infrastructure EngineType=SqlServer 
+2025-12-03 15:22:39.678 -03:00 [DBG] Creating DbConnection.
+2025-12-03 15:22:39.741 -03:00 [DBG] Created DbConnection. (58ms).
+2025-12-03 15:22:39.752 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:40.157 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:40.172 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-12-03 15:22:40.193 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (13ms).
+2025-12-03 15:22:40.216 -03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (48ms).
+2025-12-03 15:22:40.259 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-03 15:22:40.355 -03:00 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-03 15:22:40.366 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:40.391 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (16ms).
+2025-12-03 15:22:40.400 -03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2025-12-03 15:22:40.404 -03:00 [DBG] Created DbCommand for 'ExecuteScalar' (3ms).
+2025-12-03 15:22:40.407 -03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (7ms).
+2025-12-03 15:22:40.411 -03:00 [DBG] Opening connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:40.418 -03:00 [DBG] Opened connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:40.423 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-03 15:22:40.509 -03:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-12-03 15:22:40.525 -03:00 [DBG] Closing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:40.532 -03:00 [DBG] Closed connection to database 'PagueVelozDB' on server 'GRDESENVN40' (7ms).
+2025-12-03 15:22:40.544 -03:00 [DBG] 'PagueVelozDbContext' disposed.
+2025-12-03 15:22:40.555 -03:00 [DBG] Disposing connection to database 'PagueVelozDB' on server 'GRDESENVN40'.
+2025-12-03 15:22:40.564 -03:00 [DBG] Disposed connection to database '' on server '' (8ms).
+2025-12-03 15:22:40.802 -03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-12-03 15:22:40.908 -03:00 [DBG] Hosting starting
+2025-12-03 15:22:40.942 -03:00 [DBG] Middleware loaded
+2025-12-03 15:22:40.950 -03:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16513 B).
+2025-12-03 15:22:40.954 -03:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-12-03 15:22:41.072 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-03 15:22:41.077 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-03 15:22:41.098 -03:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-12-03 15:22:41.353 -03:00 [INF] Now listening on: https://localhost:7249
+2025-12-03 15:22:41.356 -03:00 [INF] Now listening on: http://localhost:5247
+2025-12-03 15:22:41.359 -03:00 [DBG] Loaded hosting startup assembly PagueVeloz.Api
+2025-12-03 15:22:41.362 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-12-03 15:22:41.365 -03:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-12-03 15:22:41.367 -03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-12-03 15:22:41.385 -03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-03 15:22:41.390 -03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-03 15:22:41.861 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-03 15:22:41.864 -03:00 [INF] Hosting environment: Development
+2025-12-03 15:22:41.866 -03:00 [INF] Content root path: E:\REINALDO.DEV (C#)\PagueVeloz\PagueVeloz.Api
+2025-12-03 15:22:41.869 -03:00 [DBG] Hosting started
+2025-12-03 15:22:58.658 -03:00 [DBG] Connection id "0HNHIJ3U8LUTO" accepted.
+2025-12-03 15:22:58.712 -03:00 [DBG] Connection id "0HNHIJ3U8LUTO" started.
+2025-12-03 15:22:58.888 -03:00 [DBG] Connection 0HNHIJ3U8LUTO established using the following protocol: "Tls13"
+2025-12-03 15:23:19.094 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_vs/browserLink - null null
+2025-12-03 15:23:19.093 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-03 15:23:19.165 -03:00 [DBG] Valid content request received, but failed to communicate with Visual Studio to retrieve content.
+2025-12-03 15:23:19.171 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_vs/browserLink - 404 0 null 99.1141ms
+2025-12-03 15:23:19.200 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-03 15:23:19.207 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 136.8517ms
+2025-12-03 15:23:19.354 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-03 15:23:19.404 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-03 15:23:19.408 -03:00 [DBG] Request did not match any endpoints
+2025-12-03 15:23:19.456 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 102.6888ms
+2025-12-03 15:24:08.951 -03:00 [DBG] Config reload token fired. Checking for changes...
+2025-12-03 15:24:08.954 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-03 15:24:08.957 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-03 15:24:09.224 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-03 15:24:09.227 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-03 15:24:09.229 -03:00 [DBG] Config reload token fired. Checking for changes...
+2025-12-03 15:24:09.485 -03:00 [DBG] Config reload token fired. Checking for changes...
+2025-12-03 15:24:09.488 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-03 15:24:09.491 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-03 15:24:09.746 -03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-03 15:24:09.748 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-03 15:24:09.751 -03:00 [DBG] Config reload token fired. Checking for changes...
+2025-12-03 15:24:14.794 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/index.html - null null
+2025-12-03 15:24:14.811 -03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-12-03 15:24:14.815 -03:00 [DBG] Request did not match any endpoints
+2025-12-03 15:24:14.964 -03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-12-03 15:24:14.972 -03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-12-03 15:24:14.981 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/index.html - 200 null text/html;charset=utf-8 186.463ms
+2025-12-03 15:24:15.032 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-03 15:24:15.038 -03:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-12-03 15:24:15.043 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 11.1382ms
+2025-12-03 15:24:15.203 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - null null
+2025-12-03 15:24:15.216 -03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-12-03 15:24:15.219 -03:00 [DBG] Request did not match any endpoints
+2025-12-03 15:24:15.247 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 44.4689ms
+2025-12-03 15:24:59.738 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7249/api/Account/BuscarConta/CC-0001 - null null
+2025-12-03 15:24:59.762 -03:00 [DBG] 1 candidate(s) found for the request path '/api/Account/BuscarConta/CC-0001'
+2025-12-03 15:24:59.766 -03:00 [DBG] Endpoint 'PagueVeloz.Api.Controllers.AccountController.GetById (PagueVeloz.Api)' with route pattern 'api/Account/BuscarConta/{AccountNumber}' is valid for the request path '/api/Account/BuscarConta/CC-0001'
+2025-12-03 15:24:59.770 -03:00 [DBG] Request matched endpoint 'PagueVeloz.Api.Controllers.AccountController.GetById (PagueVeloz.Api)'
+2025-12-03 15:24:59.818 -03:00 [INF] [REQUEST] GET /api/Account/BuscarConta/CC-0001 CorrelationId="6095c8da-c88f-4d71-bace-2a8d07161a61"
+2025-12-03 15:24:59.826 -03:00 [INF] Request started: GET /api/Account/BuscarConta/CC-0001 TraceId=0HNHIJ3U8LUTO:0000000D
+2025-12-03 15:24:59.834 -03:00 [INF] Executing endpoint 'PagueVeloz.Api.Controllers.AccountController.GetById (PagueVeloz.Api)'
+2025-12-03 15:24:59.881 -03:00 [INF] Route matched with {action = "GetById", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.String) on controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api).
+2025-12-03 15:24:59.888 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-12-03 15:24:59.893 -03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-12-03 15:24:59.897 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-12-03 15:24:59.903 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-12-03 15:24:59.907 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-12-03 15:24:59.916 -03:00 [DBG] Executing controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-03 15:24:59.924 -03:00 [DBG] Executed controller factory for controller PagueVeloz.Api.Controllers.AccountController (PagueVeloz.Api)
+2025-12-03 15:24:59.957 -03:00 [DBG] Attempting to bind parameter 'AccountNumber' of type 'System.String' ...
+2025-12-03 15:24:59.970 -03:00 [DBG] Attempting to bind parameter 'AccountNumber' of type 'System.String' using the name 'AccountNumber' in request data ...
+2025-12-03 15:24:59.977 -03:00 [DBG] Done attempting to bind parameter 'AccountNumber' of type 'System.String'.
+2025-12-03 15:24:59.981 -03:00 [DBG] Done attempting to bind parameter 'AccountNumber' of type 'System.String'.
+2025-12-03 15:24:59.985 -03:00 [DBG] Attempting to validate the bound parameter 'AccountNumber' of type 'System.String' ...
+2025-12-03 15:25:00.038 -03:00 [DBG] Done attempting to validate the bound parameter 'AccountNumber' of type 'System.String'.
+2025-12-03 15:25:00.354 -03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-12-03 15:25:00.367 -03:00 [DBG] No information found on request to perform content negotiation.
+2025-12-03 15:25:00.369 -03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-12-03 15:25:00.372 -03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-12-03 15:25:00.377 -03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-12-03 15:25:00.384 -03:00 [INF] Executing OkObjectResult, writing value of type 'PagueVeloz.Domain.Entities.AccountModel'.
+2025-12-03 15:25:00.468 -03:00 [INF] Executed action PagueVeloz.Api.Controllers.AccountController.GetById (PagueVeloz.Api) in 549.2447ms
+2025-12-03 15:25:00.475 -03:00 [INF] Executed endpoint 'PagueVeloz.Api.Controllers.AccountController.GetById (PagueVeloz.Api)'
+2025-12-03 15:25:00.479 -03:00 [INF] Request finished: GET /api/Account/BuscarConta/CC-0001 StatusCode=200 TraceId=0HNHIJ3U8LUTO:0000000D Elapsed=652ms
+2025-12-03 15:25:00.487 -03:00 [INF] [RESPONSE] GET /api/Account/BuscarConta/CC-0001 200 669ms CorrelationId="6095c8da-c88f-4d71-bace-2a8d07161a61"
+2025-12-03 15:25:00.495 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7249/api/Account/BuscarConta/CC-0001 - 200 null application/json; charset=utf-8 757.7137ms
