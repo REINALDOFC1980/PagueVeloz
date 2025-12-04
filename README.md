@@ -109,7 +109,7 @@ Remover containers:
 docker-compose down -v
 ```
 
-### Execução via Local
+## 🏠 **Execução Local**
 -------------------
 dotnet run --project PagueVeloz.api
 Swagger:
