@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PagueVeloz.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+512b99fb36c98fe4bdbfa6b0fb5dee7296176c41")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57ca04bc04c5e4c9e4265c846ed6087e0398bd87")]
 [assembly: System.Reflection.AssemblyProductAttribute("PagueVeloz.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PagueVeloz.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -47,9 +47,6 @@ builder.Services.AddScoped<IRabbitMQService, RabbitMQService>();
 builder.Services.AddScoped<IDbConnection>(sp =>
     new SqlConnection(connectionString));
 
-// Registro o DbContext do EF Core 
-//builder.Services.AddDbContext<PagueVelozDbContext>(options =>
-//    options.UseSqlServer(connectionString));
 
 builder.Services.AddDbContext<PagueVelozDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -111,8 +108,7 @@ builder.Services.AddSwaggerGen(c =>
         Title = "PagueVeloz API",
         Version = "v1",
         Description = "API para processamento de transações financeiras"
-    });
-  
+    });  
 
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -123,8 +119,7 @@ builder.Services.AddSwaggerGen(c =>
 
 
 builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
+    .AddJsonOptions(options =>    {
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
@@ -132,15 +127,21 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Aplica migrations automaticamente
 
-//Cria o banco via EF Core (se estiver usando EF)
+// Aplica migrations automaticamente
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<PagueVelozDbContext>();
-    //db.Database.EnsureCreated();
-    db.Database.Migrate();
-
+    try
+    {
+        // Aplica migrações apenas se o banco não tiver a tabela principal
+        if (!db.Database.CanConnect() || !db.Accounts.Any())
+            db.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Migração ignorada: {ex.Message}");
+    }
 }
 
 
@@ -166,7 +167,6 @@ app.MapHealthChecks("/health");
 app.MapHealthChecks("/health/ready");
 
 app.UseMiddleware<RequestTimingMiddleware>();
-
 
 app.UseHttpsRedirection();
 

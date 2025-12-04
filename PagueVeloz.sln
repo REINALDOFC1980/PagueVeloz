@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.Shared", "PagueV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.Infrastructure", "PagueVeloz.Infrastructure\PagueVeloz.Infrastructure.csproj", "{2E13A632-BF12-E2E8-8E50-8ABC3421BFBE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PagueVeloz.Tests", "PagueVeloz.Tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.UnitTests", "PagueVeloz.Tests\PagueVeloz.UnitTests\PagueVeloz.UnitTests.csproj", "{09750698-D339-40BA-94E5-66E240AFCBE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.IntegrationTests", "PagueVeloz.Tests\PagueVeloz.IntegrationTests\PagueVeloz.IntegrationTests.csproj", "{DB807FFC-5EA7-40EC-9AAB-970189E477DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +45,21 @@ Global
 		{2E13A632-BF12-E2E8-8E50-8ABC3421BFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E13A632-BF12-E2E8-8E50-8ABC3421BFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E13A632-BF12-E2E8-8E50-8ABC3421BFBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09750698-D339-40BA-94E5-66E240AFCBE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09750698-D339-40BA-94E5-66E240AFCBE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09750698-D339-40BA-94E5-66E240AFCBE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09750698-D339-40BA-94E5-66E240AFCBE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB807FFC-5EA7-40EC-9AAB-970189E477DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB807FFC-5EA7-40EC-9AAB-970189E477DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB807FFC-5EA7-40EC-9AAB-970189E477DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB807FFC-5EA7-40EC-9AAB-970189E477DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{09750698-D339-40BA-94E5-66E240AFCBE9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{DB807FFC-5EA7-40EC-9AAB-970189E477DA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B01D657-3230-4293-AF94-EE82269557A7}

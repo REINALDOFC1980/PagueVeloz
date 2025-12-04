@@ -44,6 +44,7 @@ namespace PagueVeloz.Infrastructure.Repositories.Account
         public async Task<AccountModel> GetAccountByIdAsync(Guid AccountId, IDbTransaction dbTransaction = null)
         {
             var sql = "SELECT * FROM Accounts WHERE AccountId = @AccountId";
+            var parameters = new { AccountId = AccountId.ToString("N") };
             // 🔹 Passando a transação para Dapper
             return await _connection.QueryFirstOrDefaultAsync<AccountModel>(sql, new { AccountId }, transaction: dbTransaction);
         }
