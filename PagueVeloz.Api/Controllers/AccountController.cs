@@ -35,8 +35,8 @@ namespace PagueVeloz.Api.Controllers
         ///   "accountNumber": "CC-0001",
         ///   "balance": "0",
         ///   "reservedBalance": 0,
-        ///   "creditLimit": "0",
-        ///   "referenceId": "test-credit-001"
+        ///   "creditLimit": "0"
+        ///  
         /// }
         ///        
         /// </remarks>

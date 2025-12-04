@@ -128,22 +128,11 @@ builder.Services.AddOpenApi();
 var app = builder.Build();
 
 
-// Aplica migrations automaticamente
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<PagueVelozDbContext>();
-    try
-    {
-        // Aplica migrações apenas se o banco não tiver a tabela principal
-        if (!db.Database.CanConnect() || !db.Accounts.Any())
-            db.Database.Migrate();
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Migração ignorada: {ex.Message}");
-    }
+    db.Database.Migrate();
 }
-
 
 if (app.Environment.IsDevelopment())
 {

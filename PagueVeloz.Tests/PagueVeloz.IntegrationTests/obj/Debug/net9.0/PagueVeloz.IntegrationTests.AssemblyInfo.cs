@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PagueVeloz.IntegrationTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57ca04bc04c5e4c9e4265c846ed6087e0398bd87")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40cbc6aa8e9f5453901fbc9174db86a740b319a7")]
 [assembly: System.Reflection.AssemblyProductAttribute("PagueVeloz.IntegrationTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PagueVeloz.IntegrationTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
