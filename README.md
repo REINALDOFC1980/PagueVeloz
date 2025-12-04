@@ -78,9 +78,12 @@ PagueVeloz API — Sistema de Processamento de Transações Financeiras
 ### Execução via Docker
 -------------------
 - Imagem: reinaldofc80/pagueveloz-api
-- Copie o arquivo docker-compose.yml e cole em umas pasta da sua maquina.  
-- Para rodar a aplicação e dependências, execute no terminal apontando para pasta a qual se encontra o docker-compose.yml.:
-- docker-compose up --build -d  
+- Baixe ou copie o arquivo docker-compose.yml para uma pasta da sua máquina.  
+- Abra um terminal dentro dessa pasta (onde o docker-compose.yml está).
+- Execute o comando abaixo para baixar as imagens, construir a aplicação e iniciar todos os serviços: docker-compose up --build -d
+- Baixar a imagem reinaldofc80/pagueveloz-api
+- Baixar e iniciar as dependências (Banco de dados, RabbitMQ ... )
+- Levantar toda a stack automaticamente
 
 #Para visualizar a API no Swagger
  URL do Swagger: http://localhost:8080/swagger/index.html  
