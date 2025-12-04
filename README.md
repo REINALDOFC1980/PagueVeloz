@@ -99,7 +99,6 @@ docker-compose up -d
 - Baixar e iniciar as dependências (Banco de dados, RabbitMQ ... )
 - Levantar toda a stack automaticamente
 >>>>>>> d744e1045c3ac67bb52d0c907f01b8dd02797a05
-
 Swagger:
 ```
 http://localhost:8080/swagger/index.html
@@ -108,6 +107,14 @@ http://localhost:8080/swagger/index.html
 Remover containers:
 ```bash
 docker-compose down -v
+```
+
+### Execução via Local
+-------------------
+dotnet run --project PagueVeloz.api
+Swagger:
+```
+http://localhost:5247/swagger/index.html
 ```
 
 ## 📌 **Endpoints principais**
