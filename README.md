@@ -81,10 +81,24 @@ Imagem:
 reinaldofc80/pagueveloz-api
 ```
 
+<<<<<<< HEAD
 Execute:
 ```bash
 docker-compose up -d
 ```
+=======
+### Execução via Docker
+-------------------
+- Imagem: reinaldofc80/pagueveloz-api
+- Baixe ou copie o arquivo docker-compose.yml para uma pasta da sua máquina.  
+- Abra um terminal dentro dessa pasta (onde o docker-compose.yml está).
+Execute o comando:
+bash
+docker-compose up -d
+- Baixar a imagem reinaldofc80/pagueveloz-api
+- Baixar e iniciar as dependências (Banco de dados, RabbitMQ ... )
+- Levantar toda a stack automaticamente
+>>>>>>> d744e1045c3ac67bb52d0c907f01b8dd02797a05
 
 Swagger:
 ```
